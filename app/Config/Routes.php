@@ -37,6 +37,30 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+
+//admin routes group
+$routes->group('admin', static function($routes) {
+    $routes->get('', 'Admin\HomeController::index');
+    $routes->get('test', 'Admin\HomeController::d');
+});
+/*     $routes->get('/login', 'Admin\Auth::login');
+    $routes->post('/login', 'Admin\Auth::login');
+    $routes->get('/logout', 'Admin\Auth::logout');
+    $routes->get('/forgot-password', 'Admin\Auth::forgotPassword');
+    $routes->post('/forgot-password', 'Admin\Auth::forgotPassword');
+    $routes->get('/reset-password/:token', 'Admin\Auth::resetPassword');
+    $routes->post('/reset-password/:token', 'Admin\Auth::resetPassword');
+    $routes->get('/change-password', 'Admin\Auth::changePassword');
+    $routes->post('/change-password', 'Admin\Auth::changePassword');
+    $routes->get('/profile', 'Admin\Auth::profile');
+    $routes->post('/profile', 'Admin\Auth::profile');
+    $routes->get('/settings', 'Admin\Auth::settings');
+    $routes->post('/settings', 'Admin\Auth::settings');
+    $routes->get('/users', 'Admin\UserController::index');
+    $routes->get('/users/add', 'Admin\UserController::add');
+    $routes->post('/users/add', 'Admin\UserController::add'); */
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
