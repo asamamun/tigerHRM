@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost/r49/CI/projects/HRMS/tigerHRM/public/';
+    public $baseURL = 'http://localhost/Ci/june20/tigerHRM/public/';
 
     /**
      * --------------------------------------------------------------------------
