@@ -32,33 +32,43 @@ $routes->set404Override();
  * Route Definitions
  * --------------------------------------------------------------------
  */
+$routes->get('/register', 'RegisterController::index');
+$routes->post('/register', 'RegisterController::store');
+$routes->get('/login', 'LoginController::index');
+$routes->post('/login', 'LoginController::check');
+$routes->get('/logout', 'LoginController::logout');
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/dashboard', 'Home::index');
+$routes->get('/users', 'UsersController::index');
+//customers
+$routes->get('/customers', 'CustomersController::index');
+$routes->get('/customers/create', 'CustomersController::create');
+$routes->post('/customers/create', 'CustomersController::store');
+$routes->get('/customers/edit/(:num)', 'CustomersController::edit/$1');
+$routes->post('/customers/edit/(:num)', 'CustomersController::update/$1');
+$routes->post('/customers/delete/(:num)', 'CustomersController::delete/$1');
 
 
-//admin routes group
-$routes->group('admin', static function($routes) {
-    $routes->get('', 'Admin\HomeController::index');
-    $routes->get('test', 'Admin\HomeController::d');
-});
-/*     $routes->get('/login', 'Admin\Auth::login');
-    $routes->post('/login', 'Admin\Auth::login');
-    $routes->get('/logout', 'Admin\Auth::logout');
-    $routes->get('/forgot-password', 'Admin\Auth::forgotPassword');
-    $routes->post('/forgot-password', 'Admin\Auth::forgotPassword');
-    $routes->get('/reset-password/:token', 'Admin\Auth::resetPassword');
-    $routes->post('/reset-password/:token', 'Admin\Auth::resetPassword');
-    $routes->get('/change-password', 'Admin\Auth::changePassword');
-    $routes->post('/change-password', 'Admin\Auth::changePassword');
-    $routes->get('/profile', 'Admin\Auth::profile');
-    $routes->post('/profile', 'Admin\Auth::profile');
-    $routes->get('/settings', 'Admin\Auth::settings');
-    $routes->post('/settings', 'Admin\Auth::settings');
-    $routes->get('/users', 'Admin\UserController::index');
-    $routes->get('/users/add', 'Admin\UserController::add');
-    $routes->post('/users/add', 'Admin\UserController::add'); */
+
+//users
+$routes->get('/users', 'UsersController::index');
+$routes->get('/users/create', 'UsersController::create');
+$routes->post('/users/create', 'UsersController::store');
+$routes->get('/users/edit/(:num)', 'UsersController::edit/$1');
+$routes->post('/users/edit/(:num)', 'UsersController::update/$1');
+$routes->post('/users/delete/(:num)', 'UsersController::delete/$1');
+
+//expenses
+$routes->get('/expenses', 'ExpensesController::index');
+$routes->get('/expenses/create', 'ExpensesController::create');
+$routes->post('/expenses/create', 'ExpensesController::store');
+$routes->get('/expenses/edit/(:num)', 'ExpensesController::edit/$1');
+$routes->post('/expenses/edit/(:num)', 'ExpensesController::update/$1');
+$routes->post('/expenses/delete/(:num)', 'ExpensesController::delete/$1');
+
 
 
 /*

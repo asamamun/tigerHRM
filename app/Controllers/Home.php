@@ -6,6 +6,14 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        if($this->checkauth()){
+            return view('dashboard/dashboard');
+        }
+        else{
+            return redirect("login");
+        }
+        //
     }
+
+
 }

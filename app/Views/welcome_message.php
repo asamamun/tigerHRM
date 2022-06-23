@@ -194,7 +194,7 @@
     </style>
 </head>
 <body>
-
+<h1>Welcome message page modified</h1>
 <!-- HEADER: MENU + HEROE SECTION -->
 <header>
 

@@ -49,4 +49,11 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
     }
+    public function checkauth(){
+        $session = \Config\Services::session();
+        if(!$session->logged_in){
+            return false;
+        }
+        return true;
+    }
 }

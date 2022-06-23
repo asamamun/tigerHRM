@@ -24,7 +24,12 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost/r49/CI/projects/HRMS/tigerHRM/public/';
+    
+    // private $root = "http://".$_SERVER['HTTP_HOST'];
+    // private $root = "http://".$_SERVER['HTTP_HOST'] .  str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+    public $baseURL = BASESEURL;
+
+
 
     /**
      * --------------------------------------------------------------------------
@@ -37,7 +42,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $indexPage = 'index.php';
+    public $indexPage = '';
 
     /**
      * --------------------------------------------------------------------------
