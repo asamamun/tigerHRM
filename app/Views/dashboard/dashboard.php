@@ -3,7 +3,7 @@
 <!-- content section start -->
 <?= $this->section('content'); ?>
 <h1>Welcome to</h1>
-<h1>Dashboard</h1>
+<h1>Dashboard Tiger HRM</h1>
 
 
 <?= $this->endSection(); ?>
