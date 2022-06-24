@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="my-3 text-center">
-                    <h4>Add New Department
+                    <h4>Designation
                         <hr class="text-denger">
                     </h4>
 
@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row mb-2">
                             <div class="col-sm-8">
-                                <input type="text" placeholder="Add Department">
+                                <input type="text" placeholder="Add Designation">
                                 <a href="#" class="btn btn-primary btn-sm rounded mb-2">Add Data</a>
                             </div>
                             <div class="col-sm-4">
@@ -60,7 +60,7 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>IT Department</td>
+                                        <td>Sales Manager</td>
                                         <!-- <td>+91 0000000000</td>
                                         <td>infocodinghax@gmail.com</td> -->
                                         <td class="text-center">

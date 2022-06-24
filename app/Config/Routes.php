@@ -41,6 +41,7 @@ $routes->get('/settings', 'SettingController::index');
 $routes->post('/settings', 'SettingController::save');
 $routes->get('/department', 'DepartmentController::index');
 $routes->post('/department', 'DepartmentController::delete');
+$routes->get('/designation', 'DesignationController::index');
 
 
 

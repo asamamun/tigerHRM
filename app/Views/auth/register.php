@@ -66,6 +66,11 @@
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                    
+                  </div>
+                  <div>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="login"
+                class="link-danger">Login</a></p>
                   </div>
 
                 <?= form_close() ?>
