@@ -11702,7 +11702,74 @@ body {
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
 }
-.btn:focus,.form-control:focus{
+/* .btn:active,.btn:focus,.form-control:focus{
+  outline: none!important;
+  box-shadow: none!important;
+} */
+.btn:active,
+.btn:focus,
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  outline: none!important;
+  outline:0 !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+}
+/* login-register */
+
+.login-register {
+  top: 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  padding: 5% 0;
+  position: fixed
+}
+.login-sidebar {
+  padding: 0px;
+  margin-top: 0px
+}
+
+.login-sidebar .login-box {
+  right: 0px;
+  position: absolute;
+  height: 100%
+}
+.login-box {
+  width: 400px;
+  margin: 0 auto
+}
+*,a {
   outline: none;
-  box-shadow: none;
+  text-decoration: none;
+}
+html body .db {
+  display: block
+}
+
+.card-body.loginpage {
+  padding: 10% 1.25em;
+}
+.form-group {
+  margin-bottom: 15px
+}
+.btn-success {
+  background: #4ab362;
+  width: 100%;
+  border: 1px solid #4ab362;
+}
+html body .m-t-20 {
+  margin-top: 20px
 }
