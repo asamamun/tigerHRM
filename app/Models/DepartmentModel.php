@@ -14,7 +14,7 @@ class DepartmentModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name', 'description'];
+    protected $allowedFields    = ['dep_name','dep_phon','email','created_at','deleted_at'];
 
     // Dates
     protected $useTimestamps = false;

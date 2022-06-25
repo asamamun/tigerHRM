@@ -10,9 +10,29 @@ class DepartmentController extends BaseController
     public function index()
     {
         
-        $model = new DepartmentModel();
-        $alldepartments = $model->findAll();
-        $data['departments'] = $alldepartments;
+        $department = new DepartmentModel();
+        $alldepartment = $department->findAll();
+        $data['department'] = $alldepartment;
         return view("department/index",$data);
+       }
+    public function create()
+    {
+        return view("department/create");
     }
+public function store()
+{
+    $department = new Department();
+    $data = [
+        'dep_name' => $this->request->getPost('dep_name'),
+        'dep_phon' => $this->request->getPost('dep_phon'),
+        'email' => $this->request->getPost('email')
+    ];
+    $department->save($data);
+    return redirect()->to(base_url('department'))->with('status','Department Added' ) ;
 }
+
+
+}
+
+           
+
