@@ -44,6 +44,11 @@ $routes->get('/department-add', 'DepartmentController::create');
 $routes->post('department-store', 'DepartmentController::store');
 $routes->post('department', 'DepartmentController::delete');
 $routes->get('/designation', 'DesignationController::index');
+$routes->get('/employee', 'EmployeeController::index');
+$routes->post('/employee', 'EmployeeController::delete');
+$routes->get('/disiplinary', 'DisiplinaryController::index');
+$routes->post('/disiplinary', 'DisiplinaryController::delete');
+
 
 
 
