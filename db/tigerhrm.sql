@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2022 at 04:36 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Jun 25, 2022 at 05:19 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,20 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id` int(3) NOT NULL,
-  `username` varchar(40) NOT NULL,
-  `userpass` varchar(40) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `pass` varchar(40) NOT NULL,
   `usertype` varchar(20) NOT NULL,
   `plantid` int(3) NOT NULL,
   `status` tinyint(4) NOT NULL,
-  `createdate` date NOT NULL,
-  `deleted` tinyint(4) NOT NULL
+  `created_at` date NOT NULL,
+  `deleted_at` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `userpass`, `usertype`, `plantid`, `status`, `createdate`, `deleted`) VALUES
+INSERT INTO `admin` (`id`, `name`, `pass`, `usertype`, `plantid`, `status`, `created_at`, `deleted_at`) VALUES
 (1, 'mangoit', 'aa75520f89ca1de156d9d0c63b8c9e5d4c22116f', '1', 1, 1, '2016-04-28', 0),
 (2, 'mangotex', '9f451970733ec7381a7a2c7171c299505a010e93', '1', 2, 1, '2016-04-28', 0);
 
@@ -54,10 +54,10 @@ INSERT INTO `admin` (`id`, `username`, `userpass`, `usertype`, `plantid`, `statu
 
 CREATE TABLE `companysetup` (
   `id` int(3) NOT NULL,
-  `companyname` varchar(40) NOT NULL,
+  `name` varchar(40) NOT NULL,
   `description` text NOT NULL,
-  `companyaddress1` text NOT NULL,
-  `companyaddress2` text NOT NULL,
+  `address1` text NOT NULL,
+  `address2` text NOT NULL,
   `tel` varchar(15) NOT NULL,
   `fax` varchar(15) NOT NULL,
   `email` varchar(30) NOT NULL,
@@ -67,14 +67,14 @@ CREATE TABLE `companysetup` (
   `tin` varchar(40) NOT NULL,
   `establishmentdate` date NOT NULL,
   `alias` varchar(20) NOT NULL,
-  `companytype` varchar(30) NOT NULL
+  `type` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `companysetup`
 --
 
-INSERT INTO `companysetup` (`id`, `companyname`, `description`, `companyaddress1`, `companyaddress2`, `tel`, `fax`, `email`, `web`, `tradeli`, `ownername`, `tin`, `establishmentdate`, `alias`, `companytype`) VALUES
+INSERT INTO `companysetup` (`id`, `name`, `description`, `address1`, `address2`, `tel`, `fax`, `email`, `web`, `tradeli`, `ownername`, `tin`, `establishmentdate`, `alias`, `type`) VALUES
 (1, 'GNSL', 'description', 'Dhaka', 'Dhaka', '01911039525', '8802-123456', 'asamamun.web@gmail.com', 'http://isdbstudents.com', '43545dfsdgf', 'Mr Tiger 213', '234354554', '2000-01-02', 'Tiger', 'GNSL');
 
 -- --------------------------------------------------------
@@ -84,16 +84,16 @@ INSERT INTO `companysetup` (`id`, `companyname`, `description`, `companyaddress1
 --
 
 CREATE TABLE `country` (
-  `countryid` int(3) NOT NULL,
-  `countryname` varchar(40) NOT NULL,
-  `countrycode` varchar(5) NOT NULL
+  `id` int(3) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `code` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `country`
 --
 
-INSERT INTO `country` (`countryid`, `countryname`, `countrycode`) VALUES
+INSERT INTO `country` (`id`, `name`, `code`) VALUES
 (1, 'Afghanistan', 'AF'),
 (2, 'Åland Islands', 'AX'),
 (3, 'Albania', 'AL'),
@@ -355,15 +355,15 @@ CREATE TABLE `department` (
   `name` varchar(40) NOT NULL,
   `description` text NOT NULL,
   `plantid` int(3) NOT NULL,
-  `createdate` date NOT NULL,
-  `deleted` tinyint(4) NOT NULL DEFAULT 0
+  `created_at` date NOT NULL,
+  `deleted_at` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `department`
 --
 
-INSERT INTO `department` (`id`, `name`, `description`, `plantid`, `createdate`, `deleted`) VALUES
+INSERT INTO `department` (`id`, `name`, `description`, `plantid`, `created_at`, `deleted_at`) VALUES
 (1, 'Store', 'factory 1 stores', 1, '2016-04-30', 0),
 (2, 'Account', 'account dept', 1, '2016-04-30', 0),
 (3, 'production', 'production dept', 2, '2016-04-29', 0),
@@ -378,19 +378,19 @@ INSERT INTO `department` (`id`, `name`, `description`, `plantid`, `createdate`, 
 --
 
 CREATE TABLE `designation` (
-  `desigid` int(5) NOT NULL,
-  `designame` varchar(40) NOT NULL,
-  `desigdesc` text NOT NULL,
+  `id` int(5) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `description` text NOT NULL,
   `grade` varchar(15) NOT NULL,
-  `createdate` date NOT NULL,
-  `deleted` tinyint(4) NOT NULL DEFAULT 0
+  `created_at` date NOT NULL,
+  `deleted_at` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `designation`
 --
 
-INSERT INTO `designation` (`desigid`, `designame`, `desigdesc`, `grade`, `createdate`, `deleted`) VALUES
+INSERT INTO `designation` (`id`, `name`, `description`, `grade`, `created_at`, `deleted_at`) VALUES
 (1, 'Driver', 'company driver >10 years', '9', '0000-00-00', 0),
 (2, 'CEO', 'Chief Technical Officer 1', '1', '0000-00-00', 0),
 (3, 'Lead Engineer', 'Lead Engineer', '5', '0000-00-00', 0),
@@ -433,14 +433,14 @@ CREATE TABLE `employee` (
   `deptid` int(5) NOT NULL,
   `secid` int(5) NOT NULL,
   `desigid` int(5) NOT NULL,
-  `deleted` tinyint(4) NOT NULL
+  `deleted_at` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`id`, `empid`, `fname`, `mname`, `lname`, `dln`, `dl_expdate`, `gender`, `dob`, `maritalstatus`, `phone`, `homephone`, `email`, `blood`, `tin`, `nid`, `fathersname`, `mothersname`, `bankname`, `bankaccno`, `bankacctype`, `plantid`, `deptid`, `secid`, `desigid`, `deleted`) VALUES
+INSERT INTO `employee` (`id`, `empid`, `fname`, `mname`, `lname`, `dln`, `dl_expdate`, `gender`, `dob`, `maritalstatus`, `phone`, `homephone`, `email`, `blood`, `tin`, `nid`, `fathersname`, `mothersname`, `bankname`, `bankaccno`, `bankacctype`, `plantid`, `deptid`, `secid`, `desigid`, `deleted_at`) VALUES
 (1, 'man008', 'Idb', '-', 'BISEW', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', 'NA', '', '', '', '', '', '', 'current', 1, 3, 2, 3, 0),
 (2, 'TR202', 'Aman', '', 'Ullah', '', '0000-00-00', 'male', '2016-05-14', 'unmarried', '9865432', '234987', 'aman@gmail.com', 'B+', '4356786465', '43256435879655', 'Aman\'s Father', 'Aman\'s Mother', '', '', 'savings', 1, 4, 4, 5, 0),
 (3, 'TANJIMSTORE055', 'Tanjimul', '', 'Islam', '', '0000-00-00', 'male', '2016-05-15', 'married', '346436', '3464', 'tanjim@gmail.com', 'A+', '46546', '436546546', 'Father', 'Mother', '', '', 'current', 1, 4, 5, 4, 0),
@@ -802,19 +802,19 @@ INSERT INTO `leavetype` (`id`, `leavetype`, `desc`, `created`) VALUES
 --
 
 CREATE TABLE `plant` (
-  `plantid` int(3) NOT NULL,
-  `plantname` varchar(40) NOT NULL,
-  `plantdesc` text NOT NULL,
+  `id` int(3) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `description` text NOT NULL,
   `companyid` int(3) NOT NULL,
-  `createdate` date NOT NULL,
-  `deleted` tinyint(4) NOT NULL
+  `created_at` date NOT NULL,
+  `deleted_at` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `plant`
 --
 
-INSERT INTO `plant` (`plantid`, `plantname`, `plantdesc`, `companyid`, `createdate`, `deleted`) VALUES
+INSERT INTO `plant` (`id`, `name`, `description`, `companyid`, `created_at`, `deleted_at`) VALUES
 (1, 'Mango IT', 'Mango IT', 1, '2016-04-28', 0),
 (2, 'Mango Textile', 'Mango Textile', 1, '2016-04-28', 0);
 
@@ -918,19 +918,19 @@ CREATE TABLE `salary_temp` (
 --
 
 CREATE TABLE `section` (
-  `secid` int(5) NOT NULL,
-  `secname` varchar(40) NOT NULL,
-  `secdesc` text NOT NULL,
+  `id` int(5) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `description` text NOT NULL,
   `deptid` int(5) NOT NULL,
-  `createdate` date NOT NULL,
-  `deleted` tinyint(4) NOT NULL DEFAULT 0
+  `created_at` date NOT NULL,
+  `deleted_at` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `section`
 --
 
-INSERT INTO `section` (`secid`, `secname`, `secdesc`, `deptid`, `createdate`, `deleted`) VALUES
+INSERT INTO `section` (`id`, `name`, `description`, `deptid`, `created_at`, `deleted_at`) VALUES
 (1, 'sewing', 'some desc', 3, '2016-04-30', 0),
 (2, 'store', 'store sec', 1, '2016-04-30', 0),
 (3, 'asef', 'sadf', 1, '2016-05-07', 0),
@@ -994,20 +994,20 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`, `d
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`name`);
 
 --
 -- Indexes for table `companysetup`
 --
 ALTER TABLE `companysetup`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `companyname` (`companyname`);
+  ADD UNIQUE KEY `companyname` (`name`);
 
 --
 -- Indexes for table `country`
 --
 ALTER TABLE `country`
-  ADD PRIMARY KEY (`countryid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `department`
@@ -1019,7 +1019,7 @@ ALTER TABLE `department`
 -- Indexes for table `designation`
 --
 ALTER TABLE `designation`
-  ADD PRIMARY KEY (`desigid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `employee`
@@ -1090,8 +1090,8 @@ ALTER TABLE `leavetype`
 -- Indexes for table `plant`
 --
 ALTER TABLE `plant`
-  ADD PRIMARY KEY (`plantid`),
-  ADD UNIQUE KEY `plantname` (`plantname`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `plantname` (`name`);
 
 --
 -- Indexes for table `salary`
@@ -1115,7 +1115,7 @@ ALTER TABLE `salary_temp`
 -- Indexes for table `section`
 --
 ALTER TABLE `section`
-  ADD PRIMARY KEY (`secid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `shift`
@@ -1150,7 +1150,7 @@ ALTER TABLE `companysetup`
 -- AUTO_INCREMENT for table `country`
 --
 ALTER TABLE `country`
-  MODIFY `countryid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
 
 --
 -- AUTO_INCREMENT for table `department`
@@ -1162,7 +1162,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `designation`
 --
 ALTER TABLE `designation`
-  MODIFY `desigid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -1228,7 +1228,7 @@ ALTER TABLE `leavetype`
 -- AUTO_INCREMENT for table `plant`
 --
 ALTER TABLE `plant`
-  MODIFY `plantid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `salary`
@@ -1252,7 +1252,7 @@ ALTER TABLE `salary_temp`
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `secid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `shift`

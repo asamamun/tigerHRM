@@ -2323,6 +2323,7 @@
         },
         {
             "name": "symfony/deprecation-contracts",
+<<<<<<< Updated upstream
             "version": "v2.5.1",
             "source": {
                 "type": "git",
@@ -2339,11 +2340,31 @@
             },
             "require": {
                 "php": ">=7.1"
+=======
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "26954b3d62a6c5fd0ea8a2a00c0353a14978d05c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/26954b3d62a6c5fd0ea8a2a00c0353a14978d05c",
+                "reference": "26954b3d62a6c5fd0ea8a2a00c0353a14978d05c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.2"
+>>>>>>> Stashed changes
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
+<<<<<<< Updated upstream
                     "dev-main": "2.5-dev"
+=======
+                    "dev-main": "3.0-dev"
+>>>>>>> Stashed changes
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -2372,7 +2393,11 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
+<<<<<<< Updated upstream
                 "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.1"
+=======
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.0.1"
+>>>>>>> Stashed changes
             },
             "funding": [
                 {
@@ -2388,7 +2413,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< Updated upstream
             "time": "2022-01-02T09:53:40+00:00"
+=======
+            "time": "2022-01-02T09:55:41+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "theseer/tokenizer",
@@ -2508,5 +2537,5 @@
         "php": "^7.4 || ^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
