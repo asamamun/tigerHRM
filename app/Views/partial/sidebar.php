@@ -60,8 +60,8 @@
                             </a>
                             <div class="collapse" id="EmployeeLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?= base_url() ?>/emlployee">Emlployee</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/diciplinary">Diciplinary</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/employee">Employee</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/disiplinary">Diciplinary</a>
                                     <a class="nav-link" href="<?= base_url() ?>/Active-users">In Active users</a>
                                 </nav>
                             </div>
@@ -72,9 +72,9 @@
                             </a>
                             <div class="collapse" id="AttendanceLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?= base_url() ?>/att-list">Attendance list</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/add-att">Add Attendance</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/att-Report">Attendance Report</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/attList">Attendance list</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/addAttendance">Add Attendance</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/attendanceReport">Attendance Report</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#lvLayouts" aria-expanded="false" aria-controls="collapseLayouts">

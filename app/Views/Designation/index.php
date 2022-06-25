@@ -33,6 +33,7 @@
                                     <tr>
                                         <th style="min-width: 10px">#</th>
                                         <th>Name</th>
+                                        <th>Description</th>
                                         <!-- <th>Mobile</th>
                                         <th>Email</th> -->
                                         <th class="text-center" colspan="2">Action</th>
@@ -46,9 +47,9 @@
                                     <tr>
                                         <td><?= $designation['id'] ?></td>
                                         <td><?= $designation['name'] ?></td>
-                                        <td><?= $designation['designation'] ?></td>
+                                        <td><?= $designation['description'] ?></td>
                                           <td class="text-center">
-        <?= anchor('department/edit/'.$department['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
+        <?= anchor('department/edit/'.$designation['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
                                         <td class="text-center">
                                             <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
                                             <a href="#" class="btn btn-danger rounded mx-1">Delete</a>
