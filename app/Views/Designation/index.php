@@ -39,16 +39,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                //populate table row from departments
+                                foreach ($designation as $designation) {
+                                ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Sales Manager</td>
-                                        <!-- <td>+91 0000000000</td>
-                                        <td>infocodinghax@gmail.com</td> -->
+                                        <td><?= $designation['id'] ?></td>
+                                        <td><?= $designation['name'] ?></td>
+                                        <td><?= $designation['designation'] ?></td>
+                                          <td class="text-center">
+        <?= anchor('department/edit/'.$department['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
                                         <td class="text-center">
-                                            <a href="#" class="btn btn-primary rounded mx-1">Edit</a>
+                                            <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
                                             <a href="#" class="btn btn-danger rounded mx-1">Delete</a>
                                         </td>
                                     </tr>
+                                    <?php
+                                }
+                                ?>
 
                                 </tbody>
                             </table>
