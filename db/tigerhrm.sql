@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2022 at 05:28 PM
+-- Generation Time: Jun 25, 2022 at 04:36 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -351,9 +351,9 @@ INSERT INTO `country` (`countryid`, `countryname`, `countrycode`) VALUES
 --
 
 CREATE TABLE `department` (
-  `deptid` int(5) NOT NULL,
-  `deptname` varchar(40) NOT NULL,
-  `deptdesc` text NOT NULL,
+  `id` int(5) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `description` text NOT NULL,
   `plantid` int(3) NOT NULL,
   `createdate` date NOT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0
@@ -363,7 +363,7 @@ CREATE TABLE `department` (
 -- Dumping data for table `department`
 --
 
-INSERT INTO `department` (`deptid`, `deptname`, `deptdesc`, `plantid`, `createdate`, `deleted`) VALUES
+INSERT INTO `department` (`id`, `name`, `description`, `plantid`, `createdate`, `deleted`) VALUES
 (1, 'Store', 'factory 1 stores', 1, '2016-04-30', 0),
 (2, 'Account', 'account dept', 1, '2016-04-30', 0),
 (3, 'production', 'production dept', 2, '2016-04-29', 0),
@@ -1013,7 +1013,7 @@ ALTER TABLE `country`
 -- Indexes for table `department`
 --
 ALTER TABLE `department`
-  ADD PRIMARY KEY (`deptid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `designation`
@@ -1156,7 +1156,7 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `deptid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `designation`
