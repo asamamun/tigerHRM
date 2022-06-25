@@ -17,12 +17,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="navbarDropdown">
-                        <div><img src="assets/images/users/imran.png" class="rounded-circle" width="60px" alt=""></div>
+                        <div><img src="assets/images/users/imran.png" class="rounded-circle rtl-img" width="60px" alt=""></div>
                         <p>Imran Islam</p>
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li> <?= anchor('logout',"Logout",['class'=>"dropdown-item"]) ?></li>
+                        <li> <?= anchor('logout',"<i class='fa-solid fa-power-off'></i>&nbsp;Logout",['class'=>"dropdown-item"]) ?></li>
                     </ul>
                 </li>
             </ul>

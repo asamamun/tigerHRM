@@ -11773,3 +11773,10 @@ html body .db {
 html body .m-t-20 {
   margin-top: 20px
 }
+.rtl-img {
+  transform: rotateY(180deg) !important;
+
+  }
+  .fa-power-off:hover{
+    color: red;
+  }

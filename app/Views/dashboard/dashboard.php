@@ -1,14 +1,13 @@
 <?= $this->extend('layouts/default'); ?>
-<?= $this->section('title');?> Tiger HRM <?= $this->endSection();?>
+<?= $this->section('title');?> Dashboard <?= $this->endSection();?>
 <!-- content section start -->
 <?= $this->section('content'); ?>
-<h1>Welcome to</h1>
 <!-- ===================================================================== -->
-      <div class="page-wrapper">
+      <div class="container-fluid">
             <div class="message"></div>
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor"><i class="fa fa-braille" style="color:#1976d2"></i>&nbsp Dashboard</h3>
+                    <h3 class="text-themecolor"><i class="fa fa-braille small" style="color:#1976d2"></i>&nbsp Dashboard</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
