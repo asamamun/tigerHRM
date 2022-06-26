@@ -14,7 +14,7 @@ class DesignationModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name','designation'];
+    protected $allowedFields    = ['name','desigdesc','grade'];
 
     // Dates
     protected $useTimestamps = false;

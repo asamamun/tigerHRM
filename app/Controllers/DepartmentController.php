@@ -8,8 +8,7 @@ use App\Models\DepartmentModel;
 class DepartmentController extends BaseController
 {
     public function index()
-    {
-        
+    {        
         $department = new DepartmentModel();
         $alldepartment = $department->findAll();
         $data['department'] = $alldepartment;
@@ -21,17 +20,17 @@ class DepartmentController extends BaseController
     }
 public function store()
 {
-    $department = new Department();
+    $department = new DepartmentModel();
     $data = [
-        'dep_name' => $this->request->getPost('dep_name'),
-        'dep_phon' => $this->request->getPost('dep_phon'),
+        'name' => $this->request->getPost('name'),
+        'description' => $this->request->getPost('description'),
+        'phone' => $this->request->getPost('phone'),
         'email' => $this->request->getPost('email')
     ];
+    //ddd($data);
     $department->save($data);
-    return redirect()->to(base_url('department'))->with('status','Department Added' ) ;
+    return redirect()->to(base_url('department'))->with('status','Department Added') ;
 }
-
-
 }
 
            

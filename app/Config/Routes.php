@@ -39,13 +39,18 @@ $routes->post('/login', 'LoginController::check');
 $routes->get('/logout', 'LoginController::logout');
 $routes->get('/settings', 'SettingController::index');
 $routes->post('/settings', 'SettingController::save');
+//department
 $routes->get('/department', 'DepartmentController::index');
 $routes->get('/department-add', 'DepartmentController::create');
 $routes->post('department-store', 'DepartmentController::store');
 $routes->post('department', 'DepartmentController::delete');
 $routes->get('/designation', 'DesignationController::index');
+//employee
 $routes->get('/employee', 'EmployeeController::index');
-$routes->post('/employee', 'EmployeeController::delete');
+$routes->get('/employee/add', 'EmployeeController::create');
+$routes->post('/employee/add', 'EmployeeController::store');
+
+
 $routes->get('/disiplinary', 'DisiplinaryController::index');
 $routes->post('/disiplinary', 'DisiplinaryController::delete');
 

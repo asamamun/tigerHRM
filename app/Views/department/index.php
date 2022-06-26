@@ -39,9 +39,10 @@
                             <thead>
                                 <tr>
                                     <th style="min-width: 10px">ID</th>
-                                    <th>Department</th>
-                                    <th>Department Phon</th>
-                                    <th>Department Emil</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
                                     <th class="text-center" colspan="2">Action</th>
                                 </tr>
                             </thead>
@@ -52,8 +53,9 @@
                                 ?>
                                     <tr>
                                         <td><?= $department['id'] ?></td>
-                                        <td><?= $department['dep_name'] ?></td>
-                                        <td><?= $department['dep_phon'] ?></td>
+                                        <td><?= $department['name'] ?></td>
+                                        <td><?= $department['description'] ?></td>
+                                        <td><?= $department['phone'] ?></td>
                                         <td><?= $department['email'] ?></td>
                                           <td class="text-center">
         <?= anchor('department/edit/'.$department['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>

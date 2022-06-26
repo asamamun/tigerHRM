@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2022 at 12:17 AM
+-- Generation Time: Jun 26, 2022 at 05:22 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -352,8 +352,9 @@ INSERT INTO `country` (`countryid`, `countryname`, `countrycode`) VALUES
 
 CREATE TABLE `department` (
   `id` int(11) NOT NULL,
-  `dep_name` varchar(255) NOT NULL,
-  `dep_phon` varchar(50) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(512) NOT NULL,
+  `phone` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT current_timestamp()
@@ -363,9 +364,10 @@ CREATE TABLE `department` (
 -- Dumping data for table `department`
 --
 
-INSERT INTO `department` (`id`, `dep_name`, `dep_phon`, `email`, `created_at`, `deleted_at`) VALUES
-(1, 'Manegment', '12345', 'Maneg@gmail.com', '2022-06-25 17:53:15', '2022-06-25 17:53:15'),
-(2, 'Admin', '01245789', 'admin@gmil.com', '2022-06-25 17:58:42', '2022-06-25 17:58:42');
+INSERT INTO `department` (`id`, `name`, `description`, `phone`, `email`, `created_at`, `deleted_at`) VALUES
+(1, 'Manegment', '', '12345', 'Maneg@gmail.com', '2022-06-25 17:53:15', '2022-06-25 17:53:15'),
+(2, 'Admin', '', '01245789', 'admin@gmil.com', '2022-06-25 17:58:42', '2022-06-25 17:58:42'),
+(3, 'IT', 'IT department', '012345678', 'default@gmail.com', '2022-06-26 09:58:12', '2022-06-26 09:58:12');
 
 -- --------------------------------------------------------
 
@@ -374,8 +376,8 @@ INSERT INTO `department` (`id`, `dep_name`, `dep_phon`, `email`, `created_at`, `
 --
 
 CREATE TABLE `designation` (
-  `desigid` int(5) NOT NULL,
-  `designame` varchar(40) NOT NULL,
+  `id` int(5) NOT NULL,
+  `name` varchar(40) NOT NULL,
   `desigdesc` text NOT NULL,
   `grade` varchar(15) NOT NULL,
   `createdate` date NOT NULL,
@@ -386,7 +388,7 @@ CREATE TABLE `designation` (
 -- Dumping data for table `designation`
 --
 
-INSERT INTO `designation` (`desigid`, `designame`, `desigdesc`, `grade`, `createdate`, `deleted`) VALUES
+INSERT INTO `designation` (`id`, `name`, `desigdesc`, `grade`, `createdate`, `deleted`) VALUES
 (1, 'Driver', 'company driver >10 years', '9', '0000-00-00', 0),
 (2, 'CEO', 'Chief Technical Officer 1', '1', '0000-00-00', 0),
 (3, 'Lead Engineer', 'Lead Engineer', '5', '0000-00-00', 0),
@@ -425,7 +427,7 @@ CREATE TABLE `employee` (
   `bankname` varchar(40) NOT NULL,
   `bankaccno` varchar(40) NOT NULL,
   `bankacctype` enum('current','savings','salary','') NOT NULL,
-  `plantid` int(3) NOT NULL,
+  `plantid` int(3) NOT NULL DEFAULT 1,
   `deptid` int(5) NOT NULL,
   `secid` int(5) NOT NULL,
   `desigid` int(5) NOT NULL,
@@ -444,7 +446,15 @@ INSERT INTO `employee` (`id`, `empid`, `fname`, `mname`, `lname`, `dln`, `dl_exp
 (5, 'DRIV4', 'First', '', 'Driver', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', 'NA', '', '', '', '', '', '', 'current', 1, 1, 2, 1, 0),
 (6, 'III123', 'Iiii', '', 'Iiii', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', 'NA', '', '', '', '', '', '', 'current', 1, 1, 2, 1, 0),
 (7, 'WW123', 'Www', 'Www', 'Www', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', 'NA', '', '', '', '', '', '', 'current', 1, 3, 1, 2, 1),
-(8, '5444', 'Fdg', 'Fdg', 'Fdg', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', 'NA', '', '', '', '', '', '', 'current', 1, 1, 3, 1, 0);
+(8, '5444', 'Fdg', 'Fdg', 'Fdg', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', 'NA', '', '', '', '', '', '', 'current', 1, 1, 3, 1, 0),
+(9, '123234', 'ASA', 'adf', 'Al-Mamun', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', '', '', '', '', '', '', '', 'current', 0, 2, 3, 9, 0),
+(10, '444', 'ASA4', 'al4', 'Al-Mamun4', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', '', '', '', '', '', '', '', 'current', 0, 3, 4, 5, 0),
+(12, '445', 'ASA55', '55', 'Al-Mamun55', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', '', '', '', '', '', '', '', 'current', 0, 2, 1, 1, 0),
+(13, '123111', 'IDB', '65', 'BISEW', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', '', '', '', '', '', '', '', 'current', 0, 3, 4, 8, 0),
+(14, '123', 'ASA', '45', 'Al-Mamun', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', '', '', '', '', '', '', '', 'current', 1, 1, 1, 6, 0),
+(15, '1232355', 'ASA556', '666', 'Al-Mamun666', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', '', '', '', '', '', '', '', 'current', 1, 1, 1, 4, 0),
+(16, '999', '9991', '9992', '9993', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', '', '', '', '', '', '', '', 'current', 1, 1, 3, 8, 0),
+(18, '44477', '4441', '4442', '4443', '', '0000-00-00', 'male', '0000-00-00', 'married', '', '', '', '', '', '', '', '', '', '', 'current', 1, 3, 5, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -914,10 +924,10 @@ CREATE TABLE `salary_temp` (
 --
 
 CREATE TABLE `section` (
-  `secid` int(5) NOT NULL,
-  `secname` varchar(40) NOT NULL,
+  `id` int(5) NOT NULL,
+  `name` varchar(40) NOT NULL,
   `secdesc` text NOT NULL,
-  `deptid` int(5) NOT NULL,
+  `department_id` int(5) NOT NULL,
   `createdate` date NOT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -926,7 +936,7 @@ CREATE TABLE `section` (
 -- Dumping data for table `section`
 --
 
-INSERT INTO `section` (`secid`, `secname`, `secdesc`, `deptid`, `createdate`, `deleted`) VALUES
+INSERT INTO `section` (`id`, `name`, `secdesc`, `department_id`, `createdate`, `deleted`) VALUES
 (1, 'sewing', 'some desc', 3, '2016-04-30', 0),
 (2, 'store', 'store sec', 1, '2016-04-30', 0),
 (3, 'asef', 'sadf', 1, '2016-05-07', 0),
@@ -1016,7 +1026,7 @@ ALTER TABLE `department`
 -- Indexes for table `designation`
 --
 ALTER TABLE `designation`
-  ADD PRIMARY KEY (`desigid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `employee`
@@ -1112,7 +1122,7 @@ ALTER TABLE `salary_temp`
 -- Indexes for table `section`
 --
 ALTER TABLE `section`
-  ADD PRIMARY KEY (`secid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `shift`
@@ -1153,19 +1163,19 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `designation`
 --
 ALTER TABLE `designation`
-  MODIFY `desigid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `emp_attachment`
@@ -1249,7 +1259,7 @@ ALTER TABLE `salary_temp`
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `secid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `shift`
