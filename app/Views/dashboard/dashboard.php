@@ -31,7 +31,7 @@
                                     <div class="m-l-10 align-self-center">
                                         <h3 class="m-b-0">
                                     Employees</h3>
-                                        <a href="<?php echo base_url(); ?>employee/Employees" class="text-muted m-b-0">View Details</a></div>
+                                        <a href="<?php echo base_url(); ?>/employee" class="text-muted m-b-0">View Details</a></div>
                                 </div>
                             </div>
                         </div>
@@ -45,9 +45,9 @@
                                     <div class="round align-self-center round-info"><i class="ti-file"></i></div>
                                     <div class="m-l-10 align-self-center">
                                         <h3 class="m-b-0">
-                                             Leaves
+                                             Department
                                         </h3>
-                                        <a href="<?php echo base_url(); ?>leave/Application" class="text-muted m-b-0">View Details</a>
+                                        <a href="<?php echo base_url(); ?>/department" class="text-muted m-b-0">View Details</a>
                                         </div>
                                 </div>
                             </div>

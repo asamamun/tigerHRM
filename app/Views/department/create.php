@@ -5,7 +5,7 @@
  <div class="container my-5">
      <div class="row">
          <form action="<?= base_url('department-store') ?>" method="POST">
-<?= csrf_field() ?>
+             <?= csrf_field() ?>
 
              <div class="col-12">
                  <div class="my-3 text-center">

@@ -51,6 +51,8 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="<?= base_url() ?>/department">Department</a>
                                     <a class="nav-link" href="<?= base_url() ?>/designation">Designation</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/section">Section</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/grade">Grade</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#EmployeeLayouts" aria-expanded="false" aria-controls="collapseLayouts">

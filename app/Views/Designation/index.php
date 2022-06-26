@@ -47,7 +47,7 @@
                                     <tr>
                                         <td><?= $designation['id'] ?></td>
                                         <td><?= $designation['name'] ?></td>
-                                        <td><?= $designation['description'] ?></td>
+                                        <td><?= $designation['desigdesc'] ?></td>
                                           <td class="text-center">
         <?= anchor('department/edit/'.$designation['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
                                         <td class="text-center">
