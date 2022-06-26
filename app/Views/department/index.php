@@ -65,8 +65,6 @@
                                 <?php
                                 }
                                 ?>
-
-            
                             </tbody>
                         </table>
 
