@@ -13,7 +13,10 @@ class EmployeeController extends BaseController
 {
     public function index()
     {
-        return View('employee/index');
+        $employee = new EmployeeModel();
+        $allemployee = $employee->findAll();
+        $data['employee'] = $allemployee;
+        return view("employee/index", $data);
     }
     //create
     public function create(){
@@ -55,5 +58,10 @@ class EmployeeController extends BaseController
         return redirect()->to(base_url('employee'))->with('message','Employee Added') ;
         else
         return redirect()->to(base_url('employee/add'))->with('status','Error') ;
+    }
+
+    //Employee details
+    public function details(){
+        return view ('employee/details');
     }
 }

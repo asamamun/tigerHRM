@@ -49,6 +49,7 @@ $routes->get('/designation', 'DesignationController::index');
 $routes->get('/employee', 'EmployeeController::index');
 $routes->get('/employee/add', 'EmployeeController::create');
 $routes->post('/employee/add', 'EmployeeController::store');
+$routes->get('/employee/details/(:num)', 'EmployeeController::details/$1');
 
 
 $routes->get('/disiplinary', 'DisiplinaryController::index');
