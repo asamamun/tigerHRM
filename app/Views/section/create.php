@@ -20,22 +20,22 @@
                         <div class="form-body">
                             <div class="form-group">
                                 <label class="control-label col-md-3">Section Title</label>
-                                <div class="col-md-9">
-                                    <input name="secname" placeholder="Section Title here." class="form-control" type="text">
+                                <div class="col-md-12">
+                                    <input name="name" placeholder="Section Title here." class="form-control" type="text">
                                     <span class="help-block"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3">Description</label>
+                                <label class="control-label col-md-12">Description</label>
                                 
-                                <div class="col-md-9">
+                                <div class="col-md-12">
                                     <input name="secdesc" placeholder="Short Description here." class="form-control" type="text">
                                     <span class="help-block"></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3">Department</label>
-                                <?php echo form_dropdown('deptid',$dept,'',['class' => 'form-control']) ?> 
+                                <?php echo form_dropdown('deptid',$dept,'',['class' => 'form-control']) ?>
                                 <div class="col-md-9">
                                     
 
@@ -46,8 +46,8 @@
 
                         </div>
                         <div class="pull-right" style="padding-right:20px;">  
-                            <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
-                            <button type="button"  onclick="hideForm()" class="btn btn-danger" >Cancel</button>
+                            <button type="button" id="Save"  class="btn btn-primary">Save</button>
+                            <button type="button"  class="btn btn-danger" >Cancel</button>
                         </div>  
                     <?php echo form_close(); ?>
                 </div>
