@@ -7,9 +7,11 @@ use App\Models\UserModel;
 
 class LoginController extends BaseController
 {
+    private $session;
     public function __construct()
     {
         helper("form");
+        $this->session = \Config\Services::session();
     }
     public function index()
     {
@@ -46,19 +48,19 @@ $userd = [
     'role'     => $info['role'],
     'logged_in' => true,
 ];
-$session = \Config\Services::session();
-$session->set($userd);
+// $session = \Config\Services::session();
+$this->session->set($userd);
 
 
                 return redirect()->to(base_url("/dashboard"));
             }
             else{
-                $session->setFlashdata('message', 'Auth Failed!!');
+                $this->session->setFlashdata('message', 'Auth Failed!!');
                 return redirect()->to(base_url('/login')); 
             }              
         } 
         else{
-            $session->setFlashdata('message', 'No user Found');
+            $this->session->setFlashdata('message', 'No user Found');
                     return redirect()->to(base_url('/login'));
         }      
 //

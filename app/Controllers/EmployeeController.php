@@ -8,14 +8,19 @@ use App\Models\DepartmentModel;
 use App\Models\SectionModel;
 use App\Models\DesignationModel;
 use App\Models\EmployeeModel;
+use App\Models\EmpaddressModel;
+use App\Models\EmpeducationModel;
 
 class EmployeeController extends BaseController
 {
+    public function __construct(){
+        helper('form');
+    }
     public function index()
     {
         $employee = new EmployeeModel();
         $allemployee = $employee->findAll();
-        $data['employee'] = $allemployee;
+        $data['employee'] = $allemployee;        
         return view("employee/index", $data);
     }
     //create
@@ -61,7 +66,19 @@ class EmployeeController extends BaseController
     }
 
     //Employee details
-    public function details(){
-        return view ('employee/details');
+    public function details($id){
+        $empinfo = new EmployeeModel();
+        $emp = $empinfo->find($id);
+        $data['emp'] = $emp;
+
+        $empaddress = new EmpaddressModel();
+        $address = $empaddress->where('id',$id)->get();
+        $data['empaddress'] = $address->getResultArray();
+
+        $empedu = new EmpeducationModel();
+        $data['empeducation'] = $empedu->where('eid',$id)->getResultArray();
+        //ddd($data['empaddress']);
+        // ddd($emp); 
+        return view ('employee/details',$data);
     }
 }

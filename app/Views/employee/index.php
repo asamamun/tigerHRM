@@ -37,7 +37,7 @@
                             <table id="employees123" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
+                                        <th>Employee Id</th>
                                         <th>Name</th>
                                         <th>Department </th>
                                         <th>Designation </th>
