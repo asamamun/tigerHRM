@@ -13,7 +13,7 @@
                 <br />
                 <a href="<?php echo base_url(); ?>/section/add">
                 <button class="btn btn-success" ><i class="glyphicon glyphicon-plus"></i> Add Section</button></a>
-                <button class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i> Reload</button>
+                <!-- <button class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i> Reload</button> -->
                 <br />
                 <br />
 
@@ -53,15 +53,12 @@
 
                     
                 </table>
-        </div>
-        </Section>
-    </div>
-    <div class='clearfix'></div>
+        
+    
 </div><!-- /.content-wrapper -->
 
 
-</body>
-</html>
+
 
 
 <?= $this->endSection(); ?>

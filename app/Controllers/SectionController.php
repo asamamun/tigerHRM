@@ -28,9 +28,11 @@ class SectionController extends BaseController
             'deartment_id' => $this->request->getPost('deartment_id'),
             // 'email' => $this->request->getPost('email')
         ];
-        //ddd($data);
-        $section->save($data);
-        return redirect()->to(base_url('section'))->with('status', 'Department Added');
+        // ddd($data);
+        if($section->save($data))
+        return redirect()->to(base_url('section'))->with('message','Section Added Successfully') ;
+        else
+        return redirect()->to(base_url('section/add'))->with('status','Error') ;
     }
 
     //create
@@ -51,20 +53,20 @@ class SectionController extends BaseController
     }
 
     //store the employee data
-    public function save(){
-        $sectionsave = new SectionModel();
-        $data = [
-            'name'=>$this->request->getPost('name'),
-            'secdesc'=>$this->request->getPost('secdesc'),
-            'department_id'=>$this->request->getPost('department_id'),
+    // public function save(){
+    //     $sectionsave = new SectionModel();
+    //     $data = [
+    //         'name'=>$this->request->getPost('name'),
+    //         'secdesc'=>$this->request->getPost('secdesc'),
+    //         'department_id'=>$this->request->getPost('department_id'),
             
-        ];
-        //ddd($data);
-        if($sectionsave->save($data))
-        return redirect()->to(base_url('section'))->with('message','Section Added Successfully') ;
-        else
-        return redirect()->to(base_url('section/add'))->with('status','Error') ;
-    }
+    //     ];
+    //     ddd($data);
+    //     if($sectionsave->save($data))
+    //     return redirect()->to(base_url('section'))->with('message','Section Added Successfully') ;
+    //     else
+    //     return redirect()->to(base_url('section/add'))->with('status','Error') ;
+    // }
     
     
 }

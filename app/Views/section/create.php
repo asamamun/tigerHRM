@@ -46,7 +46,7 @@
 
                         </div>
                         <div class="pull-right" style="padding-right:20px;">  
-                            <button type="button" id="Save"  class="btn btn-primary">Save</button>
+                            <button type="submit" id="store"  class="btn btn-primary">Save</button>
                             <button type="button"  class="btn btn-danger" >Cancel</button>
                         </div>  
                     <?php echo form_close(); ?>
