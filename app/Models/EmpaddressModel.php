@@ -14,7 +14,7 @@ class EmpaddressModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['p_address1', 'p_address2', 'p_village', 'p_post_name', 'p_post_code', 'p_upazila', 'p_dist', 'p_country', 'sameornot', 'c_address1', 'c_address2', 'c_village', 'c_post_name', 'c_post_code', 'c_upazila', 'c_dist', 'c_country'];
 
     // Dates
     protected $useTimestamps = false;

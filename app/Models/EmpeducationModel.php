@@ -14,7 +14,7 @@ class EmpeducationModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['level','institute','board','major','year','score', 'start_date','end_date',	'created'];
 
     // Dates
     protected $useTimestamps = false;
