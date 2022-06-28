@@ -79,7 +79,7 @@
                                     <div class="round align-self-center round-success"><i class="ti-money"></i></div>
                                     <div class="m-l-10 align-self-center">
                                         <h3 class="m-b-0">
-                                         Loan 
+                                         Leave
                                         </h3>
                                         <a href="<?php echo base_url(); ?>Loan/View" class="text-muted m-b-0">View Details</a>
                                     </div>
@@ -107,7 +107,7 @@
                     <!-- Column -->
                     <div class="col-md-6 col-lg-3 col-xlg-3">
                         <div class="card card-info card-inverse">
-                            <div class="box text-center">
+                            <div class="box bg-primary text-center">
                                 <h1 class="font-light text-white">
                                           
                                 </h1>
@@ -118,7 +118,7 @@
                     <!-- Column -->
                     <div class="col-md-6 col-lg-3 col-xlg-3">
                         <div class="card card-inverse card-danger">
-                            <div class="box text-center">
+                            <div class="box bg-primary text-center">
                                 <h1 class="font-light text-white">
                                     
                                 </h1>
@@ -129,7 +129,7 @@
                     <!-- Column -->
                     <div class="col-md-6 col-lg-3 col-xlg-3">
                         <div class="card card-inverse card-success">
-                            <div class="box text-center">
+                            <div class="box bg-primary text-center">
                                 <h1 class="font-light text-white">
                                         
                                 </h1>
@@ -154,7 +154,7 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Running Project/s</h4>
+                                <h4 class="card-title">Project/s</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive" style="height:600px;overflow-y:scroll">
@@ -164,6 +164,7 @@
                                                 <th>Title</th>
                                                 <th>Start Date</th>
                                                 <th>End Date</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>

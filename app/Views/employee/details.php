@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/default'); ?>
 <?= $this->Section('content') ?>
 <!--  -->
-<h1>Employee Detail Information</h1>
+<span class="btn btn-info"><h1>Employee Detail Information</h1></span>
 <?= view("partial/flashmessage"); ?>
 <?php
 if (!count($emp)) {
@@ -11,8 +11,8 @@ if (!count($emp)) {
 } else {
 ?>
     <!-- personal information start -->
-    <div class="d-flex justify-content-between">
-        <h4>Personal Information:</h4>
+    <div class="d-flex justify-content-between bg-primary">
+        <button class="btn btn-primary"><h4>Personal Information:</h4></button>
         <button id="editBtn" class="btn btn-primary btn-lg">Edit</button>
     </div>
     <fieldset id="formcontainer" disabled>
@@ -193,11 +193,11 @@ if (!count($emp)) {
     </fieldset>
     <!-- personal information  end-->
     <!-- address start -->
-    <div class="d-flex justify-content-between">
-        <h4>Employee Address:</h4>
+    <div class="d-flex justify-content-between bg-primary border-bottom">
+        <button class="btn btn-primary"><h4>Employee Address:</h4></button>
         <button id="adrBtn" class="btn btn-primary btn-lg">Edit</button>
     </div>
-    <fieldset id="addresscontainer">
+    <fieldset id="addresscontainer" disabled>
         <?php echo form_open('employee/address'); ?>
         <?php echo form_hidden('id', $emp['id']); ?>
         <div class="row">
@@ -348,11 +348,9 @@ if (!count($emp)) {
     <!-- address end -->
 
     <!-- education start -->
-    <div class="d-flex justify-content-between">
-        <h4>Education:</h4>
-        <div>
-            <button id="eduBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
-        </div>
+    <div class="d-flex justify-content-between bg-primary">
+        <button class="btn btn-primary"><h4>Education:</h4></button>
+        <button id="eduBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
     </div>
     <fieldset id="educationcontainer">
         <?php echo form_open('education/add'); ?>
@@ -437,6 +435,9 @@ if (!count($emp)) {
                     <td>
                         <select class="form-control" name="passingyear" id="passingyear">
                             <option value="-1">Year</option>
+                            <option value="2027">2030</option>
+                            <option value="2027">2029</option>
+                            <option value="2027">2028</option>
                             <option value="2027">2027</option>
                             <option value="2026">2026</option>
                             <option value="2025">2025</option>
@@ -498,6 +499,12 @@ if (!count($emp)) {
                             <option value="1969">1969</option>
                             <option value="1968">1968</option>
                             <option value="1967">1967</option>
+                            <option value="1967">1966</option>
+                            <option value="1967">1965</option>
+                            <option value="1967">1964</option>
+                            <option value="1967">1963</option>
+                            <option value="1967">1962</option>
+                            <option value="1967">1961</option>
                         </select>
                     </td>
                 </tr>
@@ -568,7 +575,7 @@ if (!count($emp)) {
                         <td><?php echo $education['score'] ?></td>
                         <td><?php echo $education['start_date'] ?></td>
                         <td><?php echo $education['end_date'] ?></td>
-                        <td>EDIT | DELETE</td>
+                        <td><button><i class="fa-solid fa-pen-to-square"></i></button> | <button class="bg-danger"><i class="fa-solid fa-trash"></i></button></td>
                     </tr>
                 <?php
                 }
@@ -576,12 +583,12 @@ if (!count($emp)) {
             </tbody>
         </table>
     <?php } else { ?>
-        <strong>No education info found. Add Please</strong>
+        <strong class="bg-warning text-center">Education info not found. Add Please!</strong>
     <?php } ?>
 
     <!-- Experience start -->
-    <div class="d-flex justify-content-between">
-        <h4>Experience:</h4>
+    <div class="d-flex justify-content-between bg-primary border-bottom">
+        <button class="btn btn-primary"><h4>Work Experience:</h4></button>
         <div>
             <button id="expBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
         </div>
@@ -684,7 +691,7 @@ if (!count($emp)) {
                         <td><?php echo $experience['exp_to'] ?></td>
                         <td><?php echo $experience['exp_to'] ?></td>
                         <td><?php echo $experience['comment'] ?></td>
-                        <td>EDIT | DELETE</td>
+                        <td><button><i class="fa-solid fa-pen-to-square"></i></button> | <button class="bg-danger"><i class="fa-solid fa-trash"></i></button></td>
                     </tr>
                 <?php
                 }
@@ -719,6 +726,20 @@ if (!count($emp)) {
             $("#formcontainer").prop('disabled', true);
             $("#editBtn").show(200);
         });
+// ==========================================
+        $("#adrBtn").click(function() {
+            // alert(5)
+            $t = $(this);
+            $("#addresscontainer").prop('disabled', false);
+            $t.hide(200);
+        });
+        //cancel button click
+        $('#adrcancelBtn').click(function() {
+            $("#addresscontainer").prop('disabled', true);
+            $("#adrBtn").show(200);
+        });
+
+
         //show adress formcontainer
         $("#adrBtn").click(function() {
             $("#addresscontainer").show(500);
