@@ -10,6 +10,7 @@ use App\Models\DesignationModel;
 use App\Models\EmployeeModel;
 use App\Models\EmpaddressModel;
 use App\Models\EmpeducationModel;
+use App\Models\SettingModel;
 
 class EmployeeController extends BaseController
 {
@@ -64,6 +65,15 @@ class EmployeeController extends BaseController
         else
         return redirect()->to(base_url('employee/add'))->with('status','Error') ;
     }
+    //cards
+    public function card($id){
+        $company = new SettingModel();
+        $data['companyinfo'] = $company->find(1);        
+        $empinfo = new EmployeeModel();
+        $emp = $empinfo->find($id);
+        $data['emp'] = $emp;
+        return view('employee/card',$data);
+    }
 
     //Employee details
     public function details($id){
@@ -73,12 +83,34 @@ class EmployeeController extends BaseController
 
         $empaddress = new EmpaddressModel();
         $address = $empaddress->where('id',$id)->get();
-        $data['empaddress'] = $address->getResultArray();
+        $data['empaddress'] = $address->getResultArray()[0];
+        // ddd($data['empaddress']);
 
         $empedu = new EmpeducationModel();
-        $data['empeducation'] = $empedu->where('eid',$id)->getResultArray();
-        //ddd($data['empaddress']);
+        $data['empeducation'] = $empedu->where('eid',$id)->find();
+        if(!count($data['empeducation'])) {
+            $data['empeducation'] = null;
+        }
+        // ddd($data['empeducation']);
         // ddd($emp); 
         return view ('employee/details',$data);
+    }
+    public function addeducation(){
+/*         $emp = new EmployeeModel();
+        $data = [
+            'empid'=>$this->request->getPost('empid'),
+            'fname'=>$this->request->getPost('fname'),
+            'mname'=>$this->request->getPost('mname'),
+            'lname'=>$this->request->getPost('lname'),
+            'deptid'=>$this->request->getPost('deptid'),
+            'secid'=>$this->request->getPost('secid'),
+            'desigid'=>$this->request->getPost('desigid')
+        ];
+        //ddd($data);
+        if($emp->save($data))
+        return redirect()->to(base_url('employee'))->with('message','Employee Added') ;
+        else
+        return redirect()->to(base_url('employee/add'))->with('status','Error') ; */
+        echo "add data";
     }
 }

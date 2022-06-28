@@ -195,55 +195,55 @@ if (!count($emp)) {
                             <th>Address 1</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="p_address1" class="form-control" value="<?php echo $address['p_address1']; ?>"></td>
+                            <td><input type="text" name="p_address1" class="form-control" value="<?php echo $empaddress['p_address1']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>Address 2</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="p_address2" class="form-control" value="<?php echo $address['p_address2']; ?>"></td>
+                            <td><input type="text" name="p_address2" class="form-control" value="<?php echo $empaddress['p_address2']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>Village</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="p_village" class="form-control" value="<?php echo $address['p_village']; ?>"></td>
+                            <td><input type="text" name="p_village" class="form-control" value="<?php echo $empaddress['p_village']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>Postname</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="p_post_name" class="form-control" value="<?php echo $address['p_post_name']; ?>"></td>
+                            <td><input type="text" name="p_post_name" class="form-control" value="<?php echo $empaddress['p_post_name']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>Post Code</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="p_post_code" class="form-control" value="<?php echo $address['p_post_code']; ?>"></td>
+                            <td><input type="text" name="p_post_code" class="form-control" value="<?php echo $empaddress['p_post_code']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>p_upazila</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="p_upazila" class="form-control" value="<?php echo $address['p_upazila']; ?>"></td>
+                            <td><input type="text" name="p_upazila" class="form-control" value="<?php echo $empaddress['p_upazila']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>p_dist</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="p_dist" class="form-control" value="<?php echo $address['p_dist']; ?>"></td>
+                            <td><input type="text" name="p_dist" class="form-control" value="<?php echo $empaddress['p_dist']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>p_country</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="p_country" class="form-control" value="<?php echo $address['p_country']; ?>"></td>
+                            <td><input type="text" name="p_country" class="form-control" value="<?php echo $empaddress['p_country']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>sameornot</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="sameornot" class="form-control" value="<?php echo $address['p_country']; ?>"></td>
+                            <td><input type="text" name="sameornot" class="form-control" value="<?php echo $empaddress['p_country']; ?>"></td>
                         </tr>
 
 
@@ -265,55 +265,55 @@ if (!count($emp)) {
                             <th>Address 1</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="c_address1" class="form-control" value="<?php echo $address['c_address1']; ?>"></td>
+                            <td><input type="text" name="c_address1" class="form-control" value="<?php echo $empaddress['c_address1']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>Address 2</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="c_address2" class="form-control" value="<?php echo $address['c_address2']; ?>"></td>
+                            <td><input type="text" name="c_address2" class="form-control" value="<?php echo $empaddress['c_address2']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>Village</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="c_village" class="form-control" value="<?php echo $address['c_village']; ?>"></td>
+                            <td><input type="text" name="c_village" class="form-control" value="<?php echo $empaddress['c_village']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>Postname</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="c_post_name" class="form-control" value="<?php echo $address['c_post_name']; ?>"></td>
+                            <td><input type="text" name="c_post_name" class="form-control" value="<?php echo $empaddress['c_post_name']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>Post Code</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="c_post_code" class="form-control" value="<?php echo $address['c_post_code']; ?>"></td>
+                            <td><input type="text" name="c_post_code" class="form-control" value="<?php echo $empaddress['c_post_code']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>c_upazila</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="c_upazila" class="form-control" value="<?php echo $address['c_upazila']; ?>"></td>
+                            <td><input type="text" name="c_upazila" class="form-control" value="<?php echo $empaddress['c_upazila']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>c_dist</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="c_dist" class="form-control" value="<?php echo $address['c_dist']; ?>"></td>
+                            <td><input type="text" name="c_dist" class="form-control" value="<?php echo $empaddress['c_dist']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>c_country</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="c_country" class="form-control" value="<?php echo $address['c_country']; ?>"></td>
+                            <td><input type="text" name="c_country" class="form-control" value="<?php echo $empaddress['c_country']; ?>"></td>
                         </tr>
                         <tr class="success">
                             <th>sameornot</th>
                         </tr>
                         <tr class="primary">
-                            <td><input type="text" name="sameornot" class="form-control" value="<?php echo $address['p_country']; ?>"></td>
+                            <td><input type="text" name="sameornot" class="form-control" value="<?php echo $empaddress['p_country']; ?>"></td>
                         </tr>
                         <tr class="primary">
                             <td>
@@ -336,32 +336,11 @@ if (!count($emp)) {
     <div class="d-flex justify-content-between">
         <h4>Education:</h4>
         <div>
-            <button id="addBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
+            <button id="eduBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
         </div>
     </div>
-    <table class="table table-primary">
-        <thead>
-            <tr>
-                <th>Level</th>
-                <th>Institute</th>
-                <th>Board</th>
-                <th>Major</th>
-                <th>Passing Year</th>
-                <th>Marks/CGPA</th>
-                <th>Start year</th>
-                <th>End year</th>
-                <th>Action</th>
-            </tr>
-            <!-- <tr>
-                <td>SSC</td>
-            </tr>
-            <tr>
-                <td>hsc</td>
-            </tr> -->
-        </thead>
-    </table>
-    <fieldset id="formcontainer">
-        <?php echo form_open('employee/details'); ?>
+    <fieldset id="educationcontainer">
+        <?php echo form_open('education/add'); ?>
         <?php echo form_hidden('id', $emp['id']); ?>
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover table-responsive">
@@ -517,7 +496,7 @@ if (!count($emp)) {
                 <tr class="primary">
                     <td>
                         <input type="submit" value="Save" class="btn btn-primary">
-                        <input type="button" value="Cancel" class="btn btn-secondary" id="cancelBtn">
+                        <input type="button" value="Cancel" class="btn btn-secondary" id="eduCancelBtn">
                     </td>
                 </tr>
                 </tbody>
@@ -526,6 +505,52 @@ if (!count($emp)) {
         <?php echo form_close(); ?>
     </fieldset>
     <!-- education end -->
+    <?php if($empeducation){ ?>
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Institute</th>
+                <th>Board</th>
+                <th>Major</th>
+                <th>Passing Year</th>
+                <th>Marks/CGPA</th>
+                <th>Start year</th>
+                <th>End year</th>
+                <th>Action</th>
+            </tr>
+            <!-- <tr>
+                <td>SSC</td>
+            </tr>
+            <tr>
+                <td>hsc</td>
+            </tr> -->
+        </thead>
+        <tbody>
+        <?php
+foreach($empeducation as $education){
+    ?>
+<tr>
+    <td><?php echo $education['level'] ?></td>
+    <td><?php echo $education['institute'] ?></td>
+    <td><?php echo $education['board'] ?></td>
+    <td><?php echo $education['major'] ?></td>
+    <td><?php echo $education['year'] ?></td>
+    <td><?php echo $education['score'] ?></td>
+    <td><?php echo $education['start_date'] ?></td>
+    <td><?php echo $education['end_date'] ?></td>
+    <td>EDIT | DELETE</td>
+</tr>
+    <?php
+}
+?>
+</tbody>
+    </table>
+    <?php } else { ?>
+<strong>No education info found. Add Please</strong>
+<?php } ?>
+        
+
 
 <?php
 
@@ -537,6 +562,8 @@ if (!count($emp)) {
 <?= $this->Section('scripts') ?>
 <script>
     $(document).ready(function() {
+$("#educationcontainer").hide();
+
         $("#editBtn").click(function() {
             // alert(5)
             $t = $(this);
@@ -548,6 +575,15 @@ if (!count($emp)) {
             $("#formcontainer").prop('disabled', true);
             $("#editBtn").show(200);
         });
+//show edication formcontainer
+$("#eduBtn").click(function() {
+    $("#educationcontainer").show(500);
+});
+$("#eduCancelBtn").click(function() {
+    $("#educationcontainer").hide(500);
+});
+
+
 
     });
 </script>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2022 at 05:22 PM
+-- Generation Time: Jun 28, 2022 at 04:44 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -607,6 +607,14 @@ CREATE TABLE `emp_education` (
   `created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='unique(empid,level)';
 
+--
+-- Dumping data for table `emp_education`
+--
+
+INSERT INTO `emp_education` (`id`, `eid`, `level`, `institute`, `board`, `major`, `year`, `score`, `start_date`, `end_date`, `created`) VALUES
+(1, 2, 'SSC', 'Mirpur ABC School', 'Dhaka', 'Science', 2006, '5', '2003-01-01', '2004-12-31', '2022-06-28 16:07:05'),
+(2, 2, 'HSC', 'Mirpur ABC School', 'Dhaka', 'Science', 2008, '5', '2006-01-01', '2007-12-31', '2022-06-28 16:07:05');
+
 -- --------------------------------------------------------
 
 --
@@ -1061,7 +1069,8 @@ ALTER TABLE `emp_attendance_archive`
 -- Indexes for table `emp_education`
 --
 ALTER TABLE `emp_education`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_eid_level` (`eid`,`level`);
 
 --
 -- Indexes for table `emp_experience`
@@ -1199,7 +1208,7 @@ ALTER TABLE `emp_attendance_archive`
 -- AUTO_INCREMENT for table `emp_education`
 --
 ALTER TABLE `emp_education`
-  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `emp_experience`

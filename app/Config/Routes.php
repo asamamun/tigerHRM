@@ -60,6 +60,10 @@ $routes->get('/employee', 'EmployeeController::index');
 $routes->get('/employee/add', 'EmployeeController::create');
 $routes->post('/employee/add', 'EmployeeController::store');
 $routes->get('/employee/details/(:num)', 'EmployeeController::details/$1');
+$routes->get('/employee/card/(:num)', 'EmployeeController::card/$1');
+
+//education
+$routes->post('/education/add', 'EmployeeController::addeducation');
 
 
 $routes->get('/disiplinary', 'DisiplinaryController::index');
