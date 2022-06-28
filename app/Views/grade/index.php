@@ -1,54 +1,85 @@
 <?= $this->extend('layouts/default'); ?>
 <?= $this->Section('content') ?>
 <?= view("partial/flashmessage"); ?>
-<div class="content-wrapper">
 
-    <br>
+<body>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="my-3 text-center">
+                    <h4>Grade
+                        <hr class="text-denger">
+                    </h4>
 
-    <a href="<?php echo base_url(); ?>/grade/add">
-                <button class="btn btn-success" ><i class="glyphicon glyphicon-plus"></i> Add Grade</button></a>
-    
+                </div>
+                <div class="card rounded">
+                    <div class="card-body">
+                        <div class="row mb-2">
+                            <div class="col-sm-2">
 
-    <table id="grad" class="table sar-table table-bordered sortableTable responsive" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Basic</th>
-                <th>House Rent</th>
-                <th>Medical Allowance</th>
-                <th>Other</th>
+                                <a href="<?= base_url('grade/add') ?>" class="btn btn-success float-left">Add Grade</a>
 
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            foreach ($emp_grade as $grade) {
-            ?>
-            <tr>
-                            <td><?=$grade['gradeid']?></td>
-                            <td><?=$grade['gradename']?></td>
-                            <td><?=$grade['basic']?></td>
-                            <td><?=$grade['houserent']?></td>
-                            <td><?=$grade['medical']?></td>
-                            <td><?=$grade['other']?></td>
-                            <td class="text-center">
-        <?= anchor('grade/edit'.$grade['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
-                                        <td class="text-center">
-                                            <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
-                                            <a href="#" class="btn btn-danger rounded mx-1">Delete</a>
-                                        </td>
-                        </tr>
-                        <?php
-                    }?>
-        </tbody>
-    </table>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="text-sm-end">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search Records" name='q' value='' aria-describedby="button-addon2">
+                                        <button class="btn btn-primary" type="Submit" id="button-addon2">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-centered mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Basic</th>
+                                        <th>House Rent</th>
+                                        <th>Medical Allowance</th>
+                                        <th>Other</th>
+
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php
+                                    foreach ($emp_grade as $grade) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $grade['gradeid'] ?></td>
+                                            <td><?= $grade['gradename'] ?></td>
+                                            <td><?= $grade['basic'] ?></td>
+                                            <td><?= $grade['houserent'] ?></td>
+                                            <td><?= $grade['medical'] ?></td>
+                                            <td><?= $grade['other'] ?></td>
+                                            <td class="text-center">
+                                                <?= anchor('grade/edit' . $grade['id'], 'Edit', ['class' => 'btn btn-primary rounded mx-1']); ?>
+                                            <td class="text-center">
+                                                <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
+                                                <a href="#" class="btn btn-danger rounded mx-1">Delete</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    } ?>
+                                </tbody>
+                            </table>
+                            
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+   
 
 
 
 
-    </body>
+</body>
 
-    </html>
-    <?= $this->endSection(); ?>
+</html>
+<?= $this->endSection(); ?>

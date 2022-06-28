@@ -13,14 +13,17 @@ class DesignationController extends BaseController
     }
     public function index()
     {
-        if(!$this->checkauth()){ return redirect('login');}
-        $designetion = new DesignationModel();
-        $data['designation'] = $designetion->where('deleted',null)->findAll();
-        return view('designation/index', $data);
+       $dataload = new DesignationModel();
+       $alldata = $dataload->findAll();
+       $data['designation'] = $alldata;
+       return view("designation/index", $data);
     }
+  
+
     //create
     public function create()
     {
+
         return view('designation/create');
     }
     //store

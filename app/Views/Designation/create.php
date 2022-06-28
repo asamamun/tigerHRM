@@ -1,6 +1,6 @@
 <?= $this->extend('layouts/default'); ?>
-
-<?= $this->section('contents'); ?>
+<?= $this->Section('content') ?>
+<?= view("partial/flashmessage"); ?>
 <!-- create customer form -->
 <div>
     <?php if (session()->getFlashdata('message')) : ?>
@@ -13,7 +13,7 @@
 <div class="card-header d-flex justify-content-between">
                 <h3 class="card-title">Designation</h3>
                 <div class="card-options">
-                    <a href="<?= base_url('/Designation'); ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-arrow-left"></i> BACK</a>
+                    <a href="<?= base_url('/designation'); ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-arrow-left"></i>BACK</a>
                    
                 </div>
             </div>
@@ -23,11 +23,11 @@
     <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
 </div>
 <div class="form-group">
-    <label for="desigdesc">Desigdesc</label>
-    <input type="desigdesc" class="form-control" id="desigdesc" name="desigdesc" placeholder="Enter desigdesc">
+    <label for="desigdesc">Designation</label>
+    <input type="desigdesc" class="form-control" id="desigdesc" name="desigdesc" placeholder="Enter Designation">
 </div>
 <div class="form-group">
-    <label for="grade">Mobile</label>
+    <label for="grade">Grade</label>
     <input type="text" class="form-control" id="grade" name="grade" placeholder="Enter Grade">
 </div>
 

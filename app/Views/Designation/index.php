@@ -32,11 +32,12 @@
                 <div class="card rounded">
                     <div class="card-body">
                         <div class="row mb-2">
-                            <div class="col-sm-8">
-                                <input type="text" placeholder="Add Designation">
-                                <a href="#" class="btn btn-primary btn-sm rounded mb-2">Add Data</a>
-                            </div>
-                            <div class="col-sm-4">
+                        <div class="col-sm-2">
+                      
+                             <a href="<?= base_url('/designation/add')?>"class="btn btn-success float-left" >Add Designation</a>
+  
+                        </div>
+                            <div class="col-sm-10">
                                 <div class="text-sm-end">
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Search Records" name='q'
@@ -50,10 +51,10 @@
                             <table class="table table-bordered table-centered mb-0">
                                 <thead>
                                     <tr>
-                                        <th style="min-width: 10px">#</th>
-                                        <th>Name</th>
-                                        <!-- <th>Mobile</th>
-                                        <th>Email</th> -->
+                                        <th style="min-width: 10px">Name</th>
+                                        <th>Designation </th>
+                                        <th>Grade </th>
+                                        
                                         <th class="text-center" colspan="2">Action</th>
                                     </tr>
                                 </thead>
@@ -61,15 +62,15 @@
                                 <tbody>
                     <?php
                                 //populate table row from departments
-                                foreach ($designation as $designation) {
+                                foreach ($designation as $des) {
                                 ?>
                         <tr>
-                            <td><?=$designation['name']?></td>
-                            <td><?=$designation['desigdesc']?></td>
-                            <td><?=$designation['grade']?></td>
+                            <td><?=$des['name']?></td>
+                            <td><?=$des['desigdesc']?></td>
+                            <td><?=$des['grade']?></td>
                             
                             <td class="text-center">
-        <?= anchor('section/edit'.$designation['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
+        <?= anchor('section/edit'.$des['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
                                         <td class="text-center">
                                             <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
                                             <a href="#" class="btn btn-danger rounded mx-1">Delete</a>
