@@ -24,7 +24,7 @@
         </thead>
         <tbody>
             <?php
-            foreach ($grade as $grade) {
+            foreach ($emp_grade as $grade) {
             ?>
             <tr>
                             <td><?=$grade['gradeid']?></td>

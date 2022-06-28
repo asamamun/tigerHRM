@@ -1,72 +1,97 @@
 <?= $this->extend('layouts/default'); ?>
-<?= $this->Section('content') ?>
-    <?php if (session()->getFlashdata('message')) : ?>        
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <?= session()->getFlashdata('message'); ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>        
-        </div>
-    <?php endif; ?>
 
 
+<?= $this->section('content'); ?>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header d-flex justify-content-between">
-                <h3 class="card-title">Designation</h3>
-                <div class="card-options">
-                    <a href="<?= base_url('/'); ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-file-csv"></i> CSV</a>
-                    <a href="<?= base_url('/'); ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-file-excel"></i> Excel</a>
-                    <a href="<?= base_url('/'); ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-print"></i> Print</a>
-                    <a href="<?= base_url('/'); ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a>
-                    <a href="<?= base_url('designation/create'); ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Add Designation</a>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <title></title>
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="my-3 text-center">
+                    <h4>Designation
+                        <hr class="text-denger">
+                    </h4>
+
                 </div>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover" id="designation">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Desigdesc</th>
-                                <th>Grade</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($designation as $designation) : ?>
-                                <tr>
-                                    <td><?= $designation['name']; ?></td>
-                                    <td><?= $designation['desigdesc']; ?></td>
-                                    <td><?= $designation['grade']; ?></td>
-                                    <td class="d-flex justify-content-center">
-                                        <a href="<?= base_url('designation/edit/' . $designation['id']); ?>" class="btn btn-sm btn-warning me-1"><i class="fa fa-edit"></i></a>
-                                        <!-- onsubmit="return confirm('Are you sure you want to submit this form?');" -->
-                                        <?php echo form_open("designation/delete/".$designation['id'],['onsubmit'=>"return confirm('Are you sure you want to submit this form?');"]) ?>
-                                            <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                                        <?php echo form_close(); ?>
-                                        <!-- <a href="<?= base_url('designation/delete/' . $\designation['id']); ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> -->
-                                    </td>
+                <div class="card rounded">
+                    <div class="card-body">
+                        <div class="row mb-2">
+                            <div class="col-sm-8">
+                                <input type="text" placeholder="Add Designation">
+                                <a href="#" class="btn btn-primary btn-sm rounded mb-2">Add Data</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="text-sm-end">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search Records" name='q'
+                                            value='' aria-describedby="button-addon2">
+                                        <button class="btn btn-primary" type="Submit" id="button-addon2">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-centered mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="min-width: 10px">#</th>
+                                        <th>Name</th>
+                                        <!-- <th>Mobile</th>
+                                        <th>Email</th> -->
+                                        <th class="text-center" colspan="2">Action</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tbody>
+                    <?php
+                                //populate table row from departments
+                                foreach ($designation as $designation) {
+                                ?>
+                        <tr>
+                            <td><?=$designation['name']?></td>
+                            <td><?=$designation['desigdesc']?></td>
+                            <td><?=$designation['grade']?></td>
                             
-                        </tbody>
-                    </table>
+                            <td class="text-center">
+        <?= anchor('section/edit'.$designation['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
+                                        <td class="text-center">
+                                            <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
+                                            <a href="#" class="btn btn-danger rounded mx-1">Delete</a>
+                                        </td>
+                        </tr>
+                        <?php
+                    }?>
+                    </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<?= $this->endSection(); ?>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
 
+</html>
+<?= view("partial/flashmessage"); ?>
 
-
-
-
-
-<?= $this->section('scripts'); ?>
-<script>
-    $(document).ready(function() {
-        $('#designation').DataTable();
-    } );
-</script>
 <?= $this->endSection(); ?>

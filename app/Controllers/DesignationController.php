@@ -14,8 +14,8 @@ class DesignationController extends BaseController
     public function index()
     {
         if(!$this->checkauth()){ return redirect('login');}
-        $designetion = new DesignetionModel();
-        $data['customers'] = $designation->where('deleted',null)->findAll();
+        $designetion = new DesignationModel();
+        $data['designation'] = $designetion->where('deleted',null)->findAll();
         return view('designation/index', $data);
     }
     //create
@@ -72,7 +72,7 @@ class DesignationController extends BaseController
     public function delete($id)
     {
         $session = \Config\Services::session();
-        $designation = new DesignationrModel();
+        $designation = new DesignationModel();
         $data = [
             'deleted' => date('Y-m-d H:i:s')
         ];

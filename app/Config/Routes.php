@@ -45,6 +45,16 @@ $routes->get('/department-add', 'DepartmentController::create');
 $routes->post('department-store', 'DepartmentController::store');
 $routes->post('department', 'DepartmentController::delete');
 $routes->get('/designation', 'DesignationController::index');
+//section
+$routes->get('/section', 'SectionController::index');
+$routes->get('/section/add', 'SectionController::create');
+$routes->post('/section/add', 'SectionController::store');
+
+//Grade
+$routes->get('/grade', 'GradeController::index');
+$routes->get('/grade/add', 'GradeController::create');
+$routes->post('/grade/add', 'GradeController::store');
+
 //employee
 $routes->get('/employee', 'EmployeeController::index');
 $routes->get('/employee/add', 'EmployeeController::create');
