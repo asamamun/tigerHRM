@@ -44,18 +44,7 @@ $routes->get('/department', 'DepartmentController::index');
 $routes->get('/department-add', 'DepartmentController::create');
 $routes->post('department-store', 'DepartmentController::store');
 $routes->post('department', 'DepartmentController::delete');
-//Designation
 $routes->get('/designation', 'DesignationController::index');
-
-//Section
-$routes->get('/section', 'SectionController::index');
-$routes->get('/section/add', 'SectionController::create');
-$routes->post('/section/add', 'SectionController::store');
-
-//Grade
-$routes->get('/grade', 'GradeController::index');
-$routes->get('/grade/add', 'GradeController::create');
-
 //employee
 $routes->get('/employee', 'EmployeeController::index');
 $routes->get('/employee/add', 'EmployeeController::create');
@@ -67,6 +56,14 @@ $routes->get('/disiplinary', 'DisiplinaryController::index');
 $routes->post('/disiplinary', 'DisiplinaryController::delete');
 
 
+
+//designation
+$routes->get('/designation', 'DesignationController::index');
+$routes->get('/designation/create', 'DesignationController::create');
+$routes->post('/designation/create', 'DesignationController::store');
+$routes->get('/designation/edit/(:num)', 'DesignationController::edit/$1');
+$routes->post('/designation/edit/(:num)', 'DesignationController::update/$1');
+$routes->post('/designation/delete/(:num)', '::delete/$1');
 
 
 
