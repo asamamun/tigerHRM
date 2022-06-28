@@ -1,7 +1,6 @@
 <?= $this->extend('layouts/default'); ?>
-
-
-<?= $this->section('content'); ?>
+<?= $this->Section('content') ?>
+<?= view("partial/flashmessage"); ?>
 
 
 <!DOCTYPE html>
@@ -70,10 +69,10 @@
                             <td><?=$des['grade']?></td>
                             
                             <td class="text-center">
-        <?= anchor('section/edit'.$des['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
+        <?= anchor('designation/edit/'.$des['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
                                         <td class="text-center">
                                             <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
-                                            <a href="#" class="btn btn-danger rounded mx-1">Delete</a>
+                                            <a href="<?=base_url('designation/delete/'.$des['id'])?>" class="btn btn-danger rounded mx-1">Delete</a>
                                         </td>
                         </tr>
                         <?php
@@ -92,7 +91,6 @@
         crossorigin="anonymous"></script>
 </body>
 
-</html>
-<?= view("partial/flashmessage"); ?>
+
 
 <?= $this->endSection(); ?>

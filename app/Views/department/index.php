@@ -58,9 +58,9 @@
                                         <td><?= $department['phone'] ?></td>
                                         <td><?= $department['email'] ?></td>
                                           <td class="text-center">
-        <?= anchor('department/edit/'.$department['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
+        <?= anchor('/department/edit/'.$department['id'],'Edit',['class' => 'btn btn-primary rounded mx-1']); ?>
                                             <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
-                                            <a href="#" class="btn btn-danger rounded mx-1">Delete</a>
+                                            <a href="<?=base_url('/department/delete/'.$department['id'])?>" class="btn btn-danger rounded mx-1">Delete</a>
                                         </td>
                                     </tr>
                                 

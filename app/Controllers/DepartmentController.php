@@ -31,4 +31,34 @@ class DepartmentController extends BaseController
         $department->save($data);
         return redirect()->to(base_url('department'))->with('status', 'Department Added');
     }
+
+        public function edit($id)
+        {
+            
+            $department = new DepartmentModel();
+            $data  ['department'] = $department->find($id);
+            return view('department/edit', $data);
+        }
+
+        public function update($id){
+            $department = new DepartmentModel();
+            
+            $data = [
+                'name' => $this->request->getPost('name'),
+                'description' => $this->request->getPost('description'),
+                'phone' => $this->request->getPost('phone'),
+                'email' => $this->request->getPost('email')
+            ];
+            $department->update($id,$data);
+            return redirect()->to(base_url('department'))->with('message','department Added Successfully') ;
+           
+        }
+
+        public function delete($id = null)
+        {
+          $department = new DepartmentModel();
+          $department->delete($id);
+          return redirect()->to(base_url('department'))->with('message','department Deleted Successfully') ;
+        }
+        
 }
