@@ -4,10 +4,10 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class DisiplinaryController extends BaseController
+class LeaveController extends BaseController
 {
     public function index()
     {
-        return view('disiplinary/index');
+        return view('leave/index.php');
     }
 }

@@ -62,10 +62,8 @@
                             </a>
                             <div class="collapse" id="EmployeeLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?= base_url() ?>/employee">Employee</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/disiplinary">Diciplinary</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/Active-users">In Active users</a>
-                                </nav>
+                                    <a class="nav-link" href="<?= base_url() ?>/employee">Employee Details</Details></a>
+                               </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#AttendanceLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-clipboard-user"></i></div>
@@ -86,11 +84,7 @@
                             </a>
                             <div class="collapse" id="lvLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Holiday</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/leave-type">Leave type</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/leave-applications">Leave Application</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/earned-leave">Earned Leave</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/leave-report">Leave report</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/leave">Leave Manage</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
