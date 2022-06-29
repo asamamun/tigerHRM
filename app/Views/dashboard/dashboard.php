@@ -65,7 +65,7 @@
                                 <h3 class="text-white">
                                     Projects
                                 </h3>
-                                <a href="<?php echo base_url(); ?>Projects/All_Projects" class="text-info">View Details (100)</a>
+                                <a href="<?php echo base_url(); ?>/project/" class="text-info">View Details (100)</a>
                             </div>
                         </div>
                     </div>
