@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\DesignationModel;
+use App\Models\GradeModel;
 
 class DesignationController extends BaseController
 {
@@ -23,8 +24,15 @@ class DesignationController extends BaseController
     //create
     public function create()
     {
-
-        return view('designation/create');
+$grades = new GradeModel();
+$data['allgrades'] = $grades->findAll();
+$dropgrade = [];
+        $dropgrade[-1] = 'Select';
+            foreach ($data['allgrades'] as $grade) {
+                $dropgrade[$grade['id']] = $grade['gradename']."-".$grade['gradeid'];
+                }
+         $data['grades']=$dropgrade;       
+        return view('designation/create',$data);
     }
     //store
     public function store()

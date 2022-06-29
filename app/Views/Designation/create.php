@@ -28,7 +28,8 @@
 </div>
 <div class="form-group">
     <label for="grade">Grade</label>
-    <input type="text" class="form-control" id="grade" name="grade" placeholder="Enter Grade">
+    <!-- <input type="text" class="form-control" id="grade" name="grade" placeholder="Enter Grade"> -->
+    <?php echo form_dropdown('grade',$grades,'5',['class' => 'form-control']); ?>
 </div>
 
 <button type="submit" class="btn btn-primary mt-2">Submit</button>
