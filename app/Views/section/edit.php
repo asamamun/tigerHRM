@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group" >
                                 <label class="control-label col-md-3">Department</label>
-                                <?php echo form_dropdown('deptid',$dept,'',['class' => 'form-control']) ?>
+                                <?php echo form_dropdown('deptid',$dept,$section['department_id'],['class' => 'form-control']) ?>
                                 <div class="col-md-9">
                                     
 

@@ -62,7 +62,10 @@ class SectionController extends BaseController
         public function edit($id)
         {
             $section = new SectionModel();
-            $data  ['section'] = $section->find($id);
+            $data['section'] = $section->find($id);
+            $dept = new DepartmentModel();
+            $data['dept'] = $dept->findAll();
+            $data['dept'] = key_value_for_dropdown($data['dept']);
             return view('section/edit', $data);
         }
 
