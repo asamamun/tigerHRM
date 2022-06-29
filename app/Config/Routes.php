@@ -86,6 +86,9 @@ $routes->get('/designation/edit/(:num)', 'DesignationController::edit/$1');
 $routes->post('/designation/edit/(:num)', 'DesignationController::update/$1');
 $routes->get('/designation/delete/(:num)', 'DesignationController::delete/$1');
 
+// Project
+$routes->get('/project', 'ProjectController::index');
+
 
 
 

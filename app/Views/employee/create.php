@@ -5,26 +5,26 @@
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
-    <div class="row page-titles">
-        <div class="col-md-5 align-self-center">
+    <div class="row page-titles bg-info">
+        <div class="col-md-5 align-self-center ps-4">
             <h3 class="text-themecolor"><i class="fa fa-users" aria-hidden="true"></i> Employee</h3>
         </div>
-        <div class="col-md-7 align-self-center">
+        <div class="col-md-7 align-self-center mt-2">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                 <li class="breadcrumb-item active">Employee</li>
             </ol>
         </div>
     </div>
-    
+
     <div class="container-fluid">
-        <div class="row m-b-10">
+        <div class="row mt-3">
             <div class="col-12">
-                <button type="button" class="btn btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>employee/add" class="text-white"><i class="" aria-hidden="true"></i> Add Employee</a></button>
+                <button type="button" class="btn btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>/employee/add" class="text-white"><i class="" aria-hidden="true"></i> Add Employee</a></button>
                 <button type="button" class="btn btn-primary"><i class="fa fa-bars"></i><a href="<?php echo base_url(); ?>employee/Disciplinary" class="text-white"><i class="" aria-hidden="true"></i> Disciplinary List</a></button>
             </div>
         </div>
-    </div>
+        <hr>
 
 <!-- form -->
     <?php echo form_open('employee/add',['class' => 'row g-3']); ?>

@@ -11781,5 +11781,19 @@ html body .m-t-20 {
     color: red;
   }
 
-  /* table css */
- 
+  /* background-color css */
+ .bg-danger{
+   background-color: red!important;
+ }
+ .bg-success{
+   background-color: green!important;
+ }
+ .bg-warning{
+   background-color: orange!important;
+ }
+ .bg-blue{
+   background-color: blue!important;
+ }
+ .bg-lightyellow{
+   background-color: lightyellow!important;
+  }
