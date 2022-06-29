@@ -154,8 +154,9 @@
 
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header bg-primary">
+                    <div class="card-header bg-primary d-flex justify-content-between">
                         <h4 class="text-white">Projects</h4>
+                        <h4><a href="project/"><i class="fa-solid fa-link"></i></a></h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive" style="height:600px;overflow-y:scroll">
@@ -169,15 +170,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php
+                                    <?php
                                     //populate table row from departments
-                                    foreach ($project as $project ) {
+                                    foreach ($project as $project) {
                                     ?>
                                         <tr>
                                             <td><?= $project['name'] ?></td>
-                                            <td><?= $project ['start_date'] ?></td>
-                                            <td><?= $project ['end_date'] ?></td>
-                                            <td><?= $project ['status'] ?></td>
+                                            <td><?= $project['start_date'] ?></td>
+                                            <td><?= $project['end_date'] ?></td>
+                                            <td><?= $project['status'] ?></td>
                                         </tr>
 
                                     <?php
@@ -192,26 +193,30 @@
             <!-- Column -->
             <div class="col-lg-4">
                 <div class="card">
-                    <div class="card-header bg-primary">
-                        <h4 class="text-white">To Do list</h4>
+                    <div class="card-header bg-primary d-flex justify-content-between">
+                        <h4 class="text-white">To Do List</h4>
+                        <h4><a href="todo/"><i class="fa-solid fa-link"></i></a></h4>
                     </div>
                     <h6 class="card-subtitle ps-3 btn btn-info border-top">List of your next task to complete</h6>
                     <div class="card-body">
                         <div class="to-do-widget m-t-20" style="height:550px;overflow-y:scroll">
                             <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
+                                <?php foreach ($todo as $value) : ?>
+                                    <li class="list-group-item" data-role="task">
+                                        <?php if ($value['value'] == '1') { ?>
+                                            <div class="checkbox checkbox-info">
+                                                <input class="to-do" data-id="<?php echo $value['id'] ?>" data-value="0" type="checkbox" id="<?php echo $value['id'] ?>">
+                                                <label for="<?php echo $value['id'] ?>"><span><?php echo $value['data']; ?></span></label>
+                                            </div>
+                                        <?php } else { ?>
+                                            <div class="checkbox checkbox-info">
+                                                <input class="to-do" data-id="<?php echo $value['id'] ?>" data-value="1" type="checkbox" id="<?php echo $value['id'] ?>" checked>
+                                                <label class="task-done" for="<?php echo $value['id'] ?>"><span><?php echo $value['data']; ?></span></label>
+                                            </div>
+                                        <?php } ?>
+                                    </li>
 
-                                <li class="list-group-item" data-role="task">
-
-                                    <div class="checkbox checkbox-info">
-
-                                    </div>
-
-                                    <div class="checkbox checkbox-info">
-
-                                    </div>
-
-                                </li>
-
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                         <div class="new-todo">
@@ -233,8 +238,9 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="card">
-                    <div class="card-header bg-danger">
+                    <div class="card-header bg-danger d-flex justify-content-between">
                         <h4 class="text-white">Notice Board</h4>
+                        <h4><a href="notice/"><i class="fa-solid fa-link"></i></a></h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive slimScrollDiv" style="height:600px;overflow-y:scroll">
@@ -248,9 +254,19 @@
                                 </thead>
                                 <tbody>
 
-                                    <tr class="scrollbar" style="vertical-align:top">
+                                    <?php
+                                    //populate table row from departments
+                                    foreach ($notices as $notices) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $notices['title'] ?></td>
+                                            <td><?= $notices['file_url'] ?></td>
+                                            <td><?= $notices['date'] ?></td>
+                                        </tr>
 
-                                    </tr>
+                                    <?php
+                                    }
+                                    ?>
 
                                 </tbody>
                             </table>
@@ -260,10 +276,12 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header bg-secondary">
+                    <div class="card-header bg-secondary d-flex justify-content-between">
                         <h4 class="text-white">
                             Holidays
+                            
                         </h4>
+                        <h4><a href="holiday/"><i class="fa-solid fa-link"></i></a></h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive" style="height:600px;overflow-y:scroll">
@@ -276,9 +294,18 @@
                                 </thead>
                                 <tbody>
 
-                                    <tr style="background-color:#e3f0f7">
+                                    <?php
+                                    //populate table row from departments
+                                    foreach ($holidays as $holidays) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $holidays['name'] ?></td>
+                                            <td><?= $holidays['from_date'] ?></td>
+                                        </tr>
 
-                                    </tr>
+                                    <?php
+                                    }
+                                    ?>
 
                                 </tbody>
                             </table>

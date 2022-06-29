@@ -86,8 +86,11 @@ $routes->get('/designation/edit/(:num)', 'DesignationController::edit/$1');
 $routes->post('/designation/edit/(:num)', 'DesignationController::update/$1');
 $routes->get('/designation/delete/(:num)', 'DesignationController::delete/$1');
 
-// Project
+// dashboard's links redirect
 $routes->get('/project', 'ProjectController::index');
+$routes->get('/holiday', 'HolidayController::index');
+$routes->get('/notice', 'NociceController::index');
+$routes->get('/todo', 'TodoController::index');
 
 
 
