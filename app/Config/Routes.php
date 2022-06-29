@@ -113,7 +113,14 @@ $routes->get('/expenses/edit/(:num)', 'ExpensesController::edit/$1');
 $routes->post('/expenses/edit/(:num)', 'ExpensesController::update/$1');
 $routes->post('/expenses/delete/(:num)', 'ExpensesController::delete/$1');
 
+//Holiday
 
+$routes->get('/holiday', 'HolidayController::index');
+$routes->get('/holiday/create', 'HolidayController::create');
+$routes->post('/holiday/create', 'HolidayController::store');
+$routes->get('/holiday/edit/(:num)', 'HolidayController::edit/$1');
+$routes->post('/holiday/edit/(:num)', 'HolidayController::update/$1');
+$routes->post('/holiday/delete/(:num)', 'HolidayController::delete/$1');
 
 /*
  * --------------------------------------------------------------------
