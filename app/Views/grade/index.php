@@ -6,6 +6,12 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
+            <?php
+            if (session()->getflashdata('status'))
+            {
+                echo"<h4>".session()->getflashdata('status')."</h4>";
+            }
+            ?>
                 <div class="my-3 text-center">
                     <h4>Grade
                         <hr class="text-denger">
@@ -56,10 +62,10 @@
                                             <td><?= $grade['medical'] ?></td>
                                             <td><?= $grade['other'] ?></td>
                                             <td class="text-center">
-                                                <?= anchor('grade/edit' . $grade['id'], 'Edit', ['class' => 'btn btn-primary rounded mx-1']); ?>
+                                                <?= anchor('grade/edit/' . $grade['id'], 'Edit', ['class' => 'btn btn-primary rounded mx-1']); ?>
                                             <td class="text-center">
                                                 <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
-                                                <a href="#" class="btn btn-danger rounded mx-1">Delete</a>
+                                                <a href="<?=base_url('/grade/delete/'. $grade['id'])?>" class="btn btn-danger rounded mx-1">Delete</a>
                                             </td>
                                         </tr>
                                     <?php

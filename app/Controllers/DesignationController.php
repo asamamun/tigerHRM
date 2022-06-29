@@ -60,6 +60,7 @@ class DesignationController extends BaseController
         $designation = new DesignationModel();
         $data = [
             'name' => $this->request->getPost('name'),
+            'desigdesc' => $this->request->getPost('desigdesc'),
             'grade' => $this->request->getPost('grade'),
            
         ];
@@ -72,20 +73,23 @@ class DesignationController extends BaseController
         }
     }
     //delete
-    public function delete($id)
+    public function delete($id = null)
     {
-        $session = \Config\Services::session();
         $designation = new DesignationModel();
-        $data = [
-            'deleted' => date('Y-m-d H:i:s')
-        ];
-        if($designation->update($id, $data)) {
-            $session->setFlashdata('message', 'Designation deleted successfully');
-            return redirect()->to(base_url('/designation'));
-        } else {
-            $session->setFlashdata('message', 'designation delete failed');
-            return redirect()->to(base_url('/desination'));
-        }
+          $designation->delete($id);
+          return redirect()->to(base_url('designation'))->with('message','Designation Deleted Successfully') ;
+        // $session = \Config\Services::session();
+        // $designation = new DesignationModel();
+        // $data = [
+        //     'deleted' => date('Y-m-d H:i:s')
+        // ];
+        // if($designation->update($id, $data)) {
+        //     $session->setFlashdata('message', 'Designation deleted successfully');
+        //     return redirect()->to(base_url('/designation'));
+        // } else {
+        //     $session->setFlashdata('message', 'designation delete failed');
+        //     return redirect()->to(base_url('/desination'));
+        // }
     }
 }
 

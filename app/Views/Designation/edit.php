@@ -9,7 +9,7 @@
     <?php endif; ?>
 </div>
 <!-- edit customer form -->
-<h1>Customer Info</h1>
+<h1>Edit Designtaion</h1>
 <?php echo form_open('designation/edit/'.$designation['id']); ?>
 
 <?php echo form_hidden("id",$designation['id']); ?>
@@ -18,7 +18,7 @@
     <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" value="<?= $designation['name'] ?>">
 </div>
 <div class="form-group">
-    <label for="email">Desigdesc</label>
+    <label for="desigdesc">Desigdesc</label>
     <input type="desigdesc" class="form-control" id="desigdesc" name="desigdesc" placeholder="Enter Designation" value="<?= $designation['desigdesc'] ?>">
 </div>
 <div class="form-group">

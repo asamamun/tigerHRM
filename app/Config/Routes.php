@@ -43,17 +43,26 @@ $routes->post('/settings', 'SettingController::save');
 $routes->get('/department', 'DepartmentController::index');
 $routes->get('/department-add', 'DepartmentController::create');
 $routes->post('department-store', 'DepartmentController::store');
-$routes->post('department', 'DepartmentController::delete');
-$routes->get('/designation', 'DesignationController::index');
+$routes->get('/department/edit/(:num)', 'DepartmentController::edit/$1');
+$routes->post('/department/update/(:num)', 'DepartmentController::update/$1');
+$routes->get('/department/delete/(:num)', 'DepartmentController::delete/$1');
+
+
 //section
 $routes->get('/section', 'SectionController::index');
 $routes->get('/section/add', 'SectionController::create');
 $routes->post('/section/add', 'SectionController::store');
+$routes->get('/section/edit/(:num)', 'SectionController::edit/$1');
+$routes->post('/section/update/(:num)', 'SectionController::update/$1');
+$routes->get('/section/delete/(:num)', 'SectionController::delete/$1');
 
 //Grade
 $routes->get('/grade', 'GradeController::index');
 $routes->get('/grade/add', 'GradeController::create');
 $routes->post('/grade/add', 'GradeController::store');
+$routes->get('/grade/edit/(:num)', 'GradeController::edit/$1');
+$routes->post('/grade/update/(:num)', 'GradeController::update/$1');
+$routes->get('/grade/delete/(:num)', 'GradeController::delete/$1');
 
 //employee
 $routes->get('/employee', 'EmployeeController::index');
@@ -64,8 +73,6 @@ $routes->get('/employee/card/(:num)', 'EmployeeController::card/$1');
 
 //education
 $routes->post('/education/add', 'EmployeeController::addeducation');
-
-
 $routes->get('/disiplinary', 'DisiplinaryController::index');
 $routes->post('/disiplinary', 'DisiplinaryController::delete');
 
@@ -77,7 +84,7 @@ $routes->get('/designation/add', 'DesignationController::create');
 $routes->post('/designation/create', 'DesignationController::store');
 $routes->get('/designation/edit/(:num)', 'DesignationController::edit/$1');
 $routes->post('/designation/edit/(:num)', 'DesignationController::update/$1');
-$routes->post('/designation/delete/(:num)', '::delete/$1');
+$routes->get('/designation/delete/(:num)', 'DesignationController::delete/$1');
 
 
 

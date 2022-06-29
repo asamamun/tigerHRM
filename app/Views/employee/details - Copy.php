@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/default'); ?>
 <?= $this->Section('content') ?>
 <!--  -->
-<span class="btn btn-info"><h1>Employee Detail Information</h1></span>
+<h1>Employee Detail Information</h1>
 <?= view("partial/flashmessage"); ?>
 <?php
 if (!count($emp)) {
@@ -11,193 +11,179 @@ if (!count($emp)) {
 } else {
 ?>
     <!-- personal information start -->
-    <div class="d-flex justify-content-between bg-primary">
-        <button class="btn btn-primary"><h4>Personal Information:</h4></button>
+    <div class="d-flex justify-content-between">
+        <h4>Personal Information:</h4>
         <button id="editBtn" class="btn btn-primary btn-lg">Edit</button>
     </div>
     <fieldset id="formcontainer" disabled>
         <?php echo form_open('employee/details'); ?>
         <?php echo form_hidden('id', $emp['id']); ?>
-        <div class="row">
-            <div class="table-responsive col-6">
-                <table class="table table-striped table-bordered table-hover table-responsive">
-                    <tr class="success">
-                        <th>Employee ID</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="empid" class="form-control" value="<?php echo $emp['empid']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Frist Name</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="fname" class="form-control" value="<?php echo $emp['fname']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Middle Name</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="mname" class="form-control" value="<?php echo $emp['mname']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Last Name</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="lname" class="form-control" value="<?php echo $emp['lname']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>DLN</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="dln" class="form-control" value="<?php echo $emp['dln']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>DL Expiry Date</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="dln" class="form-control" value="<?php echo $emp['dl_expdate']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Gender</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="gender" class="form-control" value="<?php echo $emp['gender']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Date of Birth</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="dob" class="form-control" value="<?php echo $emp['dob']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Marital Status</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="maritalstatus" class="form-control" value="<?php echo $emp['maritalstatus']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Phone</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="phone" class="form-control" value="<?php echo $emp['phone']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Homephone</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="homephone" class="form-control" value="<?php echo $emp['homephone']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Email</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="email" class="form-control" value="<?php echo $emp['email']; ?>"></td>
-                    </tr>
-
-                    <tr class="primary text-end">
-                        <td>
-                            <input type="submit" value="Update" class="btn btn-primary">
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="table-responsive col-6">
-                <table class="table table-striped table-bordered table-hover table-responsive">
-                    <tr class="success">
-                        <th>Blood</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="blood" class="form-control" value="<?php echo $emp['blood']; ?>"></td>
-                    </tr>
-
-                    <tr class="success">
-                        <th>TIN</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="tin" class="form-control" value="<?php echo $emp['tin']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>NID</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="nid" class="form-control" value="<?php echo $emp['nid']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Father's Name</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="fathersname" class="form-control" value="<?php echo $emp['fathersname']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Mother's Name</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="mothersname" class="form-control" value="<?php echo $emp['mothersname']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Bank Name</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="bankname" class="form-control" value="<?php echo $emp['bankname']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Account Number</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="bankaccno" class="form-control" value="<?php echo $emp['bankaccno']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Account Type</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="bankacctype" class="form-control" value="<?php echo $emp['bankacctype']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Plant ID</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="plantid" class="form-control" value="<?php echo $emp['plantid']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Department ID</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="deptid" class="form-control" value="<?php echo $emp['deptid']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Section ID</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="secid" class="form-control" value="<?php echo $emp['secid']; ?>"></td>
-                    </tr>
-                    <tr class="success">
-                        <th>Designation ID</th>
-                    </tr>
-                    <tr class="primary">
-                        <td><input type="text" name="desigid" class="form-control" value="<?php echo $emp['desigid']; ?>"></td>
-                    </tr>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover table-responsive">
+                <tr class="success">
+                    <th>Employee ID</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="empid" class="form-control" value="<?php echo $emp['empid']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Frist Name</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="fname" class="form-control" value="<?php echo $emp['fname']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Middle Name</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="mname" class="form-control" value="<?php echo $emp['mname']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Last Name</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="lname" class="form-control" value="<?php echo $emp['lname']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>DLN</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="dln" class="form-control" value="<?php echo $emp['dln']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>DL Expiry Date</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="dln" class="form-control" value="<?php echo $emp['dl_expdate']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Gender</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="gender" class="form-control" value="<?php echo $emp['gender']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Date of Birth</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="dob" class="form-control" value="<?php echo $emp['dob']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Marital Status</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="maritalstatus" class="form-control" value="<?php echo $emp['maritalstatus']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Phone</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="phone" class="form-control" value="<?php echo $emp['phone']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Homephone</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="homephone" class="form-control" value="<?php echo $emp['homephone']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Email</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="email" class="form-control" value="<?php echo $emp['email']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Blood</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="blood" class="form-control" value="<?php echo $emp['blood']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>TIN</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="tin" class="form-control" value="<?php echo $emp['tin']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>NID</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="nid" class="form-control" value="<?php echo $emp['nid']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Father's Name</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="fathersname" class="form-control" value="<?php echo $emp['fathersname']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Mother's Name</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="mothersname" class="form-control" value="<?php echo $emp['mothersname']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Bank Name</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="bankname" class="form-control" value="<?php echo $emp['bankname']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Account Number</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="bankaccno" class="form-control" value="<?php echo $emp['bankaccno']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Account Type</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="bankacctype" class="form-control" value="<?php echo $emp['bankacctype']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Plant ID</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="plantid" class="form-control" value="<?php echo $emp['plantid']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Department ID</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="deptid" class="form-control" value="<?php echo $emp['deptid']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Section ID</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="secid" class="form-control" value="<?php echo $emp['secid']; ?>"></td>
+                </tr>
+                <tr class="success">
+                    <th>Designation ID</th>
+                </tr>
+                <tr class="primary">
+                    <td><input type="text" name="desigid" class="form-control" value="<?php echo $emp['desigid']; ?>"></td>
+                </tr>
 
 
-                    <tr class="primary">
-                        <td>
-                            <input type="button" value="Cancel" class="btn btn-secondary text-end" id="cancelBtn">
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <?php echo form_close(); ?>
+                <tr class="primary">
+                    <td>
+                        <input type="submit" value="Update" class="btn btn-primary">
+                        <input type="button" value="Cancel" class="btn btn-secondary" id="cancelBtn">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
+        <?php echo form_close(); ?>
     </fieldset>
     <!-- personal information  end-->
     <!-- address start -->
-    <div class="d-flex justify-content-between bg-primary border-bottom">
-        <button class="btn btn-primary"><h4>Employee Address:</h4></button>
-        <button id="adrBtn" class="btn btn-primary btn-lg">Edit</button>
+    <div class="d-flex justify-content-between">
+        <h4>Employee Address:</h4>
+        <button id="editBtn" class="btn btn-primary btn-lg">Edit</button>
     </div>
-    <fieldset id="addresscontainer" disabled>
+    <fieldset id="formcontainer">
         <?php echo form_open('employee/address'); ?>
         <?php echo form_hidden('id', $emp['id']); ?>
         <div class="row">
@@ -261,12 +247,12 @@ if (!count($emp)) {
                         </tr>
 
 
-                        <tr class="primary text-end">
+                        <!-- <tr class="primary">
                             <td>
                                 <input type="submit" value="Update" class="btn btn-primary">
-                               
+                                <input type="button" value="Cancel" class="btn btn-secondary" id="cancelBtn">
                             </td>
-                        </tr>
+                        </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -329,16 +315,18 @@ if (!count($emp)) {
                         <tr class="primary">
                             <td><input type="text" name="sameornot" class="form-control" value="<?php echo $empaddress['p_country']; ?>"></td>
                         </tr>
-                        <tr class="primary">
-                            <td>
-                            <input type="button" value="Cancel" class="btn btn-secondary" id="adrcancelBtn">
-                            </td>
-                        </tr>
+
                         </tbody>
                     </table>
 
                 </div>
 
+            </div>
+            <div class="primary ps-3">
+                <div>
+                    <input type="submit" value="Update" class="btn btn-primary">
+                    <input type="button" value="Cancel" class="btn btn-secondary" id="cancelBtn">
+                </div>
             </div>
         </div>
 
@@ -348,15 +336,16 @@ if (!count($emp)) {
     <!-- address end -->
 
     <!-- education start -->
-    <div class="d-flex justify-content-between bg-primary">
-        <button class="btn btn-primary"><h4>Education:</h4></button>
-        <button id="eduBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
+    <div class="d-flex justify-content-between">
+        <h4>Education:</h4>
+        <div>
+            <button id="eduBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
+        </div>
     </div>
     <fieldset id="educationcontainer">
         <?php echo form_open('education/add'); ?>
         <?php echo form_hidden('id', $emp['id']); ?>
-        <div class="row">
-        <div class="table-responsive col-6">
+        <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover table-responsive">
                 <tr class="success">
                     <th>Level</th>
@@ -417,27 +406,13 @@ if (!count($emp)) {
                         </select>
                     </td>
                 </tr>
-
-                <tr class="primary text-end">
-                    <td>
-                        <input type="submit" value="Save" class="btn btn-primary">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="table-responsive col-6">
-            <table class="table table-striped table-bordered table-hover table-responsive">
-            <tr class="success">
+                <tr class="success">
                     <th>Passing Year</th>
                 </tr>
                 <tr class="primary">
                     <td>
                         <select class="form-control" name="passingyear" id="passingyear">
                             <option value="-1">Year</option>
-                            <option value="2027">2030</option>
-                            <option value="2027">2029</option>
-                            <option value="2027">2028</option>
                             <option value="2027">2027</option>
                             <option value="2026">2026</option>
                             <option value="2025">2025</option>
@@ -499,12 +474,6 @@ if (!count($emp)) {
                             <option value="1969">1969</option>
                             <option value="1968">1968</option>
                             <option value="1967">1967</option>
-                            <option value="1967">1966</option>
-                            <option value="1967">1965</option>
-                            <option value="1967">1964</option>
-                            <option value="1967">1963</option>
-                            <option value="1967">1962</option>
-                            <option value="1967">1961</option>
                         </select>
                     </td>
                 </tr>
@@ -526,17 +495,15 @@ if (!count($emp)) {
                 <tr class="primary">
                     <td><input type="date" name="endyear" class="form-control" value=""></td>
                 </tr>
-            
 
                 <tr class="primary">
                     <td>
+                        <input type="submit" value="Save" class="btn btn-primary">
                         <input type="button" value="Cancel" class="btn btn-secondary" id="eduCancelBtn">
                     </td>
                 </tr>
                 </tbody>
             </table>
-        </div>
-
         </div>
         <?php echo form_close(); ?>
     </fieldset>
@@ -575,7 +542,7 @@ if (!count($emp)) {
                         <td><?php echo $education['score'] ?></td>
                         <td><?php echo $education['start_date'] ?></td>
                         <td><?php echo $education['end_date'] ?></td>
-                        <td><button><i class="fa-solid fa-pen-to-square"></i></button> | <button class="bg-danger"><i class="fa-solid fa-trash"></i></button></td>
+                        <td>EDIT | DELETE</td>
                     </tr>
                 <?php
                 }
@@ -583,27 +550,38 @@ if (!count($emp)) {
             </tbody>
         </table>
     <?php } else { ?>
-        <strong class="bg-warning text-center">Education info not found. Add Please!</strong>
+        <strong>No education info found. Add Please</strong>
     <?php } ?>
 
     <!-- Experience start -->
-    <div class="d-flex justify-content-between bg-primary border-bottom">
-        <button class="btn btn-primary"><h4>Work Experience:</h4></button>
+    <div class="d-flex justify-content-between">
+        <h4>Experience:</h4>
         <div>
-            <button id="expBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
+            <button id="eduBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
         </div>
     </div>
-    <fieldset id="experiencecontainer">
+    <fieldset id="educationcontainer">
         <?php echo form_open('education/add'); ?>
         <?php echo form_hidden('id', $emp['id']); ?>
-        <div class="row">
-        <div class="table-responsive col-6">
+        <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover table-responsive">
-            <tr class="success">
+                <tr class="success">
                     <th>Company</th>
                 </tr>
                 <tr class="primary">
-                    <td><input type="text" name="occupation" class="form-control" value=""></td>
+                    <td>
+                        <select name="company" id="" class="form-control">
+                            <option value="ssc">select</option>
+                            <option value="psc">PSC</option>
+                            <option value="hsc">JSC/JDC</option>
+                            <option value="ssc">SSC</option>
+                            <option value="hsc">HSC</option>
+                            <option value="hsc">Diploma</option>
+                            <option value="hsc">Bachelor/Honors</option>
+                            <option value="hsc">Masters</option>
+                            <option value="hsc">PhD (Doctor of Philosophy)</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr class="success">
                     <th>Occupation</th>
@@ -617,51 +595,56 @@ if (!count($emp)) {
                 <tr class="primary">
                     <td><input type="text" name="exp_from" class="form-control" value=""></td>
                 </tr>
-
-
-                <tr class="primary text-end">
-                    <td>
-                        <input type="submit" value="Save" class="btn btn-primary">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="table-responsive col-6">
-            <table class="table table-striped table-bordered table-hover table-responsive">
                 <tr class="success">
                     <th>Experience to</th>
                 </tr>
                 <tr class="primary">
-                    <td><input type="text" name="exp_from" class="form-control" value=""></td>
-                </tr>
-                <tr class="success">
-                    <th>Reason for Leaving</th>
-                </tr>
-                <tr class="primary">
-                    <td><input type="text" name="exp_from" class="form-control" value=""></td>
+                    <td>
+                        <select name="exp_to" id="major" class="form-control">
+                            <option value="Bachelor of Science (BSc)">Bachelor of Science (BSc)</option>
+                            <option value="Bachelor of Arts (BA)">Bachelor of Arts (BA)</option>
+                            <option value="Bachelor of Commerce (BCom)">Bachelor of Commerce (BCom)</option>
+                            <option value="Bachelor of Commerce (Pass)">Bachelor of Commerce (Pass)</option>
+                            <option value="Bachelor of Business Administration (BBA)">Bachelor of Business Administration (BBA)</option>
+                            <option value="Bachelor of Medicine and Bachelor of Surgery(MBBS)">Bachelor of Medicine and Bachelor of Surgery(MBBS)</option>
+                            <option value="Bachelor of Dental Surgery (BDS)">Bachelor of Dental Surgery (BDS)</option>
+                            <option value="Bachelor of Architecture (B.Arch)">Bachelor of Architecture (B.Arch)</option>
+                            <option value="Bachelor of Pharmacy (B.Pharm)">Bachelor of Pharmacy (B.Pharm)</option>
+                            <option value="Bachelor of Education (B.Ed)">Bachelor of Education (B.Ed)</option>
+                            <option value="Bachelor of Physical Education (BPEd)">Bachelor of Physical Education (BPEd)</option>
+                            <option value="Bachelor of Law (LLB)">Bachelor of Law (LLB)</option>
+                            <option value="Doctor of Veterinary Medicine (DVM)">Doctor of Veterinary Medicine (DVM)</option>
+                            <option value="Bachelor of Social Science (BSS)" selected="selected">Bachelor of Social Science (BSS)</option>
+                            <option value="Bachelor of Fine Arts (B.F.A)">Bachelor of Fine Arts (B.F.A)</option>
+                            <option value="Bachelor of Business Studies (BBS)">Bachelor of Business Studies (BBS)</option>
+                            <option value="Bachelor of Computer Application (BCA)">Bachelor of Computer Application (BCA)</option>
+                            <option value="Fazil (Madrasah)">Fazil (Madrasah)</option>
+                            <option value="Bachelor in Engineering (BEngg)">Bachelor in Engineering (BEngg)</option>
+                            <option value="others" undefined="">Other</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr class="success">
                     <th>Comment</th>
                 </tr>
                 <tr class="primary">
-                    <td><input type="text" name="exp_from" class="form-control" value=""></td>
+                    <td><input type="text" name="result" class="form-control" value=""></td>
                 </tr>
-
+                
 
                 <tr class="primary">
                     <td>
-                        <input type="button" value="Cancel" class="btn btn-secondary" id="expCancelBtn">
+                        <input type="submit" value="Save" class="btn btn-primary">
+                        <input type="button" value="Cancel" class="btn btn-secondary" id="eduCancelBtn">
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
-        </div>
         <?php echo form_close(); ?>
     </fieldset>
     <!-- Experience end -->
-    <?php if ($empexperience) { ?>
+    <?php if ($empeducation) { ?>
         <table class="table table-primary">
             <thead>
                 <tr>
@@ -669,9 +652,7 @@ if (!count($emp)) {
                     <th>Occupation</th>
                     <th>Experience from</th>
                     <th>Experience to</th>
-                    <th>Reason for Leaving</th>
                     <th>Comment</th>
-                    <th>Action</th>
                 </tr>
                 <!-- <tr>
                 <td>SSC</td>
@@ -682,16 +663,15 @@ if (!count($emp)) {
             </thead>
             <tbody>
                 <?php
-                foreach ($empexperience as $experience) {
+                foreach ($empeducation as $education) {
                 ?>
                     <tr>
-                        <td><?php echo $experience['company'] ?></td>
-                        <td><?php echo $experience['occupation'] ?></td>
-                        <td><?php echo $experience['exp_from'] ?></td>
-                        <td><?php echo $experience['exp_to'] ?></td>
-                        <td><?php echo $experience['exp_to'] ?></td>
-                        <td><?php echo $experience['comment'] ?></td>
-                        <td><button><i class="fa-solid fa-pen-to-square"></i></button> | <button class="bg-danger"><i class="fa-solid fa-trash"></i></button></td>
+                        <td><?php echo $education['company'] ?></td>
+                        <td><?php echo $education['occupation'] ?></td>
+                        <td><?php echo $education['exp_from'] ?></td>
+                        <td><?php echo $education['exp_to'] ?></td>
+                        <td><?php echo $education['comment'] ?></td>
+                        <td>EDIT | DELETE</td>
                     </tr>
                 <?php
                 }
@@ -712,8 +692,7 @@ if (!count($emp)) {
 <?= $this->Section('scripts') ?>
 <script>
     $(document).ready(function() {
-        $("#educationcontainer,#addresscontainer, #experiencecontainer").hide();
-
+        $("#educationcontainer").hide();
 
         $("#editBtn").click(function() {
             // alert(5)
@@ -726,43 +705,12 @@ if (!count($emp)) {
             $("#formcontainer").prop('disabled', true);
             $("#editBtn").show(200);
         });
-// ==========================================
-        $("#adrBtn").click(function() {
-            // alert(5)
-            $t = $(this);
-            $("#addresscontainer").prop('disabled', false);
-            $t.hide(200);
-        });
-        //cancel button click
-        $('#adrcancelBtn').click(function() {
-            $("#addresscontainer").prop('disabled', true);
-            $("#adrBtn").show(200);
-        });
-
-
-        //show adress formcontainer
-        $("#adrBtn").click(function() {
-            $("#addresscontainer").show(500);
-        });
-        $("#adrcancelBtn").click(function() {
-            $("#addresscontainer").hide(500);
-        });
         //show edication formcontainer
         $("#eduBtn").click(function() {
             $("#educationcontainer").show(500);
         });
         $("#eduCancelBtn").click(function() {
             $("#educationcontainer").hide(500);
-        });
-
-
-
-        //show experience formcontainer
-        $("#expBtn").click(function() {
-            $("#experiencecontainer").show(500);
-        });
-        $("#expCancelBtn").click(function() {
-            $("#experiencecontainer").hide(500);
         });
 
 

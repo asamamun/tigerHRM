@@ -11,6 +11,7 @@ use App\Models\EmployeeModel;
 use App\Models\EmpaddressModel;
 use App\Models\EmpeducationModel;
 use App\Models\SettingModel;
+use App\Models\ExpModel;
 
 class EmployeeController extends BaseController
 {
@@ -93,8 +94,20 @@ class EmployeeController extends BaseController
         }
         // ddd($data['empeducation']);
         // ddd($emp); 
+        
+
+        $empexp = new ExpModel();
+        $data['empexperience'] = $empexp->where('eid',$id)->find();
+        if(!count($data['empexperience'])) {
+            $data['empexperience'] = null;
+        }
+        //ddd($data['empexperience']);
+       // ddd($emp); 
         return view ('employee/details',$data);
     }
+
+
+
     public function addeducation(){
 /*         $emp = new EmployeeModel();
         $data = [

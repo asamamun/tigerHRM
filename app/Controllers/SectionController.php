@@ -9,6 +9,11 @@ use App\Models\DepartmentModel;
 
 class SectionController extends BaseController
 {
+
+
+    public function __construct(){
+        helper('form');
+    }
     public function index()
     {
         $section = new SectionModel();
@@ -68,5 +73,18 @@ class SectionController extends BaseController
     //     return redirect()->to(base_url('section/add'))->with('status','Error') ;
     // }
     
+        public function edit($id)
+        {
+
+        }
+
+        //delete the Section data 
+        public function delete($id = null)
+        {
+          $section = new SectionModel();
+          $section->delete($id);
+          return redirect()->to(base_url('section'))->with('message','Section Deleted Successfully') ;
+        }
+
     
 }
