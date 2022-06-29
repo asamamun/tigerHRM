@@ -57,33 +57,35 @@ class SectionController extends BaseController
         return view('section/create',$data);
     }
 
-    //store the employee data
-    // public function save(){
-    //     $sectionsave = new SectionModel();
-    //     $data = [
-    //         'name'=>$this->request->getPost('name'),
-    //         'secdesc'=>$this->request->getPost('secdesc'),
-    //         'department_id'=>$this->request->getPost('department_id'),
-            
-    //     ];
-    //     ddd($data);
-    //     if($sectionsave->save($data))
-    //     return redirect()->to(base_url('section'))->with('message','Section Added Successfully') ;
-    //     else
-    //     return redirect()->to(base_url('section/add'))->with('status','Error') ;
-    // }
     
+//edit
         public function edit($id)
         {
-
+            $section = new SectionModel();
+            $data  ['section'] = $section->find($id);
+            return view('section/edit', $data);
         }
 
-        //delete the Section data 
+//delete the Section data 
         public function delete($id = null)
         {
           $section = new SectionModel();
           $section->delete($id);
           return redirect()->to(base_url('section'))->with('message','Section Deleted Successfully') ;
+        }
+//update the Section data 
+        public function update($id){
+            $section = new SectionModel();
+            
+            $data = [
+                'name' => $this->request->getPost('name'),
+                'secdesc' => $this->request->getPost('secdesc'),
+                'department_id' => $this->request->getPost('department_id'),
+                
+            ];
+            $section->update($id,$data);
+            return redirect()->to(base_url('section'))->with('message','section Added Successfully') ;
+           
         }
 
     

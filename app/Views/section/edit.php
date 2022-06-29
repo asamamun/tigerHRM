@@ -3,7 +3,7 @@
 <?= view("partial/flashmessage"); ?>
 <!-- /.content -->
 
-<?php echo form_open('section/add',['class' => 'row g-3']); ?>
+<?php echo form_open('section/update/'. $section['id']); ?>
 <Section class="content-header">
         <h1 style="padding:7px; height:45px;" class='headtitlebackgroudgradient'>
             Section 
@@ -21,7 +21,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3">Section Title</label>
                                 <div class="col-md-12">
-                                    <input name="name" placeholder="Section Title here." class="form-control" type="text">
+                                    <input name="name" value="<?=$section['name']?>" placeholder="Section Title here." class="form-control" type="text">
                                     <span class="help-block"></span>
                                 </div>
                             </div>
@@ -29,11 +29,11 @@
                                 <label class="control-label col-md-12">Description</label>
                                 
                                 <div class="col-md-12">
-                                    <input name="secdesc" placeholder="Short Description here." class="form-control" type="text">
+                                    <input name="secdesc" value="<?=$section['secdesc']?>" placeholder="Short Description here." class="form-control" type="text">
                                     <span class="help-block"></span>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" >
                                 <label class="control-label col-md-3">Department</label>
                                 <?php echo form_dropdown('deptid',$dept,'',['class' => 'form-control']) ?>
                                 <div class="col-md-9">
