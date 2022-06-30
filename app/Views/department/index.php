@@ -2,7 +2,7 @@
 <?= $this->Section('content') ?>
 <?= view("partial/flashmessage"); ?>
 
-<div class="container my-5">
+<div class="container mb-1">
     <div class="row">
         <div class="col-12">
             <?php
@@ -11,12 +11,10 @@
                 echo"<h4>".session()->getflashdata('status')."</h4>";
             }
             ?>
-            <div class="my-3 text-center">
-                <h4>Add New Department
-                    <hr class="text-denger">
-                </h4>
-
-            </div>
+            <div class="card">
+        <div class="card-header bg-primary">
+            <h4 class="text-white text-center"> Add New Department</h4>
+        </div>
             <div class="card rounded">
                 <div class="card-body">
                     <div class="row mb-3">

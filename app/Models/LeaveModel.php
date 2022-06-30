@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class LeaveapllicationModel extends Model
+class LeaveModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'leaveapllications';
+    protected $table            = 'emp_leave';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;

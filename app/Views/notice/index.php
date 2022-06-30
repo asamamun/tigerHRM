@@ -9,7 +9,7 @@
                         <h4 class="text-white">Notice Board</h4>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive slimScrollDiv" style="height:600px;overflow-y:scroll">
+                        <div class="table-responsive slimScrollDiv" style="height:500px;overflow-y:scroll">
                             <table class="table table-hover table-bordered earning-box ">
                                 <thead>
                                     <tr>

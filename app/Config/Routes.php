@@ -17,6 +17,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
+$routes->setDefaultController('AutocompleteController');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
@@ -91,6 +92,9 @@ $routes->get('/project', 'ProjectController::index');
 $routes->get('/holiday', 'HolidayController::index');
 $routes->get('/notice', 'NociceController::index');
 $routes->get('/todo', 'TodoController::index');
+
+
+$routes->get('/search', 'AutocompleteController::index');
 
 
 

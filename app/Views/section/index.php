@@ -6,15 +6,12 @@
 
 
 <body>
-    <div class="container my-5">
+    <div class="container mb-1">
         <div class="row">
             <div class="col-12">
-                <div class="my-3 text-center">
-                    <h4>Section
-                        <hr class="text-denger">
-                    </h4>
-
-                </div>
+            <div class="card-header bg-primary">
+            <h4 class="text-white text-center"> Section</h4>
+        </div>
                 <div class="card rounded">
                     <div class="card-body">
                         <div class="row mb-2">

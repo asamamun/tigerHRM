@@ -5,10 +5,12 @@
 <!-- ===================================================================== -->
 <div class="col-12">
                 <div class="card">
-                    <div class="card-header bg-secondary">
+                <div class="card-header bg-secondary d-flex justify-content-between">
                         <h4 class="text-white">
                             Holidays
+                            
                         </h4>
+                        <h4><a href="holiday/"><i class="fa-solid fa-plus-circle bg-white rounded"></i></a></h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive" style="height:600px;overflow-y:scroll">
@@ -20,6 +22,7 @@
                                         <th>To</th>
                                         <th>Number of Days</th>
                                         <th>Year</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -34,6 +37,14 @@
                                             <td><?= $holidays ['to_date'] ?></td>
                                             <td><?= $holidays ['tl_days'] ?></td>
                                             <td><?= $holidays ['year'] ?></td>
+                                            <td class="text-center">
+                                                <?= anchor('holiday/edit/' . $holidays ['id'], 'Edit', ['class' => 'btn btn-primary rounded mx-1']); ?>
+
+                                                <?= anchor('holiday/delete/' . $holidays ['id'], 'Delete', ['class' => 'btn btn-info rounded mx-1']); ?>
+
+                                                <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
+                                                
+                                            </td>
                                         </tr>
 
                                     <?php

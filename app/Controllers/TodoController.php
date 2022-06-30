@@ -7,6 +7,10 @@ use App\Controllers\BaseController;
 
 class TodoController extends BaseController
 {
+    public function __construct()
+    {        
+        helper('form');
+    }
     public function index()
     {
         $todolist = new TodoModel();
@@ -15,4 +19,6 @@ class TodoController extends BaseController
 
         return view("todo/index", $data);
     }
+    
+
 }

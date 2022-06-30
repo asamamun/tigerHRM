@@ -8,7 +8,11 @@ use App\Models\TodoModel;
 use App\Models\UserModel;
 
 class Home extends BaseController
-{
+{ 
+    public function __construct()
+    {        
+        helper('form');
+    }
     public function index()
     {
         if($this->checkauth()){

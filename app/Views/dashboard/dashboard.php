@@ -82,7 +82,7 @@
                                 <h3 class="text-white">
                                     Leave
                                 </h3>
-                                <a href="<?php echo base_url(); ?>Loan/View" class="text-primary">View Details (10)</a>
+                                <a href="<?php echo base_url(); ?>/leave/" class="text-primary">View Details (10)</a>
                             </div>
                         </div>
                     </div>
@@ -159,7 +159,7 @@
                         <h4><a href="project/"><i class="fa-solid fa-link"></i></a></h4>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive" style="height:600px;overflow-y:scroll">
+                        <div class="table-responsive" style="height:400px;overflow-y:scroll">
                             <table class="table table-bordered table-hover earning-box">
                                 <thead>
                                     <tr>
@@ -199,7 +199,7 @@
                     </div>
                     <h6 class="card-subtitle ps-3 btn btn-info border-top">List of your next task to complete</h6>
                     <div class="card-body">
-                        <div class="to-do-widget m-t-20" style="height:550px;overflow-y:scroll">
+                        <div class="to-do-widget m-t-20" style="height:310px;overflow-y:scroll">
                             <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
                                 <?php foreach ($todo as $value) : ?>
                                     <li class="list-group-item" data-role="task">
@@ -220,15 +220,16 @@
                             </ul>
                         </div>
                         <div class="new-todo">
-                            <form method="post" action="add_todo" enctype="multipart/form-data" id="add_todo">
+                        <?php echo form_open('dashbord/dashboard'); ?>
+                            <!-- <form method="post" action="add_todo" enctype="multipart/form-data" id="add_todo"> -->
                                 <div class="input-group">
-                                    <input type="text" name="todo_data" class="form-control" style="border: 1px solid #fff !IMPORTANT;" placeholder="Enter New Task...">
+                                    <input type="text" name="data" class="form-control" style="border: 1px solid #fff !IMPORTANT;" placeholder="Enter New Task...">
                                     <span class="input-group-btn">
 
                                         <button type="submit" class="btn btn-success todo-submit"><i class="fa fa-plus"></i></button>
                                     </span>
                                 </div>
-                            </form>
+                                <?php echo form_close(); ?>
                         </div>
                     </div>
                 </div>
@@ -243,7 +244,7 @@
                         <h4><a href="notice/"><i class="fa-solid fa-link"></i></a></h4>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive slimScrollDiv" style="height:600px;overflow-y:scroll">
+                        <div class="table-responsive" style="height:400px;overflow-y:scroll">
                             <table class="table table-hover table-bordered earning-box ">
                                 <thead>
                                     <tr>
@@ -284,7 +285,7 @@
                         <h4><a href="holiday/"><i class="fa-solid fa-link"></i></a></h4>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive" style="height:600px;overflow-y:scroll">
+                        <div class="table-responsive" style="height:400px;overflow-y:scroll">
                             <table class="table table-hover table-bordered earning-box">
                                 <thead>
                                     <tr>

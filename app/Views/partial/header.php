@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="<?php echo base_url()?>/assets/css/dataTables.bootstrap5.min.css" />
     <link rel="stylesheet" href="<?php echo base_url()?>/assets/css/style.css" />
+    
     <title><?= $this->renderSection('title') ?></title>
   </head>
   <body>

@@ -2,32 +2,12 @@
 <?= $this->Section('content') ?>
 <?= view("partial/flashmessage"); ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-
-    <title></title>
-</head>
-
-<body>
-    <div class="container my-5">
+    <div class="container mb-1">
         <div class="row">
             <div class="col-12">
-                <div class="my-3 text-center">
-                    <h4>Designation
-                        <hr class="text-denger">
-                    </h4>
-
-                </div>
+            <div class="card-header bg-primary">
+            <h4 class="text-white text-center"> Designation</h4>
+        </div>
                 <div class="card rounded">
                     <div class="card-body">
                         <div class="row mb-2">

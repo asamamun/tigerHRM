@@ -12,6 +12,7 @@ use App\Models\EmpaddressModel;
 use App\Models\EmpeducationModel;
 use App\Models\SettingModel;
 use App\Models\ExpModel;
+use App\Models\LeaveModel;
 
 class EmployeeController extends BaseController
 {
@@ -103,6 +104,16 @@ class EmployeeController extends BaseController
         }
         //ddd($data['empexperience']);
        // ddd($emp); 
+
+        $empleave = new LeaveModel();
+        $data['leave'] = $empleave->where('eid',$id)->find();
+        if(!count($data['leave'])) {
+            $data['leave'] = null;
+        }
+        //ddd($data['leave']);
+       // ddd($emp); 
+
+
         return view ('employee/details',$data);
     }
 
