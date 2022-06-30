@@ -1,6 +1,6 @@
 -- MariaDB dump 10.19  Distrib 10.4.24-MariaDB, for Win64 (AMD64)
 --
--- Host: localhost    Database: mangohrm
+-- Host: localhost    Database: tigerhrm
 -- ------------------------------------------------------
 -- Server version	10.4.24-MariaDB
 
@@ -80,7 +80,7 @@ CREATE TABLE `companysetup` (
 
 LOCK TABLES `companysetup` WRITE;
 /*!40000 ALTER TABLE `companysetup` DISABLE KEYS */;
-INSERT INTO `companysetup` VALUES (1,'Tiger HRM','description','Dhaka','Dhaka','01911039525','8802-123456','asamamun.web@gmail.com','http://isdbstudents.com','43545dfsdgf','Mr Tiger 213','234354554','2000-01-02','Tiger49','GNSL');
+INSERT INTO `companysetup` VALUES (1,'GNSL','description','Dhaka','Dhaka','01911039525','8802-123456','asamamun.web@gmail.com','http://isdbstudents.com','43545dfsdgf','Mr Tiger 213','234354554','2000-01-02','Tiger','GNSL49');
 /*!40000 ALTER TABLE `companysetup` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,14 +117,15 @@ DROP TABLE IF EXISTS `department`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `department` (
-  `deptid` int(5) NOT NULL AUTO_INCREMENT,
-  `deptname` varchar(40) NOT NULL,
-  `deptdesc` text NOT NULL,
-  `plantid` int(3) NOT NULL,
-  `createdate` date NOT NULL,
-  `deleted` tinyint(4) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`deptid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(512) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +134,7 @@ CREATE TABLE `department` (
 
 LOCK TABLES `department` WRITE;
 /*!40000 ALTER TABLE `department` DISABLE KEYS */;
-INSERT INTO `department` VALUES (1,'Store','factory 1 stores',1,'2016-04-30',0),(2,'Account','account dept',1,'2016-04-30',0),(3,'production','production dept',2,'2016-04-29',0),(4,'Information Technology','Information Technology',1,'2016-05-19',0),(5,'Bbb','vc',1,'2022-06-22',0),(6,'Bbb','vc',1,'2022-06-22',0);
+INSERT INTO `department` VALUES (1,'Manegment','','12345','Maneg@gmail.com','2022-06-25 17:53:15','2022-06-25 17:53:15'),(2,'Admin','','01245789','admin@gmil.com','2022-06-25 17:58:42','2022-06-25 17:58:42'),(3,'Web','','012345678','default@gmail.com','2022-06-26 09:58:12','2022-06-26 09:58:12');
 /*!40000 ALTER TABLE `department` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,13 +146,13 @@ DROP TABLE IF EXISTS `designation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `designation` (
-  `desigid` int(5) NOT NULL AUTO_INCREMENT,
-  `designame` varchar(40) NOT NULL,
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) NOT NULL,
   `desigdesc` text NOT NULL,
   `grade` varchar(15) NOT NULL,
   `createdate` date NOT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`desigid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -328,8 +329,9 @@ CREATE TABLE `emp_education` (
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `created` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='unique(empid,level)';
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_eid_level` (`eid`,`level`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='unique(empid,level)';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -338,6 +340,7 @@ CREATE TABLE `emp_education` (
 
 LOCK TABLES `emp_education` WRITE;
 /*!40000 ALTER TABLE `emp_education` DISABLE KEYS */;
+INSERT INTO `emp_education` VALUES (1,2,'SSC','Mirpur ABC School','Dhaka','Science',2006,'5','2003-01-01','2004-12-31','2022-06-28 16:07:05'),(2,2,'HSC','Mirpur ABC School','Dhaka','Science',2008,'5','2006-01-01','2007-12-31','2022-06-28 16:07:05');
 /*!40000 ALTER TABLE `emp_education` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -545,14 +548,14 @@ CREATE TABLE `employee` (
   `bankname` varchar(40) NOT NULL,
   `bankaccno` varchar(40) NOT NULL,
   `bankacctype` enum('current','savings','salary','') NOT NULL,
-  `plantid` int(3) NOT NULL,
+  `plantid` int(3) NOT NULL DEFAULT 1,
   `deptid` int(5) NOT NULL,
   `secid` int(5) NOT NULL,
   `desigid` int(5) NOT NULL,
   `deleted` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `empid` (`empid`,`tin`,`nid`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -561,8 +564,36 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'man008','Idb','-','BISEW','','0000-00-00','male','0000-00-00','married','','','','NA','','','','','','','current',1,3,2,3,0),(2,'TR202','Aman','','Ullah','','0000-00-00','male','2016-05-14','unmarried','9865432','234987','aman@gmail.com','B+','4356786465','43256435879655','Aman\'s Father','Aman\'s Mother','','','savings',1,4,4,5,0),(3,'TANJIMSTORE055','Tanjimul','','Islam','','0000-00-00','male','2016-05-15','married','346436','3464','tanjim@gmail.com','A+','46546','436546546','Father','Mother','','','current',1,4,5,4,0),(4,'SADF','Sadf','Sdfa','Sdaf','','0000-00-00','male','2016-05-02','married','346','678','em@gmail.com','AB-','3245','657','Father','Mother','','','current',1,1,3,1,0),(5,'DRIV4','First','','Driver','','0000-00-00','male','0000-00-00','married','','','','NA','','','','','','','current',1,1,2,1,0),(6,'III123','Iiii','','Iiii','','0000-00-00','male','0000-00-00','married','','','','NA','','','','','','','current',1,1,2,1,0),(7,'WW123','Www','Www','Www','','0000-00-00','male','0000-00-00','married','','','','NA','','','','','','','current',1,3,1,2,1),(8,'5444','Fdg','Fdg','Fdg','','0000-00-00','male','0000-00-00','married','','','','NA','','','','','','','current',1,1,3,1,0);
+INSERT INTO `employee` VALUES (1,'man008','Idb','-','BISEW','','0000-00-00','male','0000-00-00','married','','','','NA','','','','','','','current',1,3,2,3,0),(2,'TR202','Aman','','Ullah','','0000-00-00','male','2016-05-14','unmarried','9865432','234987','aman@gmail.com','B+','4356786465','43256435879655','Aman\'s Father','Aman\'s Mother','','','savings',1,4,4,5,0),(3,'TANJIMSTORE055','Tanjimul','','Islam','','0000-00-00','male','2016-05-15','married','346436','3464','tanjim@gmail.com','A+','46546','436546546','Father','Mother','','','current',1,4,5,4,0),(4,'SADF','Sadf','Sdfa','Sdaf','','0000-00-00','male','2016-05-02','married','346','678','em@gmail.com','AB-','3245','657','Father','Mother','','','current',1,1,3,1,0),(5,'DRIV4','First','','Driver','','0000-00-00','male','0000-00-00','married','','','','NA','','','','','','','current',1,1,2,1,0),(6,'III123','Iiii','','Iiii','','0000-00-00','male','0000-00-00','married','','','','NA','','','','','','','current',1,1,2,1,0),(7,'WW123','Www','Www','Www','','0000-00-00','male','0000-00-00','married','','','','NA','','','','','','','current',1,3,1,2,1),(8,'5444','Fdg','Fdg','Fdg','','0000-00-00','male','0000-00-00','married','','','','NA','','','','','','','current',1,1,3,1,0),(9,'123234','ASA','adf','Al-Mamun','','0000-00-00','male','0000-00-00','married','','','','','','','','','','','current',0,2,3,9,0),(10,'444','ASA4','al4','Al-Mamun4','','0000-00-00','male','0000-00-00','married','','','','','','','','','','','current',0,3,4,5,0),(12,'445','ASA55','55','Al-Mamun55','','0000-00-00','male','0000-00-00','married','','','','','','','','','','','current',0,2,1,1,0),(13,'123111','IDB','65','BISEW','','0000-00-00','male','0000-00-00','married','','','','','','','','','','','current',0,3,4,8,0),(14,'123','ASA','45','Al-Mamun','','0000-00-00','male','0000-00-00','married','','','','','','','','','','','current',1,1,1,6,0),(15,'1232355','ASA556','666','Al-Mamun666','','0000-00-00','male','0000-00-00','married','','','','','','','','','','','current',1,1,1,4,0),(16,'999','9991','9992','9993','','0000-00-00','male','0000-00-00','married','','','','','','','','','','','current',1,1,3,8,0),(18,'44477','4441','4442','4443','','0000-00-00','male','0000-00-00','married','','','','','','','','','','','current',1,3,5,4,0);
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `holidays`
+--
+
+DROP TABLE IF EXISTS `holidays`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `holidays` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(256) DEFAULT NULL,
+  `from_date` varchar(64) DEFAULT NULL,
+  `to_date` varchar(64) DEFAULT NULL,
+  `tl_days` varchar(64) DEFAULT NULL,
+  `year` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `holidays`
+--
+
+LOCK TABLES `holidays` WRITE;
+/*!40000 ALTER TABLE `holidays` DISABLE KEYS */;
+INSERT INTO `holidays` VALUES (1,'New Year\'s Eve','2021-12-30','2022-01-31','32','12-2021'),(3,'New Year\'s Day','2022-01-01','2022-01-02','1','01-2022'),(5,'Christmas','2021-12-23','2021-12-25','2','12-2021'),(6,'Thanksgiving','2021-11-23','2021-11-26','3','11-2021'),(7,'Halloween','2021-10-31','2021-10-31','0','10-2021'),(8,'Saint Patrick\'s Day','2021-03-17','2021-03-17','0','03-2021');
+/*!40000 ALTER TABLE `holidays` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -592,6 +623,32 @@ INSERT INTO `leavetype` VALUES (1,'Annual','Annual Leave','2016-05-16 00:00:00')
 UNLOCK TABLES;
 
 --
+-- Table structure for table `notices`
+--
+
+DROP TABLE IF EXISTS `notices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `notices` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `file_url` varchar(256) DEFAULT NULL,
+  `date` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notices`
+--
+
+LOCK TABLES `notices` WRITE;
+/*!40000 ALTER TABLE `notices` DISABLE KEYS */;
+INSERT INTO `notices` VALUES (1,'This is a demo notice for all!','sample_image.jpg','2022-01-01'),(2,'Office Decorum Notice to Staff Members','offnot1.png','2021-12-21'),(3,'Warning for Violation of Office Decorum','offnot2.png','2021-12-27');
+/*!40000 ALTER TABLE `notices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `plant`
 --
 
@@ -618,6 +675,36 @@ LOCK TABLES `plant` WRITE;
 /*!40000 ALTER TABLE `plant` DISABLE KEYS */;
 INSERT INTO `plant` VALUES (1,'Mango IT','Mango IT',1,'2016-04-28',0),(2,'Mango Textile','Mango Textile',1,'2016-04-28',0);
 /*!40000 ALTER TABLE `plant` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `projects`
+--
+
+DROP TABLE IF EXISTS `projects`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `projects` (
+  `id` int(14) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) DEFAULT NULL,
+  `start_date` varchar(128) DEFAULT NULL,
+  `end_date` varchar(128) DEFAULT NULL,
+  `description` varchar(1024) DEFAULT NULL,
+  `summary` varchar(512) DEFAULT NULL,
+  `status` enum('upcoming','complete','running') NOT NULL DEFAULT 'running',
+  `progress` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `projects`
+--
+
+LOCK TABLES `projects` WRITE;
+/*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+INSERT INTO `projects` VALUES (1,'Project X23','Jan 4, 2022','Feb 2, 2022',' This is just a demo project! This is just a demo project! This is just a demo project! This is just a demo project!','This is just a demo project!','upcoming',NULL),(2,'Multi User Chat System','Jan 1, 2022','April 14, 2022',' You are required to develop a system that supports multi-user chatting with the help of top level technologies.','Development of Multi-User Chatting System','running',NULL),(3,'Image Enhancement Software','Dec 10, 2021','Mar 20, 2022','You are required to develop of computer based software where end users can receive quality results on image enhancement. This particular project requires large number of technologies with proper use and its features.','Development of Image Enhancement Software','running',NULL),(4,'Customer support service operation','Dec 25, 2021','Feb 16, 2022','You are required to develop a customer support service based operation using DotNet (.Net)','Develop a customer support service operation','running',NULL),(5,'Real Estate Site','Dec 29, 2021','Mar 21, 2022',' You are required to develop a real estate website using React, Nodejs.','Develop a real-estate website','running',NULL),(6,'Graphics Illustration','Jan 2, 2022','Jan 10, 2022','You are required to make a graphic illustration for XYZ company. ','Make a graphic illustration for ....','running',NULL);
+/*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -757,13 +844,13 @@ DROP TABLE IF EXISTS `section`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `section` (
-  `secid` int(5) NOT NULL AUTO_INCREMENT,
-  `secname` varchar(40) NOT NULL,
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) NOT NULL,
   `secdesc` text NOT NULL,
-  `deptid` int(5) NOT NULL,
+  `department_id` int(5) NOT NULL,
   `createdate` date NOT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`secid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -806,6 +893,33 @@ INSERT INTO `shift` VALUES (1,'general',9,0,18,0),(2,'Shift-A',6,0,14,0),(3,'Shi
 UNLOCK TABLES;
 
 --
+-- Table structure for table `todos`
+--
+
+DROP TABLE IF EXISTS `todos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `todos` (
+  `id` int(14) NOT NULL AUTO_INCREMENT,
+  `eid` varchar(64) DEFAULT NULL,
+  `data` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `date` varchar(128) DEFAULT NULL,
+  `value` varchar(14) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `todos`
+--
+
+LOCK TABLES `todos` WRITE;
+/*!40000 ALTER TABLE `todos` DISABLE KEYS */;
+INSERT INTO `todos` VALUES (1,'Doe1753','Demo Task','2021-04-19 09:19:29pm','1'),(2,'Soy1332','Research on X1, Y2, A3','2022-01-02 08:27:25pm','0'),(3,'Soy1332','Recruit Members','2022-01-02 08:27:50pm','1'),(4,'Soy1332','Assign Task to Dev.','2022-01-02 08:28:04pm','0'),(5,'Soy1332','Attend Zoom Meetings','2022-01-03 03:10:07pm','1');
+/*!40000 ALTER TABLE `todos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -831,7 +945,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin@gmail.com','$2y$10$N.urp1wXxwH1bX4zyguve.kSIoDjMDoozcuG0Y01hcDSXViBjknUC',1,'2022-06-23 10:00:58',NULL),(2,'Imran','imran@gmail.com','$2y$10$LClC2UM8E48LwNu/X6UvMuM0JzZQlrjUJQiXNCOJRjLMeJI/fDm1W',1,'2022-06-23 16:52:56',NULL),(3,'umer','umer@mail.com','$2y$10$xJ99KthPTwyW9m0MQd3dZ.bvnlVCwM4f98Up3tU5AXrkkc/HiEeQO',1,'2022-06-23 16:55:01',NULL);
+INSERT INTO `users` VALUES (1,'admin','admin@gmail.com','$2y$10$N.urp1wXxwH1bX4zyguve.kSIoDjMDoozcuG0Y01hcDSXViBjknUC',1,'2022-06-23 10:00:58',NULL),(2,'ibrahim','ibrahim@gmail.com','$2y$10$0eWs9f1Z94jtIpkMfg7IFesKJGvzO3a7IUYvYsGM735/ckBZZzqlq',1,'2022-06-25 17:33:55',NULL),(3,'Imran','umer@mail.com','$2y$10$P45KdMV7gIuOeh/qH0v6qePHmyrWh6l7POoNSZ6jJ5aInh9NEbztS',1,'2022-06-28 15:20:04',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -844,4 +958,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-30 13:00:10
+-- Dump completed on 2022-06-30 22:00:46
