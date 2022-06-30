@@ -135,10 +135,6 @@ $routes->post('/expenses/delete/(:num)', 'ExpensesController::delete/$1');
 $routes->get('/leave', 'LeaveController::index');
 
 
-//attendance
-
-$routes->get('/attendance', 'AttendanceController::index');
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing
