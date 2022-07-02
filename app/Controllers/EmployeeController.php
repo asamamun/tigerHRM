@@ -71,10 +71,17 @@ class EmployeeController extends BaseController
     //cards
     public function card($id){
         $company = new SettingModel();
-        $_SESSION["companyinfo"] = $data['companyinfo'] = $company->find(1);        
+        $data['company'] = $company->find(1);        
         $empinfo = new EmployeeModel();
         $emp = $empinfo->find($id);
-        $_SESSION["employeeinfo"] =  $data['emp'] = $emp;
+        //ddd($emp);
+        $deptid = $emp['deptid'];
+        $d = new DepartmentModel();
+        $data['deptname'] = $d->find($deptid)['name'];
+        $desigid = $emp['desigid'];
+        $des = new DesignationModel();
+        $data['designame'] = $des->find($desigid)['name'];
+        $data['employee'] = $emp;
         return view('employee/card',$data);
     }
 

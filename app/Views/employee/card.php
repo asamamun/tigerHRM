@@ -6,9 +6,9 @@
 
     <!-- START Generate EMP CARD info  -->
     <?php
-    $companyid = $_SESSION["companyinfo"]['id'];
-    $plantid = $_SESSION["employeeinfo"]['plantid'];
-    $empid = $_SESSION["employeeinfo"]['plantid'];
+    $companyid = $company['id'];
+    $plantid = $employee['plantid'];
+    $empid = $employee['plantid'];
     $companyid = str_pad($companyid, 2, "0", STR_PAD_LEFT);
     $plantid = str_pad($plantid, 2, "0", STR_PAD_LEFT);
     $empid = str_pad($empid, 5, "0", STR_PAD_LEFT);
@@ -20,7 +20,7 @@
 
     <!-- START EMP Image Loading function  -->
     <?php
-    $empimage = "assets/images/card/" . $_SESSION["employeeinfo"]['empid'] . ".jpg";
+    $empimage = "assets/images/card/" . $employee['empid'] . ".jpg";
     if (is_file($empimage)) {
         $userphoto = site_url() . $empimage;
     } else {
@@ -37,16 +37,16 @@
 
         <div class="border border-2 roumded" id="page1-div" style="position:relative;width:355px;height:219px;">
             <img width="352" height="217" src="<?php echo site_url().'/assets/images/card/CardTemplate.png' ?>" alt="background image"/>
-            <img style="position:absolute;top:58px;left:244px;white-space:nowrap; padding:2px; background:white; border-radius:5px" width="95px" height="110px" src="<?php echo site_url() . '/assets/images/card/imran.png' ?>" alt="background image"/>
+            <img style="position:absolute;top:58px;left:244px;white-space:nowrap; padding:2px; background:white; border-radius:5px" width="95px" height="110px" src="<?php echo site_url() . '/assets/images/cardimages/'.$employee['id'].'.jpg' ?>" alt="background image"/>
             <p style="position:absolute;top:194px;left:242px;white-space:nowrap; font-size:10px; text-decoration: overline;" class="ft00"><b>Signature of Authority</b></p>     
-            <p style="position:absolute;top:73px;left:19px;white-space:nowrap" class="ft00"><b>Name:&#160;&#160;</b><?php echo $_SESSION["employeeinfo"]['fname'] . " " . $_SESSION["employeeinfo"]['lname']; ?></p>
+            <p style="position:absolute;top:73px;left:19px;white-space:nowrap" class="ft00"><b>Name:&#160;&#160;</b><?php echo $employee['fname'] . " " . $employee['lname']; ?></p>
             <img style="position:absolute;top:6px;left:4px;white-space:nowrap" width="40" height="40" src="<?php echo site_url() . '/assets/images/card/hrm-logo.png' ?>" alt="background image"/>
-            <p style="position:absolute;top:93px;left:19px;white-space:nowrap" class="ft00"><b>Designation:&#160;</b><?php echo $_SESSION["employeeinfo"]['desigid'] ?></p>
-            <p style="position:absolute;top:112px;left:19px;white-space:nowrap" class="ft00"><b>Employ&#160;No.:&#160;</b><?php echo str_pad($_SESSION["employeeinfo"]['empid'], 8, "0", STR_PAD_LEFT); ?></p>
-            <p style="position:absolute;top:132px;left:19px;white-space:nowrap" class="ft00"><b>Dept:&#160;</b><?php echo $_SESSION["employeeinfo"]['deptid'] ?></p>
+            <p style="position:absolute;top:93px;left:19px;white-space:nowrap" class="ft00"><b>Designation:&#160;</b><?php echo $designame ?></p>
+            <p style="position:absolute;top:112px;left:19px;white-space:nowrap" class="ft00"><b>Employ&#160;No.:&#160;</b><?php echo str_pad($employee['empid'], 8, "0", STR_PAD_LEFT); ?></p>
+            <p style="position:absolute;top:132px;left:19px;white-space:nowrap" class="ft00"><b>Dept:&#160;</b><?php echo $deptname ?></p>
             <p style="position:absolute;top:151px;left:19px;white-space:nowrap" class="ft00"><b>Issued&#160;Date:&#160;</b><?php echo date("F j, Y"); ?></p>
             <p style="position:absolute;top:15px;left:224px;white-space:nowrap" class=" text-primary"><b>IDENTITY&#160;CARD</b></p>
-            <p style="position:absolute;top:15px;left:51px;white-space:nowrap" class="text-info text-uppercase"><b><?php echo $_SESSION["companyinfo"]['companyname']; ?></b></p>
+            <p style="position:absolute;top:15px;left:51px;white-space:nowrap" class="text-info text-uppercase"><b><?php echo $company['companyname']; ?></b></p>
             <p style="position:absolute;top:35px;left:51px;white-space:nowrap" class="text-muted">with the best policy</p>
             <canvas style="position:absolute;top:173px;left:10x;white-space:nowrap; width:230px; height: 36px;" id="barcodeTarget">
 
