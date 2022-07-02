@@ -32,7 +32,6 @@ if (! $this->validate($rules)) {
 
 
         $email = $this->request->getPost('email');
-        
         $pass = $this->request->getPost('password');
         $user = new UserModel();
         $info = $user->where("email",$email)->first();
@@ -44,6 +43,7 @@ if (! $this->validate($rules)) {
 //set user info into session
 $userd = [
     'username'  => $info['name'],
+    // 'email'  => $info['email'],
     'id'  => $info['id'],
     'role'     => $info['role'],
     'logged_in' => true,

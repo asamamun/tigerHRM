@@ -183,6 +183,4 @@ class UsersController extends BaseController
             return redirect()->to(base_url('/users'));
         }
     }
-
-
 }

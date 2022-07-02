@@ -31,7 +31,8 @@
                             <div class="align-self-center">
                                 <h3 class="text-white">
                                     Employees</h3>
-                                <a href="<?php echo base_url(); ?>/employee" class="text-primary">View Details (300)</a>
+
+                                <a href="<?php echo base_url(); ?>/employee" class="text-primary">View Details (<?= $_SESSION["allemployees"]; ?>)</a>
                             </div>
                         </div>
                     </div>
@@ -48,7 +49,7 @@
                                 <h3 class="text-white">
                                     Department
                                 </h3>
-                                <a href="<?php echo base_url(); ?>/department" class="text-info">View Details (30)</a>
+                                <a href="<?php echo base_url(); ?>/department" class="text-info">View Details (<?= $_SESSION["alldepartments"]; ?>)</a>
                             </div>
                         </div>
                     </div>
@@ -65,7 +66,7 @@
                                 <h3 class="text-white">
                                     Projects
                                 </h3>
-                                <a href="<?php echo base_url(); ?>/project/" class="text-info">View Details (100)</a>
+                                <a href="<?php echo base_url(); ?>/project/" class="text-info">View Details (<?= $_SESSION["allprojects"]; ?>)</a>
                             </div>
                         </div>
                     </div>
@@ -82,7 +83,7 @@
                                 <h3 class="text-white">
                                     Leave
                                 </h3>
-                                <a href="<?php echo base_url(); ?>/leave/" class="text-primary">View Details (10)</a>
+                                <a href="<?php echo base_url(); ?>/leave/" class="text-primary">View Details (<?= $_SESSION["allleaves"]; ?>))</a>
                             </div>
                         </div>
                     </div>
@@ -220,16 +221,16 @@
                             </ul>
                         </div>
                         <div class="new-todo">
-                        <?php echo form_open('dashbord/dashboard'); ?>
+                            <?php echo form_open('dashbord/dashboard'); ?>
                             <!-- <form method="post" action="add_todo" enctype="multipart/form-data" id="add_todo"> -->
-                                <div class="input-group">
-                                    <input type="text" name="data" class="form-control" style="border: 1px solid #fff !IMPORTANT;" placeholder="Enter New Task...">
-                                    <span class="input-group-btn">
+                            <div class="input-group">
+                                <input type="text" name="data" class="form-control" style="border: 1px solid #fff !IMPORTANT;" placeholder="Enter New Task...">
+                                <span class="input-group-btn">
 
-                                        <button type="submit" class="btn btn-success todo-submit"><i class="fa fa-plus"></i></button>
-                                    </span>
-                                </div>
-                                <?php echo form_close(); ?>
+                                    <button type="submit" class="btn btn-success todo-submit"><i class="fa fa-plus"></i></button>
+                                </span>
+                            </div>
+                            <?php echo form_close(); ?>
                         </div>
                     </div>
                 </div>
@@ -280,7 +281,7 @@
                     <div class="card-header bg-secondary d-flex justify-content-between">
                         <h4 class="text-white">
                             Holidays
-                            
+
                         </h4>
                         <h4><a href="holiday/"><i class="fa-solid fa-link"></i></a></h4>
                     </div>

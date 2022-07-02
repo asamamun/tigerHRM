@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+use CodeIgniter\Session\Session;
 use App\Controllers\BaseController;
 use CodeIgniter\Debug\Toolbar\Collectors\Views;
 use App\Models\DepartmentModel;
@@ -23,7 +23,8 @@ class EmployeeController extends BaseController
     {
         $employee = new EmployeeModel();
         $allemployee = $employee->findAll();
-        $data['employee'] = $allemployee;        
+        $data['employee'] = $allemployee;
+        $_SESSION["allemployees"] = $employee->countAllResults();
         return view("employee/index", $data);
     }
     //create
@@ -70,10 +71,10 @@ class EmployeeController extends BaseController
     //cards
     public function card($id){
         $company = new SettingModel();
-        $data['companyinfo'] = $company->find(1);        
+        $_SESSION["companyinfo"] = $data['companyinfo'] = $company->find(1);        
         $empinfo = new EmployeeModel();
         $emp = $empinfo->find($id);
-        $data['emp'] = $emp;
+        $_SESSION["employeeinfo"] =  $data['emp'] = $emp;
         return view('employee/card',$data);
     }
 

@@ -1,50 +1,62 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\ProjectModel;
 use App\Models\HolidayModel;
 use App\Models\NoticeModel;
 use App\Models\TodoModel;
-use App\Models\UserModel;
+use App\Models\EmployeeModel;
+use App\Models\DepartmentModel;
+use App\Models\LeaveModel;
+use CodeIgniter\Session\Session;
 
 class Home extends BaseController
-{ 
+{
+    public $nedata;
     public function __construct()
-    {        
+    {
         helper('form');
     }
     public function index()
     {
-        if($this->checkauth()){
-        $project = new ProjectModel();
-        $allproject = $project->findAll();
-        $data['project'] = $allproject;
-        
-        // holiday
-        $holiday = new HolidayModel();
-        $allholiday = $holiday->findAll();
-        $data['holidays'] = $allholiday; 
+        if ($this->checkauth()) {
 
-// notice
-        $notice = new NoticeModel();
-        $allnotice = $notice->findAll();
-        $data['notices'] = $allnotice;
-// todolist
-        $todolist = new TodoModel();
-        $alltodo = $todolist->findAll();
-        $data['todo'] = $alltodo;
+            $project = new ProjectModel();
+            $allproject = $project->findAll();
+            $data['project'] = $allproject;
+            $_SESSION["allprojects"] = $project->countAllResults();
 
-        $usr = new UserModel();
-        $allusr = $usr->findAll();
-        $data['usrs'] = $allusr;
 
-        return view("dashboard/dashboard", $data);
+            // holiday
+            $holiday = new HolidayModel();
+            $allholiday = $holiday->findAll();
+            $data['holidays'] = $allholiday;
 
-        }
-        else{
+            // notice
+            $notice = new NoticeModel();
+            $allnotice = $notice->findAll();
+            $data['notices'] = $allnotice;
+            // todolist
+            $todolist = new TodoModel();
+            $alltodo = $todolist->findAll();
+            $data['todo'] = $alltodo;
+
+            // EmployeeModel || count all employees rows
+            $employee = new EmployeeModel();
+            $_SESSION["allemployees"] = $employee->countAllResults();
+
+            // DepartmentModel
+            $department = new DepartmentModel();
+            $_SESSION["alldepartments"] = $department->countAllResults();
+
+            // LeaveModel
+            $empleave = new LeaveModel();
+            $_SESSION["allleaves"] = $empleave->countAllResults();
+            // ============================================
+            return view("dashboard/dashboard", $data);
+        } else {
             return redirect("login");
         }
-     
     }
-
 }
