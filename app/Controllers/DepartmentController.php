@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\DepartmentModel;
+use CodeIgniter\Session\Session;
 
 class DepartmentController extends BaseController
 {
@@ -12,6 +13,7 @@ class DepartmentController extends BaseController
         $department = new DepartmentModel();
         $alldepartment = $department->findAll();
         $data['department'] = $alldepartment;
+        $_SESSION["alldepartments"] = $department->countAllResults();
         return view("department/index", $data);
     }
     public function create()
@@ -42,7 +44,6 @@ class DepartmentController extends BaseController
 
         public function update($id){
             $department = new DepartmentModel();
-            
             $data = [
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),

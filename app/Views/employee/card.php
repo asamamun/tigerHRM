@@ -1,41 +1,14 @@
-<!-- 
-######################################################################################################
-
-Developed by          : Muhammad Anwar Hossen, WPSI, R-26, IDB-BISEW
-View Name             : CardPrintView (Employee ID Card)
-Mobile No             : ++01923-020000
-Email Address         : anwardote@gmail.com
-
-#######################################################################################################
-
--->
-
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-    <head>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <style type="text/css">
-            <!--
-            p {margin: 0; padding: 0;}	.ft00{font-size:9px;font-family:Times;color:#2b394c;}
-            .ft01{font-size:9px;font-family:Times;color:#2b394c;}
-            .ft02{font-size:12px;font-family:Times;color:#2b394c;}
-            .ft03{font-size:8px;font-family:Times;color:#2b394c;}
-            -->
-        </style>
-
-        <!-- JS file for barcode dependence  -->		
-        <script src="<?php echo site_url(); ?>assets/jquery/jquery-2.1.4.min.js"></script>
-        <script src="<?php echo site_url(); ?>assets/upload/emp_card/JsBarcode.all.min.js"></script>	
-        <!-- END JS file for barcode dependence  -->		
-    </head>
+<?= $this->extend('layouts/default'); ?>
+<?= $this->section('title'); ?> Dashboard <?= $this->endSection(); ?>
+<!-- content section start -->
+<?= $this->section('content'); ?>
 
 
     <!-- START Generate EMP CARD info  -->
     <?php
-    $companyid = $emp_company_info[0]->id;
-    $plantid = $emp_card_info[0]->plantid;
-    $empid = $emp_card_info[0]->id;
+    $companyid = $_SESSION["companyinfo"]['id'];
+    $plantid = $_SESSION["employeeinfo"]['plantid'];
+    $empid = $_SESSION["employeeinfo"]['plantid'];
     $companyid = str_pad($companyid, 2, "0", STR_PAD_LEFT);
     $plantid = str_pad($plantid, 2, "0", STR_PAD_LEFT);
     $empid = str_pad($empid, 5, "0", STR_PAD_LEFT);
@@ -47,11 +20,11 @@ Email Address         : anwardote@gmail.com
 
     <!-- START EMP Image Loading function  -->
     <?php
-    $empimage = "assets/upload/emp_photo/" . $emp_card_info[0]->empid . ".jpg";
+    $empimage = "assets/images/card/" . $_SESSION["employeeinfo"]['empid'] . ".jpg";
     if (is_file($empimage)) {
         $userphoto = site_url() . $empimage;
     } else {
-        $userphoto = site_url() . "assets/upload/emp_photo/default.png";
+        $userphoto = site_url() . "assets/images/card/default.png";
     }
     ?>
     <!-- END EMP Image Loading function  -->
@@ -59,33 +32,34 @@ Email Address         : anwardote@gmail.com
 
 
 
-    <body bgcolor="#A0A0A0" vlink="blue" link="blue">
+    <section class="d-flex justify-content-between mt-5 ms-5">
         <!-- START EMP ID Frame  -->	
 
-        <div id="page1-div" style="position:relative;width:352px;height:217px;">
-            <img width="352" height="217" src="<?php echo site_url() . 'assets/upload/emp_card/CardTemplate.png' ?>" alt="background image"/>
-            <img style="position:absolute;top:60px;left:244px;white-space:nowrap; padding:2px; background:white; border-radius:2px" width="95px" height="110px" src="<?php echo $userphoto; ?>" alt="background image"/>
-            <p style="position:absolute;top:197px;left:242px;white-space:nowrap; font-size:10px; text-decoration: overline;" class="ft00"><b>Signature of Authority</b></p>     
-            <p style="position:absolute;top:78px;left:19px;white-space:nowrap" class="ft00"><b>Name:&#160;&#160;</b><?php echo $emp_card_info[0]->fname . " " . $emp_card_info[0]->mname . " " . $emp_card_info[0]->lname ?></p>
-            <img style="position:absolute;top:6px;left:4px;white-space:nowrap" width="40" height="40" src="<?php echo site_url() . 'assets/upload/emp_card/companylogo.png' ?>" alt="background image"/>
-            <p style="position:absolute;top:98px;left:19px;white-space:nowrap" class="ft00"><b>Designation:&#160;</b><?php echo $emp_card_info[0]->designame ?></p>
-            <p style="position:absolute;top:117px;left:19px;white-space:nowrap" class="ft00"><b>Employ&#160;No.:&#160;</b><?php echo str_pad($emp_card_info[0]->empid, 8, "0", STR_PAD_LEFT); ?></p>
-            <p style="position:absolute;top:137px;left:19px;white-space:nowrap" class="ft00"><b>Dept:&#160;</b><?php echo $emp_card_info[0]->deptname ?></p>
-            <p style="position:absolute;top:156px;left:19px;white-space:nowrap" class="ft00"><b>Issued&#160;Date:&#160;</b><?php echo date("F j, Y"); ?></p>
-            <p style="position:absolute;top:20px;left:244px;white-space:nowrap" class="ft02"><b>IDENTITY&#160;CARD</b></p>
-            <p style="position:absolute;top:17px;left:51px;white-space:nowrap" class="ft02"><b><?php echo $emp_company_info[0]->companyname ?></b></p>
-            <p style="position:absolute;top:35px;left:51px;white-space:nowrap" class="ft03">Leading the Digital Entertainment Revolution</p>
+        <div class="border border-2 roumded" id="page1-div" style="position:relative;width:355px;height:219px;">
+            <img width="352" height="217" src="<?php echo site_url().'/assets/images/card/CardTemplate.png' ?>" alt="background image"/>
+            <img style="position:absolute;top:58px;left:244px;white-space:nowrap; padding:2px; background:white; border-radius:5px" width="95px" height="110px" src="<?php echo site_url() . '/assets/images/card/imran.png' ?>" alt="background image"/>
+            <p style="position:absolute;top:194px;left:242px;white-space:nowrap; font-size:10px; text-decoration: overline;" class="ft00"><b>Signature of Authority</b></p>     
+            <p style="position:absolute;top:73px;left:19px;white-space:nowrap" class="ft00"><b>Name:&#160;&#160;</b><?php echo $_SESSION["employeeinfo"]['fname'] . " " . $_SESSION["employeeinfo"]['lname']; ?></p>
+            <img style="position:absolute;top:6px;left:4px;white-space:nowrap" width="40" height="40" src="<?php echo site_url() . '/assets/images/card/hrm-logo.png' ?>" alt="background image"/>
+            <p style="position:absolute;top:93px;left:19px;white-space:nowrap" class="ft00"><b>Designation:&#160;</b><?php echo $_SESSION["employeeinfo"]['desigid'] ?></p>
+            <p style="position:absolute;top:112px;left:19px;white-space:nowrap" class="ft00"><b>Employ&#160;No.:&#160;</b><?php echo str_pad($_SESSION["employeeinfo"]['empid'], 8, "0", STR_PAD_LEFT); ?></p>
+            <p style="position:absolute;top:132px;left:19px;white-space:nowrap" class="ft00"><b>Dept:&#160;</b><?php echo $_SESSION["employeeinfo"]['deptid'] ?></p>
+            <p style="position:absolute;top:151px;left:19px;white-space:nowrap" class="ft00"><b>Issued&#160;Date:&#160;</b><?php echo date("F j, Y"); ?></p>
+            <p style="position:absolute;top:15px;left:224px;white-space:nowrap" class=" text-primary"><b>IDENTITY&#160;CARD</b></p>
+            <p style="position:absolute;top:15px;left:51px;white-space:nowrap" class="text-info text-uppercase"><b><?php echo $_SESSION["companyinfo"]['companyname']; ?></b></p>
+            <p style="position:absolute;top:35px;left:51px;white-space:nowrap" class="text-muted">with the best policy</p>
             <canvas style="position:absolute;top:173px;left:10x;white-space:nowrap; width:230px; height: 36px;" id="barcodeTarget">
 
         </div>
 
         <!-- END EMP ID Frame  -->			
-    </body>
-</html>
+    </section>
+    <?= $this->endSection(); ?>
+        <!-- content section end-->
 
-
-<!-- START Barcode jquery function -->
-<script>
+        <?= $this->section('scripts'); ?>
+        <script>
+         
     /*
      var defaultValues = {
      CODE128 : "Example 1234",
@@ -135,4 +109,9 @@ Email Address         : anwardote@gmail.com
 
 //JsBarcode("#barcodeTarget", "<?php echo $CardBarCodeID ?>");
 </script>
+        
+        <?= $this->endSection(); ?>
+
+<!-- START Barcode jquery function -->
+
 <!-- START Barcode jquery function -->

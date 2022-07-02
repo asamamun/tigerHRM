@@ -92,9 +92,7 @@ $routes->get('/project', 'ProjectController::index');
 $routes->get('/holiday', 'HolidayController::index');
 $routes->get('/notice', 'NociceController::index');
 $routes->get('/todo', 'TodoController::index');
-
-
-$routes->get('/search', 'AutocompleteController::index');
+$routes->get('/countall', 'CountAll::index');
 
 
 
