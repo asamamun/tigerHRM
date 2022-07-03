@@ -18,34 +18,34 @@ if (!count($emp)) {
     <div class="row bg-dark">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Personal Information:</button>
+            <button class="nav-link active link-light" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Personal Information</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Address</button>
+            <button class="nav-link link-light" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Address</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">Education</button>
+            <button class="nav-link link-light" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">Education</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="experience-tab" data-bs-toggle="tab" data-bs-target="#experience-tab-pane" type="button" role="tab" aria-controls="experience-tab-pane" aria-selected="false">Work Experience</button>
+            <button class="nav-link link-light" id="experience-tab" data-bs-toggle="tab" data-bs-target="#experience-tab-pane" type="button" role="tab" aria-controls="experience-tab-pane" aria-selected="false">Work Experience</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="leave-tab" data-bs-toggle="tab" data-bs-target="#leave-tab-pane" type="button" role="tab" aria-controls="leave-tab-pane" aria-selected="false">Leave</button>
+            <button class="nav-link link-light" id="leave-tab" data-bs-toggle="tab" data-bs-target="#leave-tab-pane" type="button" role="tab" aria-controls="leave-tab-pane" aria-selected="false">Leave</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="picture-tab" data-bs-toggle="tab" data-bs-target="#picture-tab-pane" type="button" role="tab" aria-controls="picture-tab-pane" aria-selected="false">Profile Picture</button>
+            <button class="nav-link link-light" id="picture-tab" data-bs-toggle="tab" data-bs-target="#picture-tab-pane" type="button" role="tab" aria-controls="picture-tab-pane" aria-selected="false">Profile Picture</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="leave-tab" data-bs-toggle="tab" data-bs-target="#attachment-tab-pane" type="button" role="tab" aria-controls="attachment-tab-pane" aria-selected="false">Attachment</button>
+            <button class="nav-link link-light" id="leave-tab" data-bs-toggle="tab" data-bs-target="#attachment-tab-pane" type="button" role="tab" aria-controls="attachment-tab-pane" aria-selected="false">Attachment</button>
+        </li>
+        <li class="nav-item ink-light" role="presentation">
+            <button class="nav-link link-light" id="attachment-tab" data-bs-toggle="tab" data-bs-target="#attendance-tab-pane" type="button" role="tab" aria-controls="attendance-tab-pane" aria-selected="false">Attendance</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="attachment-tab" data-bs-toggle="tab" data-bs-target="#attendance-tab-pane" type="button" role="tab" aria-controls="attendance-tab-pane" aria-selected="false">Attendance</button>
+            <button class="nav-link link-light" id="ahievement-tab" data-bs-toggle="tab" data-bs-target="#ahievement-tab-pane" type="button" role="tab" aria-controls="ahievement-tab-pane" aria-selected="false">Ahievement</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="ahievement-tab" data-bs-toggle="tab" data-bs-target="#ahievement-tab-pane" type="button" role="tab" aria-controls="ahievement-tab-pane" aria-selected="false">Ahievement</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+            <button class="nav-link link-light" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
         </li>
     </ul>
     </div>

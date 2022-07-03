@@ -11797,3 +11797,8 @@ html body .m-t-20 {
  .bg-lightyellow{
    background-color: lightyellow!important;
   }
+
+  /* fix-footer bottom */
+  .fix-footer{
+    margin-left: 220px;
+  }
