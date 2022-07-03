@@ -1,7 +1,7 @@
 
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <img src="assets/images/logo/hrm-logo.png" class="rounded-circle ps-1" width="40px" alt="">
+            <img src="<?= base_url() ?>/assets/images/logo/hrm-logo.png" class="rounded-circle ps-1" width="40px" alt="">
             <?php echo anchor('/',"tiger HRM",['class'=>'navbar-brand ps-1 text-info text-uppercase fw-bold']); ?>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-lg-0 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
@@ -17,7 +17,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="navbarDropdown">
-                        <div><img src="assets/images/users/imran.png" class="rounded-circle rtl-img" width="60px" alt=""></div>
+                        <div><img src="<?= base_url() ?>/assets/images/users/imran.png" class="rounded-circle rtl-img" width="60px" alt=""></div>
                         <p><?= session()->get('username') ?></p>
                         <li><a class="dropdown-item" href="#!"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>

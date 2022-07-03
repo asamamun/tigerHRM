@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-between bg-primary border-bottom">
         <button class="btn btn-primary"><h4>Work Experience:</h4></button>
-        <div>
-            <button id="expBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
-        </div>
+ 
+        <button id="expBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
+       
     </div>
     <fieldset id="experiencecontainer">
         <?php echo form_open('education/add'); ?>

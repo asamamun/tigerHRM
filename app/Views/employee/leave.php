@@ -3,7 +3,7 @@
         <button id="eduBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
     </div>
     <fieldset id="educationcontainer">
-        <div class="table-responsive col-6">
+        <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover table-responsive">
             
     <!-- loop -->

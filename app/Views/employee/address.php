@@ -2,7 +2,7 @@
         <button class="btn btn-primary"><h4>Employee Address:</h4></button>
         <button id="adrBtn" class="btn btn-primary btn-lg">Edit</button>
     </div>
-    <fieldset id="addresscontainer" disabled>
+    <fieldset id="addresscontainer">
         <?php echo form_open('employee/address'); ?>
         <?php echo form_hidden('id', $emp['id']); ?>
         <div class="row">
