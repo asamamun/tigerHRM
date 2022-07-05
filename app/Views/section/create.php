@@ -19,6 +19,11 @@
                         <input type="hidden" value="" name="secid"/> 
                         <div class="form-body">
                             <div class="form-group">
+                            <div class="col-sm-4">
+
+                                    <a href="<?= base_url('section') ?>" class="btn btn-danger float-left">Back</a>
+
+                            </div> 
                                 <label class="control-label col-md-3">Section Title</label>
                                 <div class="col-md-12">
                                     <input name="name" placeholder="Section Title here." class="form-control" type="text">
@@ -47,7 +52,7 @@
                         </div>
                         <div class="pull-right" style="padding-right:20px;">  
                             <button type="submit" id="store"  class="btn btn-primary">Save</button>
-                            <button type="button"  class="btn btn-danger" >Cancel</button>
+                            <!-- <button type="button"  class="btn btn-danger" >Cancel</button> -->
                         </div>  
                     <?php echo form_close(); ?>
                 </div>

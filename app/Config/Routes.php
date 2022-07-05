@@ -137,6 +137,10 @@ $routes->get('/leave', 'LeaveController::index');
 //attendance
 $routes->get('/attendance', 'AttendanceController::index');
 $routes->post('/attendance', 'AttendanceController::store');
+$routes->get('/attendance/report', 'AttendanceController::report');
+$routes->get('/attendance/addattendance', 'AttendanceController::addattendance');
+$routes->get('/attendance/attendancelist', 'AttendanceController::attendancelist');
+
 
 
 /*

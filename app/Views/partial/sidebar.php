@@ -72,9 +72,9 @@
                             </a>
                             <div class="collapse" id="AttendanceLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?= base_url() ?>/attList">Attendance list</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/addAttendance">Add Attendance</a>
-                                    <a class="nav-link" href="<?= base_url() ?>/attendanceReport">Attendance Report</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/attendance/attendancelist">Attendance list</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/attendance/addattendance">Add Attendance</a>
+                                    <a class="nav-link" href="<?= base_url() ?>/attendance/report">Attendance Report</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#lvLayouts" aria-expanded="false" aria-controls="collapseLayouts">

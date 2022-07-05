@@ -24,6 +24,17 @@ class AttendanceController extends BaseController
         else echo "0";
 
     }
+
+    public function report(){
+        return view('attendance/report');
+    }
+
+    public function addattendance(){
+        return view('attendance/addattendance');
+    }
+    public function attendancelist(){
+        return view('attendance/attendancelist');
+    }
 }
 
 /* attendance menu
