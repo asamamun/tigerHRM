@@ -6,7 +6,17 @@
 	<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>    
 </head>
 <body>
-  
+  <div>
+    <pre>
+     attendance menu
+-attendance report(button: daily, monthly, individual)
+daily - input(date), submit
+monthly - month, year, submit
+individual - empid , startdate, enddate, submit
+
+between and sql 
+    </pre>
+  </div>
     <h1>JQuery HTML5 QR Code Scanner using Instascan JS Example - ItSolutionStuff.com</h1>
     <input id="csrf" type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
     <select name="type" id="type">

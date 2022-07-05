@@ -25,3 +25,11 @@ class AttendanceController extends BaseController
 
     }
 }
+
+/* attendance menu
+-attendance report(button: daily, monthly, individual)
+daily - input(date), submit
+monthly - month, year, submit
+individual - empid , startdate, enddate, submit
+
+between and sql */
