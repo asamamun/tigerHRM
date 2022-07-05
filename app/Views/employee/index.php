@@ -52,7 +52,7 @@
                                             <td class="text-center">
                                                 <?= anchor('employee/details/' . $employee ['id'], 'Details', ['class' => 'btn btn-primary rounded mx-1']); ?>
 
-                                                <?= anchor('employee/card/' . $employee ['id'], 'Card', ['class' => 'btn btn-info rounded mx-1']); ?>
+                                                <?= anchor('employee/card/' . $employee ['id'], 'Card', ['target' => '_blank','class' => 'btn btn-info rounded mx-1']); ?>
 
                                                 <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
                                                 

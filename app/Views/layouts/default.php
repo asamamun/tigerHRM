@@ -1,4 +1,3 @@
-<? session_start() ?>
 <?php echo view("partial/header"); ?>
 <?= view("partial/sidebar"); ?>
 <!-- content -->

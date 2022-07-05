@@ -14,6 +14,7 @@ use App\Models\SettingModel;
 use App\Models\ExpModel;
 use App\Models\LeaveModel;
 use App\Models\EmployeeAddress;
+use Dompdf\Dompdf;
 
 class EmployeeController extends BaseController
 {
@@ -182,5 +183,14 @@ class EmployeeController extends BaseController
         else
         return redirect()->to(base_url('employee/add'))->with('status','Error') ; */
         echo "add data";
+    }
+    public function cardpdf(){
+
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml(view('employee/card/. $employee ["id"]'));
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+        $dompdf->stream();
+        
     }
 }
