@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class EmployeeModel extends Model
+class AttendanceModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'employee';
+    protected $table            = 'attendance';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['empid','fname','mname','lname','deptid','secid','desigid','loginname','password'];
+    protected $allowedFields    = ['type','empid'];
 
     // Dates
     protected $useTimestamps = false;

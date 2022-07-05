@@ -27,8 +27,8 @@ $options = new QROptions(
     $plantid = str_pad($plantid, 2, "0", STR_PAD_LEFT);
     $empid = str_pad($empid, 5, "0", STR_PAD_LEFT);
     // $qrcode = (new QRCode($options))->render('$companyid . "-" . "-" . $empid;');
-    $qrcode = (new QRCode($options))->render($companyid . $empid);
-    $qrcode2 = (new QRCode($options))->render($companyid .$plantid. $empid);
+    $qrcode = (new QRCode($options))->render($empid);
+    $qrcode2 = (new QRCode($options))->render($empid);
     ?>
 
     <!-- END Generate EMP CARD info  -->

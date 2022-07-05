@@ -60,6 +60,14 @@
     <label for="designation" class="form-label">Designation</label>
     <?php echo form_dropdown('desigid',$desig,'',['class' => 'form-control']) ?>
   </div>
+  <div class="col-6 bg-info">
+    <label for="loginname" class="form-label">Login Name</label>
+    <input type="text" id="loginname" name="loginname" placeholder="Login name" class="form-control">
+  </div>
+  <div class="col-6 bg-info">
+    <label for="password" class="form-label">Password</label>
+    <input type="text" id="password" name="password" placeholder="Password"  class="form-control">
+  </div>
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Add</button>
   </div>

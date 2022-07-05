@@ -60,7 +60,9 @@ class EmployeeController extends BaseController
             'lname'=>$this->request->getPost('lname'),
             'deptid'=>$this->request->getPost('deptid'),
             'secid'=>$this->request->getPost('secid'),
-            'desigid'=>$this->request->getPost('desigid')
+            'desigid'=>$this->request->getPost('desigid'),
+            'loginname'=>$this->request->getPost('loginname'),
+            'password'=>$this->request->getPost('password'),
         ];
         //ddd($data);
         if($emp->save($data))
