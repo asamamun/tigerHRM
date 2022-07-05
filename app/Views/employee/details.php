@@ -1,9 +1,9 @@
 <?= $this->extend('layouts/default'); ?>
 <?= $this->Section('content') ?>
 <!--  -->
-<span class="btn btn-info">
+<div class="btn btn-info">
     <h1>Employee Detail Information</h1>
-</span>
+</div>
 <?= view("partial/flashmessage"); ?>
 <?php
 if (!count($emp)) {
@@ -15,7 +15,7 @@ if (!count($emp)) {
 
 
     <!-- personal information start -->
-    <div class="row bg-dark">
+    <div class=" bg-dark">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active link-light" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Personal Information</button>
@@ -43,9 +43,6 @@ if (!count($emp)) {
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link link-light" id="ahievement-tab" data-bs-toggle="tab" data-bs-target="#ahievement-tab-pane" type="button" role="tab" aria-controls="ahievement-tab-pane" aria-selected="false">Ahievement</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link link-light" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
         </li>
     </ul>
     </div>

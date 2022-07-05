@@ -93,6 +93,8 @@ $routes->get('/holiday', 'HolidayController::index');
 $routes->get('/notice', 'NociceController::index');
 $routes->get('/todo', 'TodoController::index');
 $routes->get('/countall', 'CountAll::index');
+$routes->get('/employee/cardpdf', 'DompdfController::index');
+$routes->get('/employee/cardpdf', 'DompdfController::htmlToPDF');
 
 
 

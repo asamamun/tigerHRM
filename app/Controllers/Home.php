@@ -9,7 +9,9 @@ use App\Models\TodoModel;
 use App\Models\EmployeeModel;
 use App\Models\DepartmentModel;
 use App\Models\LeaveModel;
+use App\Models\SettingModel;
 use CodeIgniter\Session\Session;
+use Faker\Provider\ar_EG\Company;
 
 class Home extends BaseController
 {
@@ -46,10 +48,12 @@ class Home extends BaseController
             $employee = new EmployeeModel();
             $_SESSION["allemployees"] = $employee->countAllResults();
 
+            $company=new SettingModel();
+            $_SESSION["companies"] = $company->findAll();
+
             // DepartmentModel
             $department = new DepartmentModel();
             $_SESSION["alldepartments"] = $department->countAllResults();
-
             // LeaveModel
             $empleave = new LeaveModel();
             $_SESSION["allleaves"] = $empleave->countAllResults();

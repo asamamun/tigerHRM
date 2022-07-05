@@ -4,7 +4,9 @@
 <!-- content -->
 <?= $this->renderSection('content') ?>
 <!-- scripts -->
-<footer class="py-4 bg-light mt-4 border-top">
+
+
+<footer class="py-4 bg-light mt-5 border-top">
     <div class="container-fluid px-4">
         <div class="d-flex align-items-center justify-content-between small">
             <div class="text-muted">Copyright &copy; <?= date('Y') ?> IsDB Students, Round-49</div>

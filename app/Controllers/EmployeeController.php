@@ -13,6 +13,7 @@ use App\Models\EmpeducationModel;
 use App\Models\SettingModel;
 use App\Models\ExpModel;
 use App\Models\LeaveModel;
+use App\Models\EmployeeAddress;
 
 class EmployeeController extends BaseController
 {
@@ -60,9 +61,7 @@ class EmployeeController extends BaseController
             'lname'=>$this->request->getPost('lname'),
             'deptid'=>$this->request->getPost('deptid'),
             'secid'=>$this->request->getPost('secid'),
-            'desigid'=>$this->request->getPost('desigid'),
-            'loginname'=>$this->request->getPost('loginname'),
-            'password'=>$this->request->getPost('password'),
+            'desigid'=>$this->request->getPost('desigid')
         ];
         //ddd($data);
         if($emp->save($data))
@@ -76,6 +75,10 @@ class EmployeeController extends BaseController
         $data['company'] = $company->find(1);        
         $empinfo = new EmployeeModel();
         $emp = $empinfo->find($id);
+        $data['employee'] = $emp;
+        $empaddress = new EmployeeAddress();
+        $empadrs = $empaddress->find($id);
+        $data['empaddress'] = $empadrs;
         //ddd($emp);
         $deptid = $emp['deptid'];
         $d = new DepartmentModel();
@@ -83,7 +86,7 @@ class EmployeeController extends BaseController
         $desigid = $emp['desigid'];
         $des = new DesignationModel();
         $data['designame'] = $des->find($desigid)['name'];
-        $data['employee'] = $emp;
+        
         return view('employee/card',$data);
     }
 
@@ -126,8 +129,41 @@ class EmployeeController extends BaseController
 
         return view ('employee/details',$data);
     }
-
-
+      //  save emp  personal information
+    public function save($id){
+        $empup = new EmployeeModel();
+        $id = $this->request->getPost('id');
+        $data = [        
+        "fname" => $this->request->getPost('empid'),
+        "fname" => $this->request->getPost('fname'),
+        "mname" => $this->request->getPost('mname'),
+        "lname" => $this->request->getPost('lname'),
+        "dln" => $this->request->getPost('dln'),
+        "dl_expdate" => $this->request->getPost('dl_expdate'),
+        "gender" => $this->request->getPost('gender'),
+        "dob" => $this->request->getPost('dob'),
+        "maritalstatus" => $this->request->getPost('maritalstatus'),
+        "phone" => $this->request->getPost('phone'),
+        "homephone" => $this->request->getPost('homephone'),
+        "email" => $this->request->getPost('email'),
+        "blood" => $this->request->getPost('blood'),
+        "blood" => $this->request->getPost('tin'),
+        "nid" => $this->request->getPost('nid'),
+        "mothersname" => $this->request->getPost('mothersname'),
+        "mothersname" => $this->request->getPost('mothersname'),
+        "bankname" => $this->request->getPost('bankname'),
+        "bankaccno" => $this->request->getPost('bankaccno'),
+        "bankacctype" => $this->request->getPost('bankacctype'),
+        "plantid" => $this->request->getPost('plantid'),
+        "deptid" => $this->request->getPost('deptid'),
+        "secid" => $this->request->getPost('secid'),
+        "deptid" => $this->request->getPost('desigid'),
+        ];
+        // var_dump($data);
+        // exit;
+        $empup->update($id, $data);
+        return redirect()->back()->with('message', 'Setting updated!');
+    }
 
     public function addeducation(){
 /*         $emp = new EmployeeModel();
