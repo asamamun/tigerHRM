@@ -1,7 +1,28 @@
-<title>ID Card</title>
-<?= View('partial/header'); ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <? session_start() ?>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="<?php echo base_url()?>/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url()?>/assets/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url()?>/assets/css/style.css" />
+    
+    <title>ID Card 123 </title>
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url()?>/favicon.ico">
+    <style>
+        @media print {
+            #topbar{ display: none; opacity: 0;}
+        }
+        
+    </style>
+  </head>
+  <body>
 
-<div class="btn d-flex justify-content-between">
+<div id="topbar" class="btn d-flex justify-content-between">
     <span>
         <img src="<?= base_url() ?>/assets/images/logo/hrm-logo.png" class="rounded-circle ps-1" width="40px" alt="">
         <a class="navbar-brand ps-1 text-info text-uppercase fw-bold" href="<?= base_url('/') ?>"><?= $company['companyname']; ?></a>
