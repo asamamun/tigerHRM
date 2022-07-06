@@ -19,6 +19,9 @@ use Dompdf\Dompdf;
 class EmployeeController extends BaseController
 {
     public function __construct(){
+        if(!$this->checkauth()){
+            return redirect()->to(base_url('login'))->with('message','You dont have permission') ;  
+        }
         helper('form');
     }
     public function index()

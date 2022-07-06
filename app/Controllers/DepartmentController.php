@@ -8,8 +8,16 @@ use CodeIgniter\Session\Session;
 
 class DepartmentController extends BaseController
 {
+    public function __construct()
+    {
+        
+    }
     public function index()
     {
+        if(!$this->checkauth()){
+            return redirect()->to(base_url('login'))->with('message','You dont have permission') ;  
+        }
+        
         $department = new DepartmentModel();
         $alldepartment = $department->findAll();
         $data['department'] = $alldepartment;
@@ -18,10 +26,16 @@ class DepartmentController extends BaseController
     }
     public function create()
     {
+        if(!$this->checkauth()){
+            return redirect()->to(base_url('login'))->with('message','You dont have permission') ;  
+        }
         return view("department/create");
     }
     public function store()
     {
+        if(!$this->checkauth()){
+            return redirect()->to(base_url('login'))->with('message','You dont have permission') ;  
+        }
         $department = new DepartmentModel();
         $data = [
             'name' => $this->request->getPost('name'),
