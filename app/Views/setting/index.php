@@ -1,5 +1,5 @@
 <?= $this->extend('layouts/default'); ?>
-
+<?= $this->section('title'); ?> Company Setup <?= $this->endSection(); ?>
 <?= $this->section('content'); ?>
 <div class="card-header d-flex justify-content-between bg-info">
     <h2 class="text-white"> Company Setup</h2>

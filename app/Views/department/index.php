@@ -1,4 +1,5 @@
   <?= $this->extend('layouts/default'); ?>
+  <?= $this->section('title'); ?> Department <?= $this->endSection(); ?>
 <?= $this->Section('content') ?>
 <?= view("partial/flashmessage"); ?>
 

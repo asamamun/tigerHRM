@@ -1,5 +1,5 @@
 <?= $this->extend('layouts/default'); ?>
-<?= $this->section('title'); ?>Leave <?= $this->endSection(); ?>
+<?= $this->section('title'); ?> Dashboard <?= $this->endSection(); ?>
 <!-- content section start -->
 <?= $this->section('content'); ?>
 

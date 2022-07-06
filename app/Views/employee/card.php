@@ -4,7 +4,7 @@
 <div class="btn d-flex justify-content-between">
     <span>
         <img src="<?= base_url() ?>/assets/images/logo/hrm-logo.png" class="rounded-circle ps-1" width="40px" alt="">
-        <?php echo anchor('/', "Tiger HRM", ['class' => 'navbar-brand text-small ps-1 text-info text-uppercase fw-bold']); ?>
+        <a class="navbar-brand ps-1 text-info text-uppercase fw-bold" href="<?= base_url('/') ?>"><?= $company['companyname']; ?></a>
     </span>
     <span class="text-muted small" onclick="window.print()"><i class="fa-solid fa-print"></i></span>
 </div>
@@ -60,7 +60,7 @@ if (is_file($empimage)) {
     <!-- START EMP ID Frame  -->
 
 
-    <div class="border border-2 mt-5 me-2 roumded" id="page1-div" style="position:relative;width:355px;height:219px;">
+    <div class="border border-2 mt-5 me-2 rounded" id="page1-div" style="position:relative;width:355px;height:219px;">
         <img width="352" height="217" src="<?php echo site_url() . '/assets/images/card/CardTemplate.png' ?>" alt="background image" />
         <img style="position:absolute;top:58px;left:244px;white-space:nowrap; padding:2px; background:white; border-radius:5px" width="95px" height="110px" src="<?php echo site_url() . '/assets/images/cardimages/' . $employee['id'] . '.jpg' ?>" alt="background image" />
         <img style="position:absolute;top:172px; left:265px;" width='70' height='22' src="<?php echo site_url() . '/assets/images/card/digital_auth_sign.png' ?>" alt="digital sing" />
@@ -78,7 +78,7 @@ if (is_file($empimage)) {
 
     </div>
     <!-- backpart of the card -->
-    <div class="border border-2 roumded mt-5 ms-2 bg-light" id="page1-div" style="position:relative;width:355px;height:219px;">
+    <div class="border border-2 rounded mt-5 ms-2 bg-light" id="page1-div" style="position:relative;width:355px;height:219px;">
         <img width="352" height="217" src="<?php echo site_url() . '/assets/images/card/CardTemplate-back.png' ?>" alt="background image" />
         <img style="position:absolute;top:74px;left:244px;white-space:nowrap; padding:2px; background:white; border:1px solid lightgray; border-radius:5px" width="85px" height="95px" src="<?= $qrcode2 ?>" alt='QR Code' />
         <img class='' style="position:absolute;top:172px; left:42px; border-radius:5px" width='70' height='22' src="<?php echo site_url() . '/assets/images/card/sing_1.png' ?>" alt="digital sing" />

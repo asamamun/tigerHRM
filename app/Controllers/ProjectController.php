@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ProjectModel;
+use App\Models\SettingModel;
 
 class ProjectController extends BaseController
 {
@@ -14,7 +15,9 @@ class ProjectController extends BaseController
     {
         $project = new ProjectModel();
         $allproject = $project->findAll();
-        $data['project'] = $allproject;        
+        $data['project'] = $allproject;
+        $company= new SettingModel();
+        $_SESSION["comname"] = $company->find(1);     
         return view("project/index", $data);
     }
 }

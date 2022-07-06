@@ -1,4 +1,5 @@
 <?= $this->extend('layouts/default'); ?>
+<?= $this->section('title'); ?> Employee Details <?= $this->endSection(); ?>
 <?= $this->Section('content') ?>
 <!--  -->
 <div class="btn btn-info">

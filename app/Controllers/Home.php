@@ -18,6 +18,7 @@ class Home extends BaseController
     public $nedata;
     public function __construct()
     {
+        $this->session = \Config\Services::session();
         helper('form');
     }
     public function index()
@@ -48,9 +49,9 @@ class Home extends BaseController
             $employee = new EmployeeModel();
             $_SESSION["allemployees"] = $employee->countAllResults();
 
-            $company=new SettingModel();
-            $_SESSION["companies"] = $company->findAll();
-
+            $company= new SettingModel();
+            $_SESSION["comname"] = $company->find(1);
+            
             // DepartmentModel
             $department = new DepartmentModel();
             $_SESSION["alldepartments"] = $department->countAllResults();

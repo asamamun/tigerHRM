@@ -12,5 +12,6 @@
     <link rel="stylesheet" href="<?php echo base_url()?>/assets/css/style.css" />
     
     <title><?= $this->renderSection('title') ?></title>
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url()?>/favicon.ico">
   </head>
   <body>

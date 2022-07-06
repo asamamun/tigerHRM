@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\LeaveModel;
+use App\Models\SettingModel;
 
 class LeaveController extends BaseController
 {
@@ -12,7 +13,9 @@ class LeaveController extends BaseController
     {
         $empleave = new LeaveModel();
         $allleave = $empleave->findAll();
-        $data['leave'] = $allleave;        
+        $data['leave'] = $allleave; 
+        $company= new SettingModel();
+        $_SESSION["comname"] = $company->find(1); 
      
         //ddd($data['leave']);
        // ddd($emp); 

@@ -184,13 +184,13 @@ class EmployeeController extends BaseController
         return redirect()->to(base_url('employee/add'))->with('status','Error') ; */
         echo "add data";
     }
-    public function cardpdf(){
+    // public function cardpdf(){
 
-        $dompdf = new Dompdf();
-        $dompdf->loadHtml(view('employee/card/. $employee ["id"]'));
-        $dompdf->setPaper('A4', 'landscape');
-        $dompdf->render();
-        $dompdf->stream();
+    //     $dompdf = new Dompdf();
+    //     $dompdf->loadHtml(view('employee/cardpdf);
+    //     $dompdf->setPaper('A4', 'landscape');
+    //     $dompdf->render();
+    //     $dompdf->stream();
         
-    }
+    // }
 }

@@ -1,4 +1,5 @@
 <?= $this->extend('layouts/default'); ?>
+<?= $this->section('title'); ?> Create<?= $this->endSection(); ?>
 <?= $this->Section('content') ?>
 <?= view("partial/flashmessage"); ?>
 <div class="page-wrapper">

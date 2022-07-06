@@ -1,8 +1,9 @@
 
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
+            
             <img src="<?= base_url() ?>/assets/images/logo/hrm-logo.png" class="rounded-circle ps-1" width="40px" alt="">
-            <?php echo anchor('/',"tiger HRM",['class'=>'navbar-brand ps-1 text-info text-uppercase fw-bold']); ?>
+            <a class="navbar-brand ps-1 text-info text-uppercase fw-bold" href="<?= base_url('/') ?>"><?= $_SESSION["comname"]['companyname'];?></a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-lg-0 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
