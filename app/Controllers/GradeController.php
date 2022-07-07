@@ -20,12 +20,12 @@ class GradeController extends BaseController
         $allgrade = $grade->findAll();
         $data['emp_grade'] = $allgrade;
 
-        return view('grade/index', $data);
+        return view('tiger/grade/index', $data);
         // return view('grade/index');
     }
     public function create()
     {
-        return view("grade/create");
+        return view("tiger/grade/create");
     }
     public function store()
     {
@@ -40,7 +40,7 @@ class GradeController extends BaseController
         ];
         //ddd($data);
         $grade->save($data);
-        return redirect()->to(base_url('grade'))->with('message', 'Grade Added successfully');
+        return redirect()->to(base_url('tiger/grade'))->with('message', 'Grade Added successfully');
     }
 
     //edit grade
@@ -49,7 +49,7 @@ class GradeController extends BaseController
     {
         $grade = new GradeModel();
         $data ['emp_grade'] = $grade->find($id);
-        return view('grade/edit',$data);
+        return view('tiger/grade/edit',$data);
     }
     //update grade
     public function update($id){
@@ -64,7 +64,7 @@ class GradeController extends BaseController
             'other' => $this->request->getPost('other'),
         ];
         $grade1->update($id,$data);
-        return redirect()->to(base_url('grade'))->with('message','Grade Added Successfully') ;
+        return redirect()->to(base_url('tiger/grade'))->with('message','Grade Added Successfully') ;
        
     }
 
@@ -73,7 +73,7 @@ class GradeController extends BaseController
     {
       $grade = new GradeModel();
       $grade->delete($id);
-      return redirect()->to(base_url('grade'))->with('message','Grade Deleted Successfully') ;
+      return redirect()->to(base_url('tiger/grade'))->with('message','Grade Deleted Successfully') ;
     }
      
 

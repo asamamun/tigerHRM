@@ -107,13 +107,13 @@ class UsersController extends BaseController
     {
         $users = new UserModel();
         $data['users'] = $users->where('deleted',null)->findAll();
-        return view('users/index', $data);
+        return view('tiger/users/index', $data);
     }
 
     //create
     public function create()
     {
-        return view('users/create');
+        return view('tiger/tiger/users/create');
     }
 
      //store
@@ -130,10 +130,10 @@ class UsersController extends BaseController
          ];
          if($user->insert($data)) {
              $session->setFlashdata('message', 'User created successfully');
-             return redirect()->to(base_url('/users'));
+             return redirect()->to(base_url('tiger/users'));
          } else {
              $session->setFlashdata('message', 'User creation failed');
-             return redirect()->to(base_url('/users/create'));
+             return redirect()->to(base_url('tiger/users/create'));
          }
      }
 
@@ -142,7 +142,7 @@ class UsersController extends BaseController
     {
         $user = new UserModel();
         $data['user'] = $user->find($id);
-        return view('users/edit', $data);
+        return view('tiger/tiger/users/edit', $data);
     }
 
      //update
@@ -160,10 +160,10 @@ class UsersController extends BaseController
          ];
          if($user->update($id, $data)) {
              $session->setFlashdata('message', 'User updated successfully');
-             return redirect()->to(base_url('/users'));
+             return redirect()->to(base_url('tiger/users'));
          } else {
              $session->setFlashdata('message', 'User update failed');
-             return redirect()->to(base_url('/users/edit/'.$id));
+             return redirect()->to(base_url('tiger/users/edit/'.$id));
          }
      }
 
@@ -177,10 +177,10 @@ class UsersController extends BaseController
         ];
         if($user->update($id, $data)) {
             $session->setFlashdata('message', 'User deleted successfully');
-            return redirect()->to(base_url('/users'));
+            return redirect()->to(base_url('tiger/users'));
         } else {
             $session->setFlashdata('message', 'User delete failed');
-            return redirect()->to(base_url('/users'));
+            return redirect()->to(base_url('tiger/users'));
         }
     }
 }

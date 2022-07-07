@@ -17,7 +17,7 @@ class DesignationController extends BaseController
        $dataload = new DesignationModel();
        $alldata = $dataload->findAll();
        $data['designation'] = $alldata;
-       return view("designation/index", $data);
+       return view("tiger/designation/index", $data);
     }
   
 
@@ -32,7 +32,7 @@ $dropgrade = [];
                 $dropgrade[$grade['id']] = $grade['gradename']."-".$grade['gradeid'];
                 }
          $data['grades']=$dropgrade;       
-        return view('designation/create',$data);
+        return view('tiger/designation/create',$data);
     }
     //store
     public function store()
@@ -47,10 +47,10 @@ $dropgrade = [];
         ];
         if($designation->insert($data)) {
             $session->setFlashdata('message', 'Designation created successfully');
-            return redirect()->to(base_url('/designation'));
+            return redirect()->to(base_url('/tiger/designation'));
         } else {
             $session->setFlashdata('message', 'Designation creation failed');
-            return redirect()->to(base_url('/designation/create'));
+            return redirect()->to(base_url('/tiger/designation/create'));
         }
     }
     //edit
@@ -58,7 +58,7 @@ $dropgrade = [];
     {
         $designation = new DesignationModel();
         $data['designation'] = $designation->find($id);
-        return view('designation/edit', $data);
+        return view('tiger/designation/edit', $data);
     }
     //update
     public function update($id)

@@ -20,6 +20,6 @@ class LeaveController extends BaseController
         //ddd($data['leave']);
        // ddd($emp); 
 
-        return view('leave/index');
+        return view('tiger/leave/index');
     }
 }

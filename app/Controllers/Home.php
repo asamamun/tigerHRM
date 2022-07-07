@@ -59,7 +59,7 @@ class Home extends BaseController
             $empleave = new LeaveModel();
             $_SESSION["allleaves"] = $empleave->countAllResults();
             // ============================================
-            return view("dashboard/dashboard", $data);
+            return view("tiger/dashboard/dashboard", $data);
         } else {
             return redirect("login");
         }

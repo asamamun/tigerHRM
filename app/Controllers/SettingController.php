@@ -14,7 +14,7 @@ class SettingController extends BaseController
         $setting = new SettingModel();
         $allsetting = $setting->find(1);
         // var_dump($allsetting);
-        return view("setting/index", ['allsettings'=>$allsetting]);
+        return view("tiger/setting/index", ['allsettings'=>$allsetting]);
     }
     //save
     public function save(){

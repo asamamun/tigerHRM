@@ -30,7 +30,7 @@ class EmployeeController extends BaseController
         $allemployee = $employee->findAll();
         $data['employee'] = $allemployee;
         $_SESSION["allemployees"] = $employee->countAllResults();
-        return view("employee/index", $data);
+        return view("tiger/employee/index", $data);
     }
     //create
     public function create(){
@@ -53,7 +53,7 @@ class EmployeeController extends BaseController
             'desig'=>$alldesig
         ];
 
-        return view('employee/create',$data);
+        return view('tiger/employee/create',$data);
     }
     //store the employee data
     public function store(){
@@ -69,9 +69,9 @@ class EmployeeController extends BaseController
         ];
         //ddd($data);
         if($emp->save($data))
-        return redirect()->to(base_url('employee'))->with('message','Employee Added') ;
+        return redirect()->to(base_url('tiger/employee'))->with('message','Employee Added') ;
         else
-        return redirect()->to(base_url('employee/add'))->with('status','Error') ;
+        return redirect()->to(base_url('tiger/employee/add'))->with('status','Error') ;
     }
     //cards
     public function card($id){
@@ -91,7 +91,7 @@ class EmployeeController extends BaseController
         $des = new DesignationModel();
         $data['designame'] = $des->find($desigid)['name'];
         
-        return view('employee/card',$data);
+        return view('tiger/employee/card',$data);
     }
 
     //Employee details
@@ -131,7 +131,7 @@ class EmployeeController extends BaseController
        // ddd($emp); 
 
 
-        return view ('employee/details',$data);
+        return view ('tiger/employee/details',$data);
     }
       //  save emp  personal information
     public function save($id){

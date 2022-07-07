@@ -15,6 +15,6 @@ class HolidayController extends BaseController
         $data['holidays'] = $allholiday;        
         $company= new SettingModel();
         $_SESSION["comname"] = $company->find(1);       
-        return view("holiday/index", $data);
+        return view("tiger/holiday/index", $data);
     }
 }

@@ -16,6 +16,6 @@ class NociceController extends BaseController
         $company= new SettingModel();
         $_SESSION["comname"] = $company->find(1); 
 
-        return view("notice/index", $data);
+        return view("tiger/notice/index", $data);
     }
 }

@@ -22,14 +22,14 @@ class DepartmentController extends BaseController
         $alldepartment = $department->findAll();
         $data['department'] = $alldepartment;
         $_SESSION["alldepartments"] = $department->countAllResults();
-        return view("department/index", $data);
+        return view("tiger/department/index", $data);
     }
     public function create()
     {
         if(!$this->checkauth()){
             return redirect()->to(base_url('login'))->with('message','You dont have permission') ;  
         }
-        return view("department/create");
+        return view("tiger/department/create");
     }
     public function store()
     {
@@ -45,7 +45,7 @@ class DepartmentController extends BaseController
         ];
         //ddd($data);
         $department->save($data);
-        return redirect()->to(base_url('department'))->with('status', 'Department Added');
+        return redirect()->to(base_url('tiger/department'))->with('status', 'Department Added');
     }
 
         public function edit($id)
@@ -53,7 +53,7 @@ class DepartmentController extends BaseController
             
             $department = new DepartmentModel();
             $data  ['department'] = $department->find($id);
-            return view('department/edit', $data);
+            return view('tiger/department/edit', $data);
         }
 
         public function update($id){
@@ -65,7 +65,7 @@ class DepartmentController extends BaseController
                 'email' => $this->request->getPost('email')
             ];
             $department->update($id,$data);
-            return redirect()->to(base_url('department'))->with('message','department Added Successfully') ;
+            return redirect()->to(base_url('tiger/department'))->with('message','department Added Successfully') ;
            
         }
 
@@ -73,7 +73,7 @@ class DepartmentController extends BaseController
         {
           $department = new DepartmentModel();
           $department->delete($id);
-          return redirect()->to(base_url('department'))->with('message','department Deleted Successfully') ;
+          return redirect()->to(base_url('tiger/department'))->with('message','department Deleted Successfully') ;
         }
         
 }

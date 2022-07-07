@@ -17,7 +17,7 @@ class TodoController extends BaseController
         $alltodo = $todolist->findAll();
         $data['todo'] = $alltodo;
 
-        return view("todo/index", $data);
+        return view("tiger/todo/index", $data);
     }
     
 

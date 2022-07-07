@@ -38,63 +38,63 @@ $routes->post('/register', 'RegisterController::store');
 $routes->get('/login', 'LoginController::index');
 $routes->post('/login', 'LoginController::check');
 $routes->get('/logout', 'LoginController::logout');
-$routes->get('/settings', 'SettingController::index');
-$routes->post('/settings', 'SettingController::save');
+$routes->get('/tiger/settings', 'SettingController::index');
+$routes->post('/tiger/settings', 'SettingController::save');
 //department
-$routes->get('/department', 'DepartmentController::index');
-$routes->get('/department-add', 'DepartmentController::create');
-$routes->post('department-store', 'DepartmentController::store');
-$routes->get('/department/edit/(:num)', 'DepartmentController::edit/$1');
-$routes->post('/department/update/(:num)', 'DepartmentController::update/$1');
-$routes->get('/department/delete/(:num)', 'DepartmentController::delete/$1');
+$routes->get('/tiger/department', 'DepartmentController::index');
+$routes->get('/tiger/department-add', 'DepartmentController::create');
+$routes->post('/tiger/department-store', 'DepartmentController::store');
+$routes->get('/tiger/department/edit/(:num)', 'DepartmentController::edit/$1');
+$routes->post('/tiger/department/update/(:num)', 'DepartmentController::update/$1');
+$routes->get('/tiger/department/delete/(:num)', 'DepartmentController::delete/$1');
 
 
 //section
-$routes->get('/section', 'SectionController::index');
-$routes->get('/section/add', 'SectionController::create');
-$routes->post('/section/add', 'SectionController::store');
-$routes->get('/section/edit/(:num)', 'SectionController::edit/$1');
-$routes->post('/section/update/(:num)', 'SectionController::update/$1');
-$routes->get('/section/delete/(:num)', 'SectionController::delete/$1');
+$routes->get('/tiger/section', 'SectionController::index');
+$routes->get('/tiger/section/add', 'SectionController::create');
+$routes->post('/tiger/section/add', 'SectionController::store');
+$routes->get('/tiger/section/edit/(:num)', 'SectionController::edit/$1');
+$routes->post('/tiger/section/update/(:num)', 'SectionController::update/$1');
+$routes->get('/tiger/section/delete/(:num)', 'SectionController::delete/$1');
 
 //Grade
-$routes->get('/grade', 'GradeController::index');
-$routes->get('/grade/add', 'GradeController::create');
-$routes->post('/grade/add', 'GradeController::store');
-$routes->get('/grade/edit/(:num)', 'GradeController::edit/$1');
+$routes->get('/tiger/grade', 'GradeController::index');
+$routes->get('/tiger/grade/add', 'GradeController::create');
+$routes->post('/tiger/grade/add', 'GradeController::store');
+$routes->get('/tiger/grade/edit/(:num)', 'GradeController::edit/$1');
 $routes->post('/grade/update/(:num)', 'GradeController::update/$1');
-$routes->get('/grade/delete/(:num)', 'GradeController::delete/$1');
+$routes->get('/tiger/grade/delete/(:num)', 'GradeController::delete/$1');
 
 //employee
-$routes->get('/employee', 'EmployeeController::index');
-$routes->get('/employee/add', 'EmployeeController::create');
-$routes->post('/employee/add', 'EmployeeController::store');
-$routes->get('/employee/details/(:num)', 'EmployeeController::details/$1');
-$routes->get('/employee/card/(:num)', 'EmployeeController::card/$1');
+$routes->get('/tiger/employee', 'EmployeeController::index');
+$routes->get('/tiger/employee/add', 'EmployeeController::create');
+$routes->post('/tiger/employee/add', 'EmployeeController::store');
+$routes->get('/tiger/employee/details/(:num)', 'EmployeeController::details/$1');
+$routes->get('/tiger/employee/card/(:num)', 'EmployeeController::card/$1');
 
 //education
-$routes->post('/education/add', 'EmployeeController::addeducation');
-$routes->get('/disiplinary', 'DisiplinaryController::index');
-$routes->post('/disiplinary', 'DisiplinaryController::delete');
+$routes->post('/tiger/education/add', 'EmployeeController::addeducation');
+$routes->get('/tiger/disiplinary', 'DisiplinaryController::index');
+$routes->post('/tiger/disiplinary', 'DisiplinaryController::delete');
 
 
 
 //designation
-$routes->get('/designation', 'DesignationController::index');
-$routes->get('/designation/add', 'DesignationController::create');
-$routes->post('/designation/create', 'DesignationController::store');
-$routes->get('/designation/edit/(:num)', 'DesignationController::edit/$1');
-$routes->post('/designation/edit/(:num)', 'DesignationController::update/$1');
+$routes->get('/tiger/designation', 'DesignationController::index');
+$routes->get('/tiger/designation/add', 'DesignationController::create');
+$routes->post('/tiger/designation/create', 'DesignationController::store');
+$routes->get('/tiger/designation/edit/(:num)', 'DesignationController::edit/$1');
+$routes->post('/tiger/designation/edit/(:num)', 'DesignationController::update/$1');
 $routes->get('/designation/delete/(:num)', 'DesignationController::delete/$1');
 
 // dashboard's links redirect
-$routes->get('/project', 'ProjectController::index');
-$routes->get('/holiday', 'HolidayController::index');
-$routes->get('/notice', 'NociceController::index');
-$routes->get('/todo', 'TodoController::index');
-$routes->get('/countall', 'CountAll::index');
-$routes->get('/employee/cardpdf', 'DompdfController::index');
-$routes->get('/employee/cardpdf', 'DompdfController::htmlToPDF');
+$routes->get('/tiger/project', 'ProjectController::index');
+$routes->get('/tiger/holiday', 'HolidayController::index');
+$routes->get('/tiger/notice', 'NociceController::index');
+$routes->get('/tiger/todo', 'TodoController::index');
+$routes->get('/ctiger/ountall', 'CountAll::index');
+$routes->get('/tiger/employee/cardpdf', 'DompdfController::index');
+$routes->get('/tiger/employee/cardpdf', 'DompdfController::htmlToPDF');
 
 
 
@@ -102,28 +102,28 @@ $routes->get('/employee/cardpdf', 'DompdfController::htmlToPDF');
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/dashboard', 'Home::index');
-$routes->get('/users', 'UsersController::index');
+$routes->get('/tiger/dashboard', 'Home::index');
+$routes->get('/tiger/users', 'UsersController::index');
 //customers
-$routes->get('/customers', 'CustomersController::index');
-$routes->get('/customers/create', 'CustomersController::create');
-$routes->post('/customers/create', 'CustomersController::store');
-$routes->get('/customers/edit/(:num)', 'CustomersController::edit/$1');
-$routes->post('/customers/edit/(:num)', 'CustomersController::update/$1');
-$routes->post('/customers/delete/(:num)', 'CustomersController::delete/$1');
+$routes->get('/tiger/customers', 'CustomersController::index');
+$routes->get('/tiger/customers/create', 'CustomersController::create');
+$routes->post('/tiger/customers/create', 'CustomersController::store');
+$routes->get('/tiger/customers/edit/(:num)', 'CustomersController::edit/$1');
+$routes->post('/tiger/customers/edit/(:num)', 'CustomersController::update/$1');
+$routes->post('/tiger/customers/delete/(:num)', 'CustomersController::delete/$1');
 
 
 
 //users
-$routes->get('/users', 'UsersController::index');
-$routes->get('/users/create', 'UsersController::create');
-$routes->post('/users/create', 'UsersController::store');
-$routes->get('/users/edit/(:num)', 'UsersController::edit/$1');
-$routes->post('/users/edit/(:num)', 'UsersController::update/$1');
-$routes->post('/users/delete/(:num)', 'UsersController::delete/$1');
+$routes->get('/tiger/users', 'UsersController::index');
+$routes->get('/tiger/users/create', 'UsersController::create');
+$routes->post('/tiger/users/create', 'UsersController::store');
+$routes->get('/tiger/users/edit/(:num)', 'UsersController::edit/$1');
+$routes->post('/tiger/users/edit/(:num)', 'UsersController::update/$1');
+$routes->post('/tiger/users/delete/(:num)', 'UsersController::delete/$1');
 
 //expenses
-$routes->get('/expenses', 'ExpensesController::index');
+$routes->get('/tiger/expenses', 'ExpensesController::index');
 $routes->get('/expenses/create', 'ExpensesController::create');
 $routes->post('/expenses/create', 'ExpensesController::store');
 $routes->get('/expenses/edit/(:num)', 'ExpensesController::edit/$1');
@@ -132,14 +132,17 @@ $routes->post('/expenses/delete/(:num)', 'ExpensesController::delete/$1');
 
 //Leave
 
-$routes->get('/leave', 'LeaveController::index');
+$routes->get('/tiger/leave', 'LeaveController::index');
 
 //attendance
-$routes->get('/attendance', 'AttendanceController::index');
-$routes->post('/attendance', 'AttendanceController::store');
-$routes->get('/attendance/report', 'AttendanceController::report');
-$routes->get('/attendance/addattendance', 'AttendanceController::addattendance');
-$routes->get('/attendance/attendancelist', 'AttendanceController::attendancelist');
+$routes->get('/tiger/attendance', 'AttendanceController::index');
+$routes->post('/tiger/attendance', 'AttendanceController::store');
+$routes->get('/tiger/attendance/report', 'AttendanceController::report');
+$routes->get('/tiger/attendance/addattendance', 'AttendanceController::addattendance');
+$routes->get('/tiger/attendance/attendancelist', 'AttendanceController::attendancelist');
+
+// search
+$routes->get('/tiger/search', 'AutocompleteSearch::index');
 
 
 

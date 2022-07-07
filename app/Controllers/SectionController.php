@@ -19,7 +19,7 @@ class SectionController extends BaseController
         $section = new SectionModel();
         $allsec = $section->findAll();
         $data['section'] = $allsec;
-        return view("section/index", $data);
+        return view("tiger/section/index", $data);
 
         
     }
@@ -54,7 +54,7 @@ class SectionController extends BaseController
             // 'desig'=>$allsecti
         ];
 
-        return view('section/create',$data);
+        return view('tiger/section/create',$data);
     }
 
     

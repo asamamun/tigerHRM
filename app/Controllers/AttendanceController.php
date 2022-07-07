@@ -9,7 +9,7 @@ class AttendanceController extends BaseController
 {
     public function index()
     {
-        return view('attendance/index');
+        return view('tiger/attendance/index');
     }
     public function store(){
         $type = $this->request->getPost('type');
@@ -26,14 +26,14 @@ class AttendanceController extends BaseController
     }
 
     public function report(){
-        return view('attendance/report');
+        return view('tiger/attendance/report');
     }
 
     public function addattendance(){
-        return view('attendance/addattendance');
+        return view('tiger/attendance/addattendance');
     }
     public function attendancelist(){
-        return view('attendance/attendancelist');
+        return view('tiger/attendance/attendancelist');
     }
 }
 

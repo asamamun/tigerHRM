@@ -18,6 +18,6 @@ class ProjectController extends BaseController
         $data['project'] = $allproject;
         $company= new SettingModel();
         $_SESSION["comname"] = $company->find(1);     
-        return view("project/index", $data);
+        return view("tiger/project/index", $data);
     }
 }

@@ -13,6 +13,8 @@ class LoginController extends BaseController
     {
         helper("form");
         $this->session = \Config\Services::session();
+        $company= new SettingModel();
+        $_SESSION["comname"] = $company->find(1);
     }
     public function index()
     {
@@ -53,7 +55,7 @@ $userd = [
 $this->session->set($userd);
 
 
-                return redirect()->to(base_url("/dashboard"));
+                return redirect()->to(base_url("tiger/dashboard"));
             }
             else{
                 $this->session->setFlashdata('message', 'Auth Failed!!');

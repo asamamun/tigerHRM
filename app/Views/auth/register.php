@@ -10,7 +10,7 @@
 <body>
    <div class="container">
 <!-- flash message view -->
-<?php echo view("partial/flashmessage");?>
+<?php echo view("tiger/partial/flashmessage");?>
    <section class="vh-100" style="background-color: #eee;">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
