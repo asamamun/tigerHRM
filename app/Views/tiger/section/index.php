@@ -17,7 +17,7 @@
                         <div class="row mb-2">
                             <div class="col-sm-2">
 
-                                <a href="<?= base_url('tiger/section/add') ?>" class="btn btn-success float-left">Add Section</a>
+                                <a href="<?= base_url('/tiger/section/add') ?>" class="btn btn-success float-left">Add Section</a>
 
                             </div>
                             <div class="col-sm-10">
@@ -52,10 +52,10 @@
                                             <td><?= $section['secdesc'] ?></td>
                                             <td><?= $section['department_id'] ?></td>
                                             <td class="text-center">
-                                                <?= anchor('tiger/section/edit/' . $section['id'], 'Edit', ['class' => 'btn btn-primary rounded mx-1']); ?>
+                                                <?= anchor('/tiger/section/edit/' . $section['id'], 'Edit', ['class' => 'btn btn-primary rounded mx-1']); ?>
                                             <td class="text-center">
                                                 <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
-                                                <a href="<?= base_url('tiger/section/delete/' . $section['id'])?>" class="btn btn-danger rounded mx-1">Delete</a>
+                                                <a href="<?= base_url('/tiger/section/delete/' . $section['id'])?>" class="btn btn-danger rounded mx-1">Delete</a>
                                             </td>
                                         </tr>
                                     <?php

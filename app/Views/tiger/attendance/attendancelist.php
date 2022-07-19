@@ -20,8 +20,8 @@
 
         <div class="row m-b-10">
             <div class="col-12">
-                <button type="button" class="btn btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>/attendance/addattendance" class="text-white"><i class="" aria-hidden="true"></i> Add Attendance </a></button>               
-                <button type="button" class="btn btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>/attendance/report" class="text-white"><i class="" aria-hidden="true"></i> Attendance Report </a></button>
+                <button type="button" class="btn btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>/tiger/attendance/addattendance" class="text-white"><i class="" aria-hidden="true"></i> Add Attendance </a></button>               
+                <button type="button" class="btn btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>/tiger/attendance/report" class="text-white"><i class="" aria-hidden="true"></i> Attendance Report </a></button>
             </div>
         </div>
         <div class="row">
