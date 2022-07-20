@@ -15,12 +15,16 @@ class AttendanceController extends BaseController
         $type = $this->request->getPost('type');
         $empid = $this->request->getPost('empid');
         $att = new AttendanceModel();
+        $t = date("Y-m-d H:i:s");
         $data = [
             'type'=>$type,
-            'empid'=>$empid
+            'empid'=>$empid,
+            'created_at'=>$t
         ];
-        if($att->save($data))
+        if($att->save($data)){
+            $data['csrf_token'] = csrf_hash();
         echo json_encode($data);
+        }
         else echo "0";
 
     }

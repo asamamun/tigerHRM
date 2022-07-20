@@ -14,9 +14,8 @@
     <div class='col-md-12'>
         <div class="col-md-12" style="background-color:#FFFFFF">
             <Section class="content">
-                <div class="formcontainer">
-                    <form action="#" id="form" class="form-horizontal">
-                        <input type="hidden" value="" name="secid"/> 
+                <div class="formcontainer">                    
+                        <input type="hidden" value="<?= $section['id'] ?>" name="secid"/> 
                         <div class="form-body">
                             <div class="form-group">
                                 <label class="control-label col-md-3">Section Title</label>

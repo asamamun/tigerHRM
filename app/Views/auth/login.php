@@ -41,6 +41,8 @@
                 class="link-danger">Register</a> now</p>
                     </div>
                     <?php echo form_close() ?>
+                    <hr>
+                    <?php echo anchor("attendance", "Attendance",['class'=>"btn btn-primary"]) ?>
             </div>
         </div>
     </section>

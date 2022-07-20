@@ -135,8 +135,8 @@ $routes->post('/expenses/delete/(:num)', 'ExpensesController::delete/$1');
 $routes->get('/tiger/leave', 'LeaveController::index');
 
 //attendance
-$routes->get('/tiger/attendance', 'AttendanceController::index');
-$routes->post('/tiger/attendance', 'AttendanceController::store');
+$routes->get('attendance', 'AttendanceController::index');
+$routes->post('attendance', 'AttendanceController::store');
 $routes->get('/tiger/attendance/report', 'AttendanceController::report');
 $routes->get('/tiger/attendance/addattendance', 'AttendanceController::addattendance');
 $routes->get('/tiger/attendance/attendancelist', 'AttendanceController::attendancelist');
