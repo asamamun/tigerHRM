@@ -16,7 +16,7 @@
 <div class='col-md-12'>
     <div class="col-md-12" style="background-color:#FFFFFF">
         <section class="content">
-		<?php echo form_open('grade/add',['class' => 'form-horizontal','id' => 'grform']); ?>
+		<?php echo form_open('tiger/grade/add',['class' => 'form-horizontal','id' => 'grform']); ?>
 			<div class="Formcontainer">
             
                 

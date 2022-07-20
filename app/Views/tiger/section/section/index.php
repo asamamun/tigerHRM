@@ -52,10 +52,14 @@
                                             <td><?= $section['secdesc'] ?></td>
                                             <td><?= $section['department_id'] ?></td>
                                             <td class="text-center">
+<<<<<<< HEAD
+                                            <?= anchor('/tiger/section/edit/' . $section['id'], 'Edit', ['class' => 'btn btn-primary rounded mx-1']); ?>
+=======
                                                 <?= anchor('/tiger/section/edit/' . $section['id'], 'Edit', ['class' => 'btn btn-primary rounded mx-1']); ?>
+>>>>>>> bdb95be88ebed5718a8d8df699e7079cec275833
                                             <td class="text-center">
                                                 <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
-                                                <a href="<?= base_url('tiger/section/delete/' . $section['id'])?>" class="btn btn-danger rounded mx-1">Delete</a>
+                                                <a href="<?= base_url('/tiger/section/delete/' . $section['id'])?>" class="btn btn-danger rounded mx-1">Delete</a>
                                             </td>
                                         </tr>
                                     <?php

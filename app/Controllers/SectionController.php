@@ -35,9 +35,9 @@ class SectionController extends BaseController
         ];
         // ddd($data);
         if($section->save($data))
-        return redirect()->to(base_url('section'))->with('message','Section Added Successfully') ;
+        return redirect()->to(base_url('tiger/section'))->with('message','Section Added Successfully') ;
         else
-        return redirect()->to(base_url('section/add'))->with('status','Error') ;
+        return redirect()->to(base_url('tiger/section/add'))->with('status','Error') ;
     }
 
     //create
@@ -74,7 +74,7 @@ class SectionController extends BaseController
         {
           $section = new SectionModel();
           $section->delete($id);
-          return redirect()->to(base_url('section'))->with('message','Section Deleted Successfully') ;
+          return redirect()->to(base_url('tiger/section'))->with('message','Section Deleted Successfully') ;
         }
 //update the Section data 
         public function update($id){
@@ -87,7 +87,7 @@ class SectionController extends BaseController
                 
             ];
             $section->update($id,$data);
-            return redirect()->to(base_url('section'))->with('message','section Added Successfully') ;
+            return redirect()->to(base_url('tiger/section'))->with('message','section Added Successfully') ;
            
         }
 

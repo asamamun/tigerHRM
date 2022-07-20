@@ -74,10 +74,10 @@ $dropgrade = [];
         ];
         if($designation->update($id, $data)) {
             $session->setFlashdata('message', 'designation updated successfully');
-            return redirect()->to(base_url('/designation'));
+            return redirect()->to(base_url('/tiger/designation'));
         } else {
             $session->setFlashdata('message', 'designation update failed');
-            return redirect()->to(base_url('/designation/edit/'.$id));
+            return redirect()->to(base_url('/tiger/designation/edit/'.$id));
         }
     }
     //delete
@@ -85,7 +85,7 @@ $dropgrade = [];
     {
         $designation = new DesignationModel();
           $designation->delete($id);
-          return redirect()->to(base_url('designation'))->with('message','Designation Deleted Successfully') ;
+          return redirect()->to(base_url('tiger/designation'))->with('message','Designation Deleted Successfully') ;
         // $session = \Config\Services::session();
         // $designation = new DesignationModel();
         // $data = [

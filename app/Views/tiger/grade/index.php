@@ -62,7 +62,7 @@
                                             <td><?= $grade['medical'] ?></td>
                                             <td><?= $grade['other'] ?></td>
                                             <td class="text-center">
-                                                <?= anchor('grade/edit/' . $grade['id'], 'Edit', ['class' => 'btn btn-primary rounded mx-1']); ?>
+                                                <?= anchor('/tiger/grade/edit/' . $grade['id'], 'Edit', ['class' => 'btn btn-primary rounded mx-1']); ?>
                                             <td class="text-center">
                                                 <!-- <a href="#" class="btn btn-primary rounded mx-1">Edit</a> -->
                                                 <a href="<?=base_url('/tiger/grade/delete/'. $grade['id'])?>" class="btn btn-danger rounded mx-1">Delete</a>
