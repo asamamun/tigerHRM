@@ -3,7 +3,7 @@
 <?= view("tiger/partial/flashmessage"); ?>
 <!-- /.content -->
 
-<?php echo form_open('section/add',['class' => 'row g-3']); ?>
+<?php echo form_open('tiger/section/add',['class' => 'row g-3']); ?>
 <Section class="content-header">
         <h1 style="padding:7px; height:45px;" class='headtitlebackgroudgradient'>
             Section 

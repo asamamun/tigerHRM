@@ -66,7 +66,7 @@ class SectionController extends BaseController
             $dept = new DepartmentModel();
             $data['dept'] = $dept->findAll();
             $data['dept'] = key_value_for_dropdown($data['dept']);
-            return view('section/edit', $data);
+            return view('tiger/section/edit', $data);
         }
 
 //delete the Section data 
