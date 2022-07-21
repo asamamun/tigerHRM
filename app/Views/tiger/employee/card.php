@@ -108,7 +108,7 @@ if (is_file($empimage)) {
         <p style="position:absolute;top:53px;left:19px;white-space:nowrap" class="small"><span>Blood:&#160;&#160;</span><?php echo $employee['blood']; ?></p>
         <!-- <img style="position:absolute;top:6px;left:4px;white-space:nowrap" width="40" height="40" src="<?php echo site_url() . '/assets/images/card/hrm-logo.png' ?>" alt="background image"/> -->
         <p style="position:absolute;top:73px;left:19px;white-space:nowrap" class="small"><span>D.O.B:&#160;</span><?php echo $employee['dob']; ?></p>
-        <p style="position:absolute;top:93px;left:19px;white-space:nowrap" class="small"><span><i class="fa-solid fa-house"></i>&#160;</span><?php echo $empaddress['p_address1'] . ',' . $empaddress['p_dist'] . ',' . $empaddress['p_post_code']; ?></p>
+        <p style="position:absolute;top:93px;left:19px;white-space:nowrap" class="small"><span><i class="fa-solid fa-house"></i>&#160;</span><?php echo $empaddress['p_address1'] . ', ' . $empaddress['p_dist'] . ', ' . $empaddress['p_post_code']; ?></p>
         <p style="position:absolute;top:112px;left:19px;white-space:nowrap" class="small"><span><i class="fa-solid fa-envelope"></i>&#160;</span><?php echo $employee['email']; ?></p>
         <p style="position:absolute;top:132px;left:19px;white-space:nowrap" class="small"><span><i class="fa-solid fa-phone"></i>&#160;</span><?php echo $employee['phone']; ?></p>
         <p style="position:absolute;top:151px;left:19px;white-space:nowrap" class="small"><span>Expired&#160;Date:&#160;</span><?php $date = date('Y') + 3;echo $tre_yrs = date('F,' . '&#160;' . $date); ?></p>
