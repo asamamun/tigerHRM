@@ -19,24 +19,30 @@ individual - empid , startdate, enddate, submit
 between and sql 
     </pre> -->
   </div>
-  <div class="container justify-content-between">
-    <h1>QR Code Scanner</h1>
+  <div class="container">
+    <h1>Employee Attendance</h1>
+<div class="row">
+  <div class="col-6">
+  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+  <input value="in" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+  <label class="btn btn-outline-primary" for="btnradio1">In</label>
 
-    <div class="fw-bold"> <input id="csrf" type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
-      <select class="rounded" name="type" id="type">
-        <option value="in">In</option>
-        <option value="out">Out</option>
-      </select>
-      <hr>
+  <input value="out" type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+  <label class="btn btn-outline-primary" for="btnradio2">Out</label>
+</div>
+  <div class="rounded-3" id="video"><video class="rounded" width="80%" height="80%" id="preview"></video></div>
+  <div class="fw-bold"> <input id="csrf" type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
     </div>
 
-    <div class="d-flex justify-content-between">
-      <div class="rounded-3" id="video"><video class="rounded" width="80%" height="80%" id="preview"></video></div>
-      <div class="rounded" id="result">Attendance List
-        <li>Code here</li>
+  </div>
+  <div class="col-6">
+  <div class="rounded">
+   <h1 class="bg-info">Attendance Log</h1> 
+    <ul class="list-group" id="attlog"></ul>
       </div>
+  </div>
+</div>
 
-    </div>
   </div>
 
 
@@ -61,16 +67,17 @@ between and sql
         url: $url,
         data: {
           [csrfName]: csrfHash,
-          type: $("#type").val(),
+          type: $('input[name="btnradio"]:checked').val(),
           empid: $empid
         },
         success: function(response) {
           response = JSON.parse(response);
           console.log(response);
-          alert(response.csrf_token);
+          // alert(response.csrf_token);
           $('#csrf').val(response.csrf_token);
           if (response != "0") {
             $("#result").html("attendance logged");
+            $("#attlog").append('<li class="list-group-item">Name: '+response.name+'('+response.empid +'),'+response.type+', Time: '+ response.created_at+'</li>');
           } else {
             $("#result").html("attendance not logged");
           }
