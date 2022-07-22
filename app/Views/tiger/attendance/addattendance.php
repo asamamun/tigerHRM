@@ -32,7 +32,7 @@
                         <form method="post" action="Add_Attendance" id="holidayform" enctype="multipart/form-data">
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label>Employee</label>
+                                    <label>Employee ID</label>
                                     <select class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1" name="emid" required>
                                         <option value="#">Select Here</option>
                                     </select>

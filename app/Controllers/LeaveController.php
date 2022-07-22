@@ -22,4 +22,10 @@ class LeaveController extends BaseController
 
         return view('tiger/leave/index');
     }
+
+        public function addleave()
+        {
+            return view('tiger/leave/addleave');
+        }
+    
 }

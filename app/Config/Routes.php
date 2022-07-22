@@ -133,6 +133,8 @@ $routes->post('/expenses/delete/(:num)', 'ExpensesController::delete/$1');
 //Leave
 
 $routes->get('/tiger/leave', 'LeaveController::index');
+$routes->get('/tiger/addleave', 'LeaveController::addleave');
+
 
 //attendance
 $routes->get('attendance', 'AttendanceController::index');

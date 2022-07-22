@@ -8,6 +8,10 @@
         <div class="card-header bg-primary">
             <h4 class="text-white"> Employee Leave</h4>
         </div>
+        <div class="col-6">
+                <button type="button" class="btn btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>/tiger/addleave"  class="text-white"><i class="" ></i> Add Application </a></button>
+                
+        </div>
         <div class="card-body">
             <div class="table-responsive" style="height:600px;">
                 <table class="table table-bordered table-hover earning-box">

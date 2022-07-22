@@ -13,7 +13,7 @@
     <div class="container-fluid mb-5">
         <div class="row mt-3">
             <div class="col-12">
-                <button type="button" class="btn btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>/employee/add" class="text-white"><i class="" aria-hidden="true"></i> Add Employee</a></button>
+                <button type="button" class="btn btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>/tiger/employee/add" class="text-white"><i class="" aria-hidden="true"></i> Add Employee</a></button>
                 
             </div>
         </div>
