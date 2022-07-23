@@ -37,10 +37,11 @@ if (!count($emp)) {
             <button class="nav-link link-light" id="picture-tab" data-bs-toggle="tab" data-bs-target="#picture-tab-pane" type="button" role="tab" aria-controls="picture-tab-pane" aria-selected="false">Profile Picture</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link link-light" id="leave-tab" data-bs-toggle="tab" data-bs-target="#attachment-tab-pane" type="button" role="tab" aria-controls="attachment-tab-pane" aria-selected="false">Attachment</button>
+        <button class="nav-link link-light" id="attachment-tab" data-bs-toggle="tab" data-bs-target="#attachment-tab-pane" type="button" role="tab" aria-controls="attachment-tab-pane" aria-selected="false">Attachment</button>
+      
         </li>
         <li class="nav-item ink-light" role="presentation">
-            <button class="nav-link link-light" id="attachment-tab" data-bs-toggle="tab" data-bs-target="#attendance-tab-pane" type="button" role="tab" aria-controls="attendance-tab-pane" aria-selected="false">Attendance</button>
+            <button class="nav-link link-light" id="attendance-tab" data-bs-toggle="tab" data-bs-target="#attendance-tab-pane" type="button" role="tab" aria-controls="attendance-tab-pane" aria-selected="false">Attendance</button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link link-light" id="ahievement-tab" data-bs-toggle="tab" data-bs-target="#ahievement-tab-pane" type="button" role="tab" aria-controls="ahievement-tab-pane" aria-selected="false">Ahievement</button>
@@ -74,9 +75,25 @@ if (!count($emp)) {
             <!-- leave end -->
         </div>
         <div class="tab-pane fade" id="picture-tab-pane" role="tabpanel" aria-labelledby="picture-tab" tabindex="0">
-            <!-- leave start -->
+            <!-- picture start -->
             picture
-            <!-- leave end -->
+            <!-- picture end -->
+        </div>
+        <div class="tab-pane fade" id="attachment-tab-pane" role="tabpanel" aria-labelledby="attachment-tab" tabindex="0">
+            <!-- attachment start -->
+            <?//= view('tiger/employee/attachment') ?>
+            attachment
+            <!-- attachment end -->
+        </div>
+        <div class="tab-pane fade" id="attendance-tab-pane" role="tabpanel" aria-labelledby="attendance-tab" tabindex="0">
+            <!-- attendance start -->
+            attendance
+            <!-- attendance end -->
+        </div>
+        <div class="tab-pane fade" id="ahievement-tab-pane" role="tabpanel" aria-labelledby="ahievement-tab" tabindex="0">
+            <!-- ahievement start -->
+            ahievement
+            <!-- ahievement end -->
         </div>
         <!-- ================================================ -->
 
