@@ -123,11 +123,11 @@ class EmployeeController extends BaseController
        // ddd($emp); 
 
         $empleave = new LeaveModel();
-        $data['leave'] = $empleave->where('eid',$id)->find();
-        if(!count($data['leave'])) {
-            $data['leave'] = null;
+        $data['leaves'] = $empleave->where('eid',$id)->findAll();
+        if(!count($data['leaves'])) {
+            $data['leaves'] = null;
         }
-        //ddd($data['leave']);
+        // ddd($data['leaves']);
        // ddd($emp); 
 
         $data['eid'] = $id;

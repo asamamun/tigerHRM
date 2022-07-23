@@ -3,12 +3,13 @@
         <button class="btn btn-primary"><h4>Employee Leave:</h4></button>
         <a href="<?= base_url() ?>/tiger/addleave/<?= $eid ?>" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></a>
     </div>
-    <fieldset id="educationcontainer">
+    <fieldset>
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover table-responsive">
             
     <!-- loop -->
-    <?php if ($leave) { ?>
+    <?php if ($leaves) { ?>
+ 
         <table class="table table-primary">
             <thead>
                 <tr>
@@ -31,7 +32,7 @@
             </thead>
             <tbody>
                 <?php
-                foreach ($leave as $leave) {
+                foreach ($leaves as $leave) {
                 ?>
                     <tr>
                         <td><?php echo $leave['eid'] ?></td>
