@@ -71,14 +71,37 @@
                                       <tr>
                                         <th>ID </th>
                                         <th>Name</th>
-                                        <th>Date</th>
+                                        <th>Type</th>
                                         <th>In</th>
                                         <th>Out</th>
-                                        <th>Hour</th>
-                                        <th>Place</th>
+                                        <th>Time</th>
                                       </tr>
                                     </thead>
-                                    
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>Mark</td>
+                                        <td>Overtime</td>
+                                        <td>10:00</td>
+                                        <td>10:00</td>
+                                        <td>10:00</td>
+                                      </tr>
+                                      <tr>
+                                        <td>2</td>
+                                        <td>Jacob</td>
+                                        <td>Overtime</td>
+                                        <td>10:00</td>
+                                        <td>10:00</td>
+                                        <td>10:00</td>
+                                      </tr>
+                                      <tr>
+                                        <td>3</td>
+                                        <td>Larry</td>
+                                        <td>Overtime</td>
+                                        <td>10:00</td>
+                                        <td>10:00</td>
+                                        <td>10:00</td>
+                                      </tr>
                                     <tbody class="leave">
                                     
                                     </tbody>
@@ -87,6 +110,7 @@
                         </div>
                     </div>
                 </div>
+               
 
 
 <?= $this->endSection(); ?>

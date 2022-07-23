@@ -27,6 +27,42 @@
 <script src="<?php echo base_url() ?>/assets/js/scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 <script src="<?php echo base_url() ?>/assets/js/datatables-simple-demo.js"></script>
+
+
+        <script>
+            function checkTime(i) {
+                if (i < 10) {
+                    i = "0" + i
+                }; // add zero in front of numbers < 10
+                return i;
+            }
+
+            function startTime() {
+                const today = new Date();
+
+                let y = today.getFullYear();
+                let mo = today.getMonth();
+                let d = today.getDay();
+                let h = today.getHours();
+                let ampm = (h >= 12) ? "PM" : "AM";
+                h = (h - 12) > 0 ? (h - 12) : h;
+                let m = today.getMinutes();
+                let s = today.getSeconds();
+
+                mo = checkTime(mo);
+                d = checkTime(d);
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('clock').innerHTML = h + ":" + m + ":" + s + " " + ampm;
+                setTimeout(startTime, 1000);
+            }
+
+
+            $(document).ready(function() {
+                startTime();
+            });
+        </script>
+      
 <?= $this->renderSection('scripts'); ?>
 </body>
 

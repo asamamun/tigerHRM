@@ -324,9 +324,5 @@
         <!-- content section end-->
 
         <?= $this->section('scripts'); ?>
-        <script>
-            // $(document).ready(function() {
-            //     $('#users').DataTable();
-            // } );
-        </script>
+        
         <?= $this->endSection(); ?>
