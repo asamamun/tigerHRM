@@ -44,9 +44,12 @@ class LeaveController extends BaseController
             $data['comments'] = $this->request->getPost("reason");
             // ddd($empinfo);
             $l = new LeaveModel();
-            if($l->insert($data)) echo "added";
-            else echo "error";
+            if($l->insert($data))
+            return redirect()->to(base_url('/tiger/employee/details/'.$id))->with('message','Leave Application Added Successfully!!!') ;
+            else
+            return redirect()->to(base_url('/tiger/employee/details/'.$id))->with('status','Failed To Add Leave Application') ;
+    }
             
         }
     
-}
+
