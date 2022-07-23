@@ -130,7 +130,7 @@ class EmployeeController extends BaseController
         //ddd($data['leave']);
        // ddd($emp); 
 
-
+        $data['eid'] = $id;
         return view ('tiger/employee/details',$data);
     }
       //  save emp  personal information

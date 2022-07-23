@@ -6,8 +6,9 @@
 
 <div class="container my-5">
     <div class="row">
-        <form action="<?= base_url('') ?>" method="POST">
+        <form action="<?= base_url(''); ?>/tiger/storeleave/<?= $emp['id']; ?>" method="POST">
             <?= csrf_field() ?>
+            <input type="hidden" name="id" value="<?= $emp['id']; ?>">
             <div class="modal-body">
                 <div class="my-3 text-center">
                     <h4>Add Leave Application For Employee
@@ -19,16 +20,23 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Employee</label>
-                    <select class=" form-control custom-select selectedEmployeeID" tabindex="1" name="emid" required>
-                        <option value=""></option>
-                    </select>
+                    <label><?= $emp['empid'] ?></label>
+                    <label><?= $emp['fname'] ?></label>                   
+                    
                 </div>
                 <div class="form-group">
-                    <label>Leave Type</label>
-                    <select class="form-control custom-select assignleave" tabindex="1" name="typeid" id="leavetype" required>
+                    <label for="leavetype">Leave Type</label>
+                    <select class="form-control custom-select assignleave" tabindex="1" name="leavetype" id="leavetype" required>
                         <option value="">Select Here..</option>
-                        <option value=""></option>
+                        <option value="1">Annual</option>
+                        <option value="2">Sick</option>
+                        <option value="3">Casual</option>
+                        <option value="4">Leave with pay</option>
+                        <option value="5">Leave without pay</option>
+                        <option value="6">Earned</option>
+                        <option value="7">Short Leave</option>
+                        <option value="8">Maternity</option>
+                        <option value="9">Paternity</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -38,7 +46,7 @@
                     </div>
                     <br>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label class="control-label">Leave Duration</label><br>
                     <input name="type" type="radio" id="radio_1" data-value="Half" class="duration" value="Half Day" checked="">
                     <label for="radio_1">Hourly</label>
@@ -46,17 +54,24 @@
                     <label for="radio_2">Full Day</label>
                     <input name="type" type="radio" class="with-gap duration" id="radio_3" data-value="More" value="More than One day">
                     <label for="radio_3">Above a Day</label>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" id="hourlyFix">Date</label>
+                </div> -->
+                <div class="row">
+                    <div class="col-6">
+                    <div class="form-group">
+                    <label class="control-label" id="hourlyFix">From</label>
                     <input type="date" name="startdate" class="form-control" id="recipient-name1" required>
                 </div>
-                <div class="form-group" id="enddate" style="display:none">
-                    <label class="control-label">End Date</label>
-                    <input type="date" name="enddate" class="form-control" id="recipient-name1">
+                    </div>
+                    <div class="col-6">
+                    <div class="form-group">
+                    <label class="control-label" id="hourlyFix">To</label>
+                    <input type="date" name="enddate" class="form-control" id="recipient-name1" required>
                 </div>
+                    </div>
+                </div>             
 
-                <div class="form-group" id="hourAmount">
+
+                <!-- <div class="form-group" id="hourAmount">
                     <label>Length</label>
                     <select id="hourAmountVal" class=" form-control custom-select" tabindex="1" name="hourAmount" required>
                         <option value="">Select Hour</option>
@@ -69,7 +84,7 @@
                         <option value="7">Seven hour</option>
                         <option value="8">Eight hour</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label class="control-label">Reason</label>
                     <textarea class="form-control" name="reason" id="message-text1" required minlength="10"></textarea>

@@ -1,7 +1,7 @@
 
 <div class="d-flex justify-content-between bg-primary border-bottom">
         <button class="btn btn-primary"><h4>Employee Leave:</h4></button>
-        <button id="eduBtn" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></button>
+        <a href="<?= base_url() ?>/tiger/addleave/<?= $eid ?>" class="btn btn-primary btn-lg"><i class="fa-solid fa-circle-plus"></i></a>
     </div>
     <fieldset id="educationcontainer">
         <div class="table-responsive">

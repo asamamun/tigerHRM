@@ -14,7 +14,7 @@ class LeaveModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['eid','leave_id','leave_from','leave_to','leave_days','approved_by','approved','comments'];
 
     // Dates
     protected $useTimestamps = false;
