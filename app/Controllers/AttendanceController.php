@@ -22,6 +22,7 @@ class AttendanceController extends BaseController
         $empid = $this->request->getPost('empid');
         $emp = New EmployeeModel();
         $empinfo = $emp->where('empid',$empid)->first();
+        if(!$empinfo){  echo json_encode(["error"=>"1"]); exit;}
         $att = new AttendanceModel();
         $t = date("Y-m-d H:i:s");
         $data = [
@@ -30,13 +31,13 @@ class AttendanceController extends BaseController
             'created_at'=>$t,            
         ];
         if($att->save($data)){
+            $data['error'] = "0";
             $data['csrf_token'] = csrf_hash();
             $data['name'] = $empinfo['fname'] . " ".$empinfo['mname']." ".$empinfo['lname'];
 
         echo json_encode($data);
         }
-        else echo "0";
-
+        else echo json_encode(["error"=>"1"]);
     }
 
     public function report(){

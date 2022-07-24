@@ -48,6 +48,7 @@ between and sql
         </div>
       </div>
     </div>
+    <div id="result"></div>
 
   </div>
 
@@ -78,6 +79,10 @@ between and sql
         },
         success: function(response) {
           response = JSON.parse(response);
+          if(response.error=="1"){
+            $("#result").html("attendance not logged");
+            return;
+          }
           console.log(response);
           // alert(response.csrf_token);
           $('#csrf').val(response.csrf_token);
