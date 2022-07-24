@@ -8,7 +8,7 @@
             <button class="btn btn-link btn-sm order-lg-0 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <!-- clock -->
-            <div class="col-6 d-flex justify-content-end">
+            <div class="col-5 d-flex justify-content-end">
               <p class="text-info m-1"><?= date("l, jS \of F Y"); ?></p>
               <p class="text-warning m-1"><i class="fa-solid fa-clock"></i></p>
               <p id="clock" class="text-white m-1"><?= date("h:i:sa"); ?></p>

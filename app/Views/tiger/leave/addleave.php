@@ -3,26 +3,32 @@
 <!-- content section start -->
 <?= $this->section('content'); ?>
 
+<div class="d-flex justify-content-between bg-primary border-bottom">
+    <button class="btn btn-primary">
+        <h4 class=''>Add Leave Application For
+            <?= $emp['fname'] . '&nbsp;' . $emp['mname'] . $emp['lname'] . '&nbsp(' . $emp['empid'] . ')'; ?>
+    </button>
+    <hr class="text-denger">
+    </h4>
+</div>
 
-<div class="container my-5">
+
+<div class="container my-1">
     <div class="row">
         <form action="<?= base_url(''); ?>/tiger/storeleave/<?= $emp['id']; ?>" method="POST">
             <?= csrf_field() ?>
             <input type="hidden" name="id" value="<?= $emp['id']; ?>">
             <div class="modal-body">
-                <div class="my-3 text-center">
-                    <h4>Add Leave Application For Employee
-                        <hr class="text-denger">
-                    </h4>
-                </div>
                 <div>
                     <a href="<?= base_url('tiger/leave/') ?>" class="btn btn-danger float-left">Back</a>
                 </div>
 
                 <div class="form-group">
-                    <label><?= $emp['empid'] ?></label>
-                    <label><?= $emp['fname'] ?></label>                   
-                    
+                    <label><? //= $emp['empid'] 
+                            ?></label>
+                    <label><? //= $emp['fname'] 
+                            ?></label>
+
                 </div>
                 <div class="form-group">
                     <label for="leavetype">Leave Type</label>
@@ -57,18 +63,18 @@
                 </div> -->
                 <div class="row">
                     <div class="col-6">
-                    <div class="form-group">
-                    <label class="control-label" id="hourlyFix">From</label>
-                    <input type="date" name="startdate" class="form-control" id="recipient-name1" required>
-                </div>
+                        <div class="form-group">
+                            <label class="control-label" id="hourlyFix">From</label>
+                            <input type="date" name="startdate" class="form-control" id="recipient-name1" required>
+                        </div>
                     </div>
                     <div class="col-6">
-                    <div class="form-group">
-                    <label class="control-label" id="hourlyFix">To</label>
-                    <input type="date" name="enddate" class="form-control" id="recipient-name1" required>
-                </div>
+                        <div class="form-group">
+                            <label class="control-label" id="hourlyFix">To</label>
+                            <input type="date" name="enddate" class="form-control" id="recipient-name1" required>
+                        </div>
                     </div>
-                </div>             
+                </div>
 
 
                 <!-- <div class="form-group" id="hourAmount">

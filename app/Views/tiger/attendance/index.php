@@ -19,29 +19,35 @@ individual - empid , startdate, enddate, submit
 between and sql 
     </pre> -->
   </div>
+  
   <div class="container">
-    <h1>Employee Attendance</h1>
-<div class="row">
-  <div class="col-6">
-  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-  <input value="in" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-  <label class="btn btn-outline-primary" for="btnradio1">In</label>
-
-  <input value="out" type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btnradio2">Out</label>
-</div>
-  <div class="rounded-3" id="video"><video class="rounded" width="80%" height="80%" id="preview"></video></div>
-  <div class="fw-bold"> <input id="csrf" type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+  <div class="btn d-grid btn-info my-3">
+      <h2>Employee Attendance </h2>
     </div>
 
-  </div>
-  <div class="col-6">
-  <div class="rounded">
-   <h1 class="bg-info">Attendance Log</h1> 
-    <ul class="list-group" id="attlog"></ul>
+    <div class="row">
+      <div class="col-6">
+        <div class="btn-group d-flex justify-content-between" role="group" aria-label="Basic radio toggle button group">
+          <input value="in" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+          <label class="btn btn-outline-primary rounded" for="btnradio1">In</label>
+
+          <input value="out" type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+          <label class="btn btn-outline-primary rounded ms-1" for="btnradio2">Out</label>
+          <div class="text-end"><?php echo anchor("attendance", "Refresh", ['class' => "btn btn-warning ms-5"]) ?></div>
+        </div>
+
+        <div class="rounded-3 mt-2" id="video"><video class="rounded border border-info" width="80%" height="80%" id="preview"></video></div>
+        <div class="fw-bold"> <input id="csrf" type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+        </div>
+
       </div>
-  </div>
-</div>
+      <div class="col-6">
+        <div class="rounded">
+          <h3 class="bg-info text-center rounded pb-2">Attendance Log</h3>
+          <ul class="list-group" id="attlog"></ul>
+        </div>
+      </div>
+    </div>
 
   </div>
 
@@ -77,7 +83,7 @@ between and sql
           $('#csrf').val(response.csrf_token);
           if (response != "0") {
             $("#result").html("attendance logged");
-            $("#attlog").append('<li class="list-group-item">Name: '+response.name+'('+response.empid +'),'+response.type+', Time: '+ response.created_at+'</li>');
+            $("#attlog").append('<li class="list-group-item border border-info mb-1">Name: ' + response.name + ' (' + response.empid + '), ' + response.type + ', Time: ' + response.created_at + '</li>');
           } else {
             $("#result").html("attendance not logged");
           }

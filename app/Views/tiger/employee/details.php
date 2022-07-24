@@ -87,6 +87,7 @@ if (!count($emp)) {
         </div>
         <div class="tab-pane fade" id="attendance-tab-pane" role="tabpanel" aria-labelledby="attendance-tab" tabindex="0">
             <!-- attendance start -->
+            <?//= view('tiger/employee/attendance') ?>
             attendance
             <!-- attendance end -->
         </div>

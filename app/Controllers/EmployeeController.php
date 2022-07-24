@@ -4,6 +4,7 @@ namespace App\Controllers;
 use CodeIgniter\Session\Session;
 use App\Controllers\BaseController;
 use CodeIgniter\Debug\Toolbar\Collectors\Views;
+use App\Models\AttendanceModel;
 use App\Models\DepartmentModel;
 use App\Models\SectionModel;
 use App\Models\DesignationModel;
@@ -128,6 +129,13 @@ class EmployeeController extends BaseController
             $data['leaves'] = null;
         }
         // ddd($data['leaves']);
+       // ddd($emp); 
+
+    //    Attendance
+        $attendance = new AttendanceModel();
+        $data['attens'] = $attendance->find($id);
+    
+        // ddd($data['attens']);
        // ddd($emp); 
 
         $data['eid'] = $id;
