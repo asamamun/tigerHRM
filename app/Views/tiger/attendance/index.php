@@ -21,6 +21,7 @@ between and sql
   </div>
   
   <div class="container">
+  <div class="text-end"><?php echo anchor("attendance/barcode", "Barcode", ['class' => "btn btn-warning mt-2 ms-5"]) ?></div>
   <div class="btn d-grid btn-info my-3">
       <h2>Employee Attendance </h2>
     </div>

@@ -13,9 +13,12 @@ class AttendanceController extends BaseController
         $this->db = \Config\Database::connect();
     }
 
-    public function index()
-    {
+    public function index(){
         return view('tiger/attendance/index');
+    }
+    public function barcode(){
+
+        return view('tiger/attendance/barcode');
     }
     public function store(){
         $type = $this->request->getPost('type');

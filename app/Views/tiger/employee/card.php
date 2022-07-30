@@ -73,8 +73,8 @@
 
     // Barcode Generator
     $generator = new BarcodeGeneratorSVG();
-    $barcode = $generator->getBarcode($employee['phone'], $generator::TYPE_CODE_128);
-    // $barcode = $generator->getBarcode($empid, $generator::TYPE_CODE_128);
+    // $barcode = $generator->getBarcode($employee['phone'], $generator::TYPE_CODE_128);
+    $barcode = $generator->getBarcode($empid, $generator::TYPE_CODE_128);
     // qrcode
     $qrcode2 = (new QRCode($options))->render($empid);
 
@@ -140,6 +140,7 @@
             <canvas style="position:absolute;top:173px;left:10x;white-space:nowrap; width:230px; height: 36px;" id="barcodeTarget">
 
         </div>
+
 
 
         <!-- END EMP ID Frame  -->

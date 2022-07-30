@@ -40,20 +40,18 @@
             function startTime() {
                 const today = new Date();
 
-                let y = today.getFullYear();
-                let mo = today.getMonth();
-                let d = today.getDay();
                 let h = today.getHours();
                 let ampm = (h >= 12) ? "PM" : "AM";
-                h = (h - 12) > 0 ? (h - 12) : h;
+                h = (h - 12) > 0 ? (h - 12): h;
+                h = 00 ? 12: h;
                 let m = today.getMinutes();
                 let s = today.getSeconds();
 
-                mo = checkTime(mo);
-                d = checkTime(d);
+                h = checkTime(h);
+                oh = (h == 00) ? 12: (h);
                 m = checkTime(m);
                 s = checkTime(s);
-                document.getElementById('clock').innerHTML = h + ":" + m + ":" + s + " " + ampm;
+                document.getElementById('clock').innerHTML = oh + ":" + m + ":" + s + " " + ampm;
                 setTimeout(startTime, 1000);
             }
 

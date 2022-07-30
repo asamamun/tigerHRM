@@ -11,7 +11,7 @@
             <div class="col-5 d-flex justify-content-end">
               <p class="text-info m-1"><?= date("l, jS \of F Y"); ?></p>
               <p class="text-warning m-1"><i class="fa-solid fa-clock"></i></p>
-              <p id="clock" class="text-white m-1"><?= date("h:i:sa"); ?></p>
+              <p id="clock" class="text-white m-1"><?= date("h:i:s a"); ?></p>
             </div>
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
