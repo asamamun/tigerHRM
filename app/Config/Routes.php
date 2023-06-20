@@ -139,6 +139,7 @@ $routes->post('/tiger/storeleave/(:num)', 'LeaveController::storeleave/$1');
 
 //attendance
 $routes->get('attendance', 'AttendanceController::index');
+$routes->post('attendance', 'AttendanceController::store');
 $routes->get('attendance/barcode', 'AttendanceController::barcode');
 $routes->get('/tiger/attendance/report', 'AttendanceController::report');
 $routes->get('/tiger/attendance/addattendance', 'AttendanceController::addattendance');
