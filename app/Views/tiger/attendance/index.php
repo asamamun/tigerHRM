@@ -57,6 +57,8 @@ between and sql
 
 
   <script type="text/javascript">
+    let speech = new SpeechSynthesisUtterance();
+    speech.lang = "en";
     let scanner = new Instascan.Scanner({
       video: document.getElementById('preview')
     });
@@ -70,12 +72,13 @@ between and sql
       // CSRF Hash
       var csrfName = $('#csrf').attr('name'); // CSRF Token name
       var csrfHash = $('#csrf').val(); // CSRF hash
+      var inout = $('input[name="btnradio"]:checked').val();
       $.ajax({
         type: "post",
         url: $url,
         data: {
           [csrfName]: csrfHash,
-          type: $('input[name="btnradio"]:checked').val(),
+          type: inout,
           empid: $empid
         },
         success: function(response) {
@@ -88,8 +91,13 @@ between and sql
           // alert(response.csrf_token);
           $('#csrf').val(response.csrf_token);
           if (response != "0") {
+            //show
             $("#result").html("attendance logged");
             $("#attlog").append('<li class="list-group-item border border-info mb-1">Name: ' + response.name + ' (' + response.empid + '), ' + response.type + ', Time: ' + response.created_at + '</li>');
+            //talk
+            // speech.text = response.name + " logged " + inout + " at" + response.created_at;
+            speech.text = response.name + " logged " + inout;
+          window.speechSynthesis.speak(speech);
           } else {
             $("#result").html("attendance not logged");
           }
